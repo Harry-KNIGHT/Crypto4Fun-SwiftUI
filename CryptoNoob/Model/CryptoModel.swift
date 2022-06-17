@@ -13,10 +13,18 @@ struct Data: Codable {
     let id, name: String
     let image: String
     let currentPrice: Double
+    let priceChangePercentage24h: Float
 
     enum CodingKeys: String, CodingKey {
         case id, name
         case image
         case currentPrice = "current_price"
+        case priceChangePercentage24h = "price_change_percentage_24h"
+    }
+}
+
+extension Double {
+    var stringWithoutZeroFraction: String {
+        return truncatingRemainder(dividingBy: 1) == 0 ? String(format: "%.0f") : String(self)
     }
 }

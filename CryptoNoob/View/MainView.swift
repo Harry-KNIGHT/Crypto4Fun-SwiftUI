@@ -20,15 +20,20 @@ struct MainView: View {
                         VStack(alignment: .leading) {
                             Text(item.name)
                                 .font(.headline)
-                            HStack(spacing: 1) {
+                            HStack(alignment: .center, spacing: 1) {
                                 Text("$")
                                     .bold()
                                 Text(String(item.currentPrice.formatted()))
+                                Spacer()
+
                             }
                         }
+                        Text("\(String(format: "%.2f", item.priceChangePercentage24h))% ")
+                            .foregroundColor(item.priceChangePercentage24h < 0 ? Color.red : Color.green)
                     }
                 }
             }
+            .navigationBarTitle("Crypto Noob", displayMode: .inline)
             .navigationTitle("My Crypto")
             .task {
                 await apiCall.fetchData()
@@ -44,6 +49,7 @@ struct MainView: View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
+            .preferredColorScheme(.dark)
             .environmentObject(ApiCall())
     }
 }

@@ -42,6 +42,6 @@ struct AsyncImageView: View {
 
 struct AsyncImageView_Previews: PreviewProvider {
     static var previews: some View {
-        AsyncImageView(data: Data(id: "btc", name: "Bitcoin", image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?", currentPrice: 34553.45))
+        AsyncImageView(data: Data(id: "btc", name: "Bitcoin", image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?", currentPrice: 34553.45, priceChangePercentage24h: -0.26766))
     }
 }
