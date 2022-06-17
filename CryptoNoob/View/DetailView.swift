@@ -11,9 +11,11 @@ struct DetailView: View {
     let data: Data
     @EnvironmentObject var apiCall: ApiCall
     var body: some View {
+        VStack {
+            Spacer()
+
         AsyncImageView(data: data)
-        .padding()
-   
+                .padding(20)
         HStack(spacing: 1) {
             Text("$")
             Text(String(data.currentPrice.formatted()))
@@ -22,6 +24,9 @@ struct DetailView: View {
         .padding()
         .background(.regularMaterial)
         .cornerRadius(10)
+            Spacer()
+        }
+
     }
 }
 
