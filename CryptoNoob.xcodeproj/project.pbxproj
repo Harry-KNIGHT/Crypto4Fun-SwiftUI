@@ -62,12 +62,9 @@
 			isa = PBXGroup;
 			children = (
 				3C2CFADE285CF356000EED5D /* CryptoNoobApp.swift */,
-				3C2CFAE0285CF356000EED5D /* ContentView.swift */,
-				3C2CFAEC285CF37E000EED5D /* MainView.swift */,
-				3CD8C7A7285CF4FD004D65B9 /* DetailView.swift */,
-				3CD8C7A9285CFBDA004D65B9 /* AsyncImageView.swift */,
-				3C2CFAEE285CF38D000EED5D /* CryptoModel.swift */,
-				3C2CFAF0285CF394000EED5D /* API.swift */,
+				3CD8C7AB285D00D0004D65B9 /* View */,
+				3CD8C7AC285D00DC004D65B9 /* Model */,
+				3CD8C7AD285D00E6004D65B9 /* Api */,
 				3C2CFAE2285CF357000EED5D /* Assets.xcassets */,
 				3C2CFAE4285CF357000EED5D /* Preview Content */,
 			);
@@ -80,6 +77,33 @@
 				3C2CFAE5285CF357000EED5D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3CD8C7AB285D00D0004D65B9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3C2CFAE0285CF356000EED5D /* ContentView.swift */,
+				3C2CFAEC285CF37E000EED5D /* MainView.swift */,
+				3CD8C7A7285CF4FD004D65B9 /* DetailView.swift */,
+				3CD8C7A9285CFBDA004D65B9 /* AsyncImageView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3CD8C7AC285D00DC004D65B9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3C2CFAEE285CF38D000EED5D /* CryptoModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3CD8C7AD285D00E6004D65B9 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				3C2CFAF0285CF394000EED5D /* API.swift */,
+			);
+			path = Api;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
