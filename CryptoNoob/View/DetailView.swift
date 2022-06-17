@@ -21,6 +21,7 @@ struct DetailView: View {
             Text("$")
             Text(String(data.currentPrice.formatted()))
         }
+        .foregroundColor(data.priceChangePercentage24h < 0 ? Color.red : Color.green)
         .font(.largeTitle.bold())
         .padding()
         .background(.regularMaterial)
@@ -33,7 +34,7 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(data: Data(id: "btc", name: "Bitcoin", image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?", currentPrice: 34553.45))
+        DetailView(data: Data(id: "btc", name: "Bitcoin", image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?", currentPrice: 34553.45, priceChangePercentage24h: -4032.56))
             .environmentObject(ApiCall())
     }
 }
