@@ -16,6 +16,7 @@ struct DetailView: View {
 
         AsyncImageView(data: data)
                 .padding(20)
+                
         HStack(spacing: 1) {
             Text("$")
             Text(String(data.currentPrice.formatted()))
