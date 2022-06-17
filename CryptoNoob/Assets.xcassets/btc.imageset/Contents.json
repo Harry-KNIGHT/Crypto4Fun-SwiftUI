@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "kisspng-bitcoin-com-cryptocurrency-logo-zazzle-kibuba-btc-5b15aa1f3c8e94.8209571515281464632481.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
