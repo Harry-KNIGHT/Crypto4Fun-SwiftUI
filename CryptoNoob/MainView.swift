@@ -14,26 +14,24 @@ struct MainView: View {
         NavigationView {
             List(apiCall.datas, id: \.id) { item in
                 NavigationLink(destination: DetailView(data: item)) {
-                HStack {
-                    AsyncImage(url: URL(string: item.image)) { image in
-                        image
-                            .resizable()
-                            .scaledToFit()
-                    }placeholder: {
-                        Color.secondary
+                    HStack {
+                       AsyncImageView(data: item, width: 50, height: 50)
+
+                        VStack(alignment: .leading) {
+                            Text(item.name)
+                                .font(.headline)
+                            HStack(spacing: 1) {
+                                Text("$")
+                                    .bold()
+                                Text(String(item.currentPrice.formatted()))
+                            }
+                        }
                     }
-                    .frame(width: 40, height: 40)
-                    VStack(alignment: .leading) {
-                        Text(item.name)
-                            .font(.headline)
-                        Text(String(item.currentPrice))
-                    }
-                }
                 }
             }
             .navigationTitle("My Crypto")
             .task {
-                await apiCall.fetchData()
+                   await apiCall.fetchData()
             }
         }
     }
@@ -42,5 +40,6 @@ struct MainView: View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
+            .environmentObject(ApiCall())
     }
 }
