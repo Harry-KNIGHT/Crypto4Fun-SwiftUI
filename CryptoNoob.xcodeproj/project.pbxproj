@@ -85,7 +85,7 @@
 				3C2CFAE0285CF356000EED5D /* ContentView.swift */,
 				3C2CFAEC285CF37E000EED5D /* MainView.swift */,
 				3CD8C7A7285CF4FD004D65B9 /* DetailView.swift */,
-				3CD8C7A9285CFBDA004D65B9 /* AsyncImageView.swift */,
+				3CD8C7AE285D0278004D65B9 /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -104,6 +104,14 @@
 				3C2CFAF0285CF394000EED5D /* API.swift */,
 			);
 			path = Api;
+			sourceTree = "<group>";
+		};
+		3CD8C7AE285D0278004D65B9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3CD8C7A9285CFBDA004D65B9 /* AsyncImageView.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
