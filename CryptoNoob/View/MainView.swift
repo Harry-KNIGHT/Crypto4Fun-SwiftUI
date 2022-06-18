@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @EnvironmentObject var apiCall: ApiCall
-    
+    @State private var isOn: Bool = false
     var body: some View {
         NavigationView {
             List(apiCall.datas, id: \.id) { item in
@@ -34,6 +34,16 @@ struct MainView: View {
                 }
             }
             .navigationBarTitle("Crypto Noob", displayMode: .inline)
+            .navigationBarItems(trailing: Button(action: {
+                isOn.toggle()
+                
+            }, label: {
+                           Label("Like button", systemImage: "heart")
+            }).sheet(isPresented: $isOn) {
+                FavoriteListView()
+            })
+                
+            
             .navigationTitle("My Crypto")
             .task {
                 await apiCall.fetchData()

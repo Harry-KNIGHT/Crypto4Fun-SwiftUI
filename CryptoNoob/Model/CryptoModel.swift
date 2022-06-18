@@ -9,7 +9,7 @@ import Foundation
 /*
  Documentation: https://docs.bitfine.com/reference/rest-public-tickers
  */
-struct Data: Codable {
+struct Data: Codable, Hashable {
     let id, name: String
     let image: String
     let currentPrice: Double
