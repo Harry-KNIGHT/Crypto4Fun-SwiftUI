@@ -13,7 +13,7 @@ struct DetailView: View {
     var body: some View {
         VStack {
             Spacer()
-
+Spacer()
         AsyncImageView(data: data)
                 .padding(20)
                 
@@ -26,6 +26,24 @@ struct DetailView: View {
         .padding()
         .background(.regularMaterial)
         .cornerRadius(10)
+        Spacer()
+
+            Button(action: {
+                Task {
+                    await apiCall.fetchData()
+                    print(data.currentPrice)
+                }
+            }, label: {
+                Label("Actualiser", systemImage: "arrow.triangle.2.circlepath")
+
+
+            })
+            .font(.title.bold())
+            .buttonStyle(.borderedProminent)
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .tint(Color.blue)
+
+
             Spacer()
         }
 
