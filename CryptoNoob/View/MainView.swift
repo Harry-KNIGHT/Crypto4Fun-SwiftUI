@@ -66,9 +66,6 @@ struct MainView: View {
                 }
             }
         }
-        .refreshable {
-            await apiCall.fetchData()
-        }
     }
 }
 
