@@ -13,6 +13,8 @@ struct CurrencyChartView: View {
     @State private var showAveragePrice: Bool = true
     @State private var timeToShow = "D"
     var timesToShow = ["M", "D", "Y"]
+    var data: Data
+
     var body: some View {
         VStack {
 
@@ -20,18 +22,19 @@ struct CurrencyChartView: View {
                 ForEach(chartApiResponse.prices, id: \.self) {
                     LineMark(x: .value("Date", Date(miliseconds: Int64($0[0]))),
                              y: .value("Price", $0[1])
-                    ).foregroundStyle(.purple)
+                    ).foregroundStyle(data.priceChangePercentage24h < 0 ? .red : .green)
                 }
 
                 if showAveragePrice {
                     RuleMark(
                         y: .value("Threshold", chartApiResponse.averagePrice)
-                    ).foregroundStyle(.orange)
+                    ).foregroundStyle(.primary)
                 }
             }
             .task {
-                await chartApiResponse.fetchChart()
+                await chartApiResponse.fetchChart(data.id)
             }
+            
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle("Bitcoin")
             VStack(spacing: 10) {
@@ -49,7 +52,8 @@ struct CurrencyChartView: View {
 
 struct CurrencyChartView_Previews: PreviewProvider {
     static var previews: some View {
-        CurrencyChartView()
+        CurrencyChartView(data: Data(id: "btc", name: "Bitcoin", image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?", currentPrice: 34553.45, priceChangePercentage24h: -4032.56))
+            .environmentObject(FavoriteViewModel())
             .environmentObject(ApiCall())
     }
 }

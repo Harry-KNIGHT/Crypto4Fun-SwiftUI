@@ -43,8 +43,8 @@ class ApiCall: ObservableObject {
         }
     }
 
-    func fetchChart() async {
-        let url = "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=1300&interval=daily"
+    func fetchChart(_ id: String) async {
+        let url = "https://api.coingecko.com/api/v3/coins/\(id)/market_chart?vs_currency=usd&days=1300&interval=daily"
 
         guard let url = URL(string: url) else {
             print("Invalid url")

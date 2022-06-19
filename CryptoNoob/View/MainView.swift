@@ -14,7 +14,7 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             List(apiCall.datas, id: \.id) { item in
-                NavigationLink(destination: CurrencyChartView()) {
+                NavigationLink(destination: CurrencyChartView(data: item)) {
                     HStack {
                         AsyncImageView(data: item, width: 50, height: 50)
                         
