@@ -11,12 +11,10 @@ struct MainView: View {
     @EnvironmentObject var apiCall: ApiCall
     @State private var isOn: Bool = false
 
- 
-
     var body: some View {
         NavigationView {
             List(apiCall.datas, id: \.id) { item in
-                NavigationLink(destination: DetailView(data: item)) {
+                NavigationLink(destination: CurrencyChartView()) {
                     HStack {
                         AsyncImageView(data: item, width: 50, height: 50)
                         
