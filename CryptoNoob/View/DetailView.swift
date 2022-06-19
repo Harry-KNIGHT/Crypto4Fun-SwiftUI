@@ -9,7 +9,6 @@ import SwiftUI
 
 struct DetailView: View {
     let data: Data
-    @EnvironmentObject var apiCall: ApiCall
     @EnvironmentObject var favoriteVM: FavoriteViewModel
     var body: some View {
         VStack(spacing: 15) {
@@ -32,22 +31,6 @@ struct DetailView: View {
 
             Spacer()
 
-            Button(action: {
-                Task {
-                    await apiCall.fetchData()
-                    print(data.currentPrice)
-                }
-            }, label: {
-                Label("Actualiser", systemImage: "arrow.triangle.2.circlepath")
-
-
-            })
-            .font(.title.bold())
-            .buttonStyle(.borderedProminent)
-            .clipShape(RoundedRectangle(cornerRadius: 10))
-            .tint(Color.blue)
-
-
             Spacer()
             Spacer()
         }
@@ -68,7 +51,6 @@ struct DetailView: View {
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
         DetailView(data: Data(id: "btc", name: "Bitcoin", image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?", currentPrice: 34553.45, priceChangePercentage24h: -4032.56))
-            .environmentObject(ApiCall())
             .environmentObject(FavoriteViewModel())
     }
 }
