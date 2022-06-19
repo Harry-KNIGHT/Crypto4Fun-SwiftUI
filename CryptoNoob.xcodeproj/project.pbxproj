@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C098332285F964400E3C117 /* CurrencyChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C098331285F964400E3C117 /* CurrencyChartView.swift */; };
 		3C2CFADF285CF356000EED5D /* CryptoNoobApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2CFADE285CF356000EED5D /* CryptoNoobApp.swift */; };
 		3C2CFAE1285CF356000EED5D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2CFAE0285CF356000EED5D /* ContentView.swift */; };
 		3C2CFAE3285CF357000EED5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C2CFAE2285CF357000EED5D /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C098331285F964400E3C117 /* CurrencyChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyChartView.swift; sourceTree = "<group>"; };
 		3C2CFADB285CF356000EED5D /* CryptoNoob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoNoob.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C2CFADE285CF356000EED5D /* CryptoNoobApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoNoobApp.swift; sourceTree = "<group>"; };
 		3C2CFAE0285CF356000EED5D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				B3314EA4285DD03300BBFF4C /* FavoriteListView.swift */,
 				3CD8C7A7285CF4FD004D65B9 /* DetailView.swift */,
 				3CE98C23285DE24E00539190 /* EmptyView.swift */,
+				3C098331285F964400E3C117 /* CurrencyChartView.swift */,
 				3CD8C7AE285D0278004D65B9 /* Cell */,
 			);
 			path = View;
@@ -202,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C2CFAE1285CF356000EED5D /* ContentView.swift in Sources */,
+				3C098332285F964400E3C117 /* CurrencyChartView.swift in Sources */,
 				3CD8C7A8285CF4FD004D65B9 /* DetailView.swift in Sources */,
 				B3314EA5285DD03300BBFF4C /* FavoriteListView.swift in Sources */,
 				3C2CFAED285CF37E000EED5D /* MainView.swift in Sources */,
@@ -347,6 +351,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -376,6 +381,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
