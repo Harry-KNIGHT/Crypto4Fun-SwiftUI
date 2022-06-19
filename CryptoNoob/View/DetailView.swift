@@ -13,7 +13,6 @@ struct DetailView: View {
     var body: some View {
         VStack(spacing: 15) {
             Spacer()
-            Spacer()
             AsyncImageView(data: data)
                 .padding(20)
 
@@ -28,10 +27,6 @@ struct DetailView: View {
             .cornerRadius(10)
 
             NegativeOrPositiveLast24hView(data: data)
-
-            Spacer()
-
-            Spacer()
             Spacer()
         }
         .toolbar(content: {
