@@ -9,6 +9,8 @@ import Foundation
 
 class ApiCall: ObservableObject {
     @Published public var datas = [Data]()
+    @Published public var timeRemaining = 30
+    public let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
     func fetchData() async {
         let url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=30&page=1&sparkline=false&price_change_percentage=%271h%2C%2024h%2C%207d"

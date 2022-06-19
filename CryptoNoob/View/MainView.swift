@@ -10,6 +10,9 @@ import SwiftUI
 struct MainView: View {
     @EnvironmentObject var apiCall: ApiCall
     @State private var isOn: Bool = false
+
+ 
+
     var body: some View {
         NavigationView {
             List(apiCall.datas, id: \.id) { item in
@@ -49,7 +52,18 @@ struct MainView: View {
             .navigationTitle("My Crypto")
             .task {
                 await apiCall.fetchData()
-                
+
+            }
+            .onReceive(apiCall.timer) { time in
+                if apiCall.timeRemaining > 0 {
+                    apiCall.timeRemaining -= 1
+                }else {
+                    Task {
+                        await apiCall.fetchData()
+                        apiCall.timeRemaining += 30
+                        print("Data fetched")
+                    }
+                }
             }
         }
         .refreshable {
