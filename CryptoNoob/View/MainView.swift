@@ -28,8 +28,7 @@ struct MainView: View {
 
                             }
                         }
-                        Text("\(String(format: "%.2f", item.priceChangePercentage24h))% ")
-                            .foregroundColor(item.priceChangePercentage24h < 0 ? Color.red : Color.green)
+                        NegativeOrPositiveLast24hView(data: item, font: .body)
                     }
                 }
             }
@@ -38,10 +37,13 @@ struct MainView: View {
                 isOn.toggle()
                 
             }, label: {
-                           Label("Like button", systemImage: "heart")
+                           Label("Like button", systemImage: "heart.fill")
+                    .font(.title3)
+                   // .foregroundColor(.green)
             }).sheet(isPresented: $isOn) {
                 FavoriteListView()
             })
+
                 
             
             .navigationTitle("My Crypto")
