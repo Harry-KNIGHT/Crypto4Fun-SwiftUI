@@ -9,6 +9,7 @@ import SwiftUI
 import Charts
 
 struct CurrencyChartView: View {
+    @EnvironmentObject var favoriteVM: FavoriteViewModel
     @EnvironmentObject var chartApiResponse: ApiCall
     @State private var showAveragePrice: Bool = true
     @State private var timeToShow = "D"
@@ -36,7 +37,13 @@ struct CurrencyChartView: View {
             }
             
             .navigationBarTitleDisplayMode(.inline)
-            .navigationTitle("Bitcoin")
+            .navigationTitle(data.name)
+            .navigationBarItems(trailing: Button(action: {
+                favoriteVM.addOrRemoveFavorite(item: data)
+            }, label: {
+                Label("Favorite", systemImage: favoriteVM.favoriteCryptos.contains(data) ? "heart.fill" : "heart")
+            }) )
+
             VStack(spacing: 10) {
                 Toggle("Average price", isOn: $showAveragePrice)
                 Picker("Chose time", selection: $timeToShow) {
