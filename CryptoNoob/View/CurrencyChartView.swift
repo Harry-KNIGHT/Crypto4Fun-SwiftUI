@@ -18,7 +18,7 @@ struct CurrencyChartView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Group {
-                Text(String(data.currentPrice))
+                Text("$" + String(data.currentPrice))
                     .foregroundColor(.primary)
                     .font(.largeTitle.bold())
                 NegativeOrPositiveLast24hView(data: data, font: .body)
@@ -54,6 +54,9 @@ struct CurrencyChartView: View {
             Toggle("Moyenne", isOn: $showAveragePrice)
                 .tint(.primary)
                 .padding(.horizontal)
+                .padding(.top)
+            Divider()
+                .padding(.horizontal, 50)
             HStack {
                 /*
                 Button(action: {
@@ -99,7 +102,8 @@ struct CurrencyChartView: View {
                 .modifier(ButtonTimeSelected())
 
 
-            }.padding(.horizontal)
+            }.padding()
+
         }
     }
 
