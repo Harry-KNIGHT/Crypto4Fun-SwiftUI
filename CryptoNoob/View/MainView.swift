@@ -10,11 +10,10 @@ import SwiftUI
 struct MainView: View {
     @EnvironmentObject var apiCall: ApiCall
     @State private var isOn: Bool = false
-
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List(apiCall.datas, id: \.id) { item in
-                NavigationLink(destination: CurrencyChartView(data: item)) {
+                 NavigationLink(destination: CurrencyChartView(data: item)) {
                     HStack {
                         AsyncImageView(data: item, width: 50, height: 50)
                         
@@ -31,8 +30,11 @@ struct MainView: View {
                         }
                         NegativeOrPositiveLast24hView(data: item, font: .body)
                     }
+
                 }
+                 .navigationBarTitle("Crypto4Fun", displayMode: .inline)
             }
+
             .navigationBarTitle("Crypto Noob", displayMode: .inline)
             .navigationBarItems(trailing: Button(action: {
                 isOn.toggle()
@@ -45,23 +47,13 @@ struct MainView: View {
                 FavoriteListView()
             })   
 
-                
-            
-            .navigationTitle("My Crypto")
+
             .task {
                 await apiCall.fetchData()
 
             }
             .onReceive(apiCall.timer) { time in
-                if apiCall.timeRemaining > 0 {
-                    apiCall.timeRemaining -= 1
-                }else {
-                    Task {
-                        await apiCall.fetchData()
-                        apiCall.timeRemaining += 30
-                        print("Data fetched")
-                    }
-                }
+              apiCall.fetchDataTimer()
             }
         }
     }

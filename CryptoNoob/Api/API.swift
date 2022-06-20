@@ -9,8 +9,9 @@ import Foundation
 
 class ApiCall: ObservableObject {
     @Published public var datas = [Data]()
-    @Published public var timeRemaining = 30
+    @Published public var timeRemaining = 10
     public let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+
 
     @Published public var prices = [[Double]]()
 
@@ -52,6 +53,18 @@ class ApiCall: ObservableObject {
             print("Invalid request")
         }
     }
+
+    func fetchDataTimer() {
+       if timeRemaining > 0 {
+           timeRemaining -= 1
+       }else {
+           Task {
+               await fetchData()
+               timeRemaining += 10
+               print("Data fetched")
+           }
+       }
+   }
 
     func fetchChart(_ id: String, timeChartShow: TimeToShow) async {
         let url = "https://api.coingecko.com/api/v3/coins/\(id)/market_chart?vs_currency=usd&days=\(timeChartShow.rawValue)&interval=daily"
