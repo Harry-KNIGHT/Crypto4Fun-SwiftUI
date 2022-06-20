@@ -13,13 +13,23 @@ class ApiCall: ObservableObject {
     public let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
     @Published public var prices = [[Double]]()
-    
+
     var averagePrice: Double {
         let valueArray = prices.map { $0[1] }
         let sum = valueArray.reduce(0, +)
 
 
         return sum / Double(valueArray.count)
+    }
+
+    @Published public var timeToShow: TimeToShow = .monthly
+
+    enum TimeToShow: String, CaseIterable, Identifiable {
+        case yearly = "365"
+        case daily = "1"
+        case monthly = "31"
+        case max = "max"
+        var id: Self { self }
     }
 
     func fetchData() async {
@@ -43,8 +53,8 @@ class ApiCall: ObservableObject {
         }
     }
 
-    func fetchChart(_ id: String) async {
-        let url = "https://api.coingecko.com/api/v3/coins/\(id)/market_chart?vs_currency=usd&days=1300&interval=daily"
+    func fetchChart(_ id: String, timeChartShow: TimeToShow) async {
+        let url = "https://api.coingecko.com/api/v3/coins/\(id)/market_chart?vs_currency=usd&days=\(timeChartShow.rawValue)&interval=daily"
 
         guard let url = URL(string: url) else {
             print("Invalid url")
