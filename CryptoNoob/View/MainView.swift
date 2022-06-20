@@ -40,10 +40,10 @@ struct MainView: View {
             }, label: {
                            Label("Like button", systemImage: "heart.fill")
                     .font(.title3)
-                   // .foregroundColor(.green)
+                .foregroundColor(.primary)
             }).sheet(isPresented: $isOn) {
                 FavoriteListView()
-            })
+            })   
 
                 
             

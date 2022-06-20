@@ -50,6 +50,8 @@ struct CurrencyChartView: View {
                 favoriteVM.addOrRemoveFavorite(item: data)
             }, label: {
                 Label("Favorite", systemImage: favoriteVM.favoriteCryptos.contains(data) ? "heart.fill" : "heart")
+                    .foregroundColor(.primary)
+                    .font(.title3)
             }) )
             Toggle("Moyenne", isOn: $showAveragePrice)
                 .tint(.primary)
