@@ -31,6 +31,7 @@ struct CurrencyChartView: View {
                     LineMark(x: .value("Date", Date(miliseconds: Int64($0[0]))),
                              y: .value("Price", $0[1])
                     ).foregroundStyle(data.priceChangePercentage24h < 0 ? .red : .green)
+
                 }
 
                 if showAveragePrice {
@@ -40,7 +41,7 @@ struct CurrencyChartView: View {
                 }
             }
             .task {
-                await chartApiResponse.fetchChart(data.id, timeChartShow: ApiCall.TimeToShow.daily)
+                await chartApiResponse.fetchChart(data.id, timeChartShow: ApiCall.TimeToShow.monthly)
             }
             
             .navigationBarTitleDisplayMode(.inline)
@@ -50,25 +51,28 @@ struct CurrencyChartView: View {
             }, label: {
                 Label("Favorite", systemImage: favoriteVM.favoriteCryptos.contains(data) ? "heart.fill" : "heart")
             }) )
-          
+            Toggle("Moyenne", isOn: $showAveragePrice)
+                .tint(.primary)
+                .padding(.horizontal)
             HStack {
-                Spacer()
+                /*
                 Button(action: {
                     Task {
-                        await chartApiResponse.fetchChart(data.id, timeChartShow: ApiCall.TimeToShow.daily)
+                        await chartApiResponse.fetchChart(data.id, timeChartShow: ApiCall.TimeToShow.max)
                     }
                 }, label: {
                     Text("Day")
                 })
                 .modifier(ButtonTimeSelected())
-                Spacer()
+                 */
+
 
                 Button(action: {
                     Task {
                         await chartApiResponse.fetchChart(data.id, timeChartShow: ApiCall.TimeToShow.monthly)
                     }
                 }, label: {
-                    Text("month")
+                    Text("MONTH")
                 })
                 .modifier(ButtonTimeSelected())
 
@@ -79,7 +83,7 @@ struct CurrencyChartView: View {
                         await chartApiResponse.fetchChart(data.id, timeChartShow: ApiCall.TimeToShow.yearly)
                     }
                 }, label: {
-                    Text("year")
+                    Text("YEAR")
                 })
                 .modifier(ButtonTimeSelected())
 
@@ -90,13 +94,12 @@ struct CurrencyChartView: View {
                         await chartApiResponse.fetchChart(data.id, timeChartShow: ApiCall.TimeToShow.max)
                     }
                 }, label: {
-                    Text("Max")
+                    Text("MAX")
                 })
                 .modifier(ButtonTimeSelected())
 
-                Spacer()
 
-            }
+            }.padding(.horizontal)
         }
     }
 
@@ -115,8 +118,10 @@ struct CurrencyChartView_Previews: PreviewProvider {
 struct ButtonTimeSelected: ViewModifier {
     func body(content: Content) -> some View {
         content
+
             .buttonStyle(.borderedProminent)
             .buttonBorderShape(.capsule)
+            .tint(.primary)
 
 
     }

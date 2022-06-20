@@ -15,7 +15,7 @@ struct FavoriteListView: View {
             
             if !favoriteVM.favoriteCryptos.isEmpty {
                 List(favoriteVM.favoriteCryptos, id: \.id) { item in
-                    NavigationLink(destination: DetailView(data: item)) {
+                    NavigationLink(destination: CurrencyChartView(data: item)) {
                         HStack {
                             AsyncImageView(data: item, width: 50, height: 50)
 

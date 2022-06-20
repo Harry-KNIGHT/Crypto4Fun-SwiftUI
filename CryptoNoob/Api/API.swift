@@ -28,7 +28,7 @@ class ApiCall: ObservableObject {
         case yearly = "365"
         case daily = "1"
         case monthly = "31"
-        case max = "max"
+        case max = "10_000"
         var id: Self { self }
     }
 
