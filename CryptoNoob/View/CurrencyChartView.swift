@@ -11,13 +11,20 @@ import Charts
 struct CurrencyChartView: View {
     @EnvironmentObject var favoriteVM: FavoriteViewModel
     @EnvironmentObject var chartApiResponse: ApiCall
-    @State private var showAveragePrice: Bool = true
-    @State private var timeToShow = "D"
-    var timesToShow = ["M", "D", "Y"]
+    @State private var showAveragePrice: Bool = false
+
     var data: Data
 
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
+            Group {
+                Text(String(data.currentPrice))
+                    .foregroundColor(.primary)
+                    .font(.largeTitle.bold())
+                NegativeOrPositiveLast24hView(data: data, font: .body)
+
+            }                    .padding(.horizontal)
+
 
             Chart {
                 ForEach(chartApiResponse.prices, id: \.self) {
@@ -33,7 +40,7 @@ struct CurrencyChartView: View {
                 }
             }
             .task {
-                await chartApiResponse.fetchChart(data.id)
+                await chartApiResponse.fetchChart(data.id, timeChartShow: ApiCall.TimeToShow.daily)
             }
             
             .navigationBarTitleDisplayMode(.inline)
@@ -43,24 +50,74 @@ struct CurrencyChartView: View {
             }, label: {
                 Label("Favorite", systemImage: favoriteVM.favoriteCryptos.contains(data) ? "heart.fill" : "heart")
             }) )
-
-            VStack(spacing: 10) {
-                Toggle("Average price", isOn: $showAveragePrice)
-                Picker("Chose time", selection: $timeToShow) {
-                    ForEach(timesToShow, id: \.self) {
-                        Text($0)
+          
+            HStack {
+                Spacer()
+                Button(action: {
+                    Task {
+                        await chartApiResponse.fetchChart(data.id, timeChartShow: ApiCall.TimeToShow.daily)
                     }
+                }, label: {
+                    Text("Day")
+                })
+                .modifier(ButtonTimeSelected())
+                Spacer()
 
-                }.pickerStyle(.segmented)
-            }.padding()
-        }.padding(.vertical)
+                Button(action: {
+                    Task {
+                        await chartApiResponse.fetchChart(data.id, timeChartShow: ApiCall.TimeToShow.monthly)
+                    }
+                }, label: {
+                    Text("month")
+                })
+                .modifier(ButtonTimeSelected())
+
+                Spacer()
+
+                Button(action: {
+                    Task {
+                        await chartApiResponse.fetchChart(data.id, timeChartShow: ApiCall.TimeToShow.yearly)
+                    }
+                }, label: {
+                    Text("year")
+                })
+                .modifier(ButtonTimeSelected())
+
+                Spacer()
+
+                Button(action: {
+                    Task {
+                        await chartApiResponse.fetchChart(data.id, timeChartShow: ApiCall.TimeToShow.max)
+                    }
+                }, label: {
+                    Text("Max")
+                })
+                .modifier(ButtonTimeSelected())
+
+                Spacer()
+
+            }
+        }
     }
+
 }
+
+
 
 struct CurrencyChartView_Previews: PreviewProvider {
     static var previews: some View {
         CurrencyChartView(data: Data(id: "btc", name: "Bitcoin", image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?", currentPrice: 34553.45, priceChangePercentage24h: -4032.56))
             .environmentObject(FavoriteViewModel())
             .environmentObject(ApiCall())
+    }
+}
+
+struct ButtonTimeSelected: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .buttonStyle(.borderedProminent)
+            .buttonBorderShape(.capsule)
+
+
     }
 }
