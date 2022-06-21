@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ApiCall: ObservableObject {
+@MainActor class ApiCall: ObservableObject {
     @Published public var datas = [Data]()
     @Published public var timeRemaining = 10
     public let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -55,16 +55,16 @@ class ApiCall: ObservableObject {
     }
 
     func fetchDataTimer() {
-       if timeRemaining > 0 {
-           timeRemaining -= 1
-       }else {
-           Task {
-               await fetchData()
-               timeRemaining += 10
-               print("Data fetched")
-           }
-       }
-   }
+        if timeRemaining > 0 {
+            timeRemaining -= 1
+        }else {
+            Task {
+                await fetchData()
+                timeRemaining += 10
+                print("Data fetched")
+            }
+        }
+    }
 
     func fetchChart(_ id: String, timeChartShow: TimeToShow) async {
         let url = "https://api.coingecko.com/api/v3/coins/\(id)/market_chart?vs_currency=usd&days=\(timeChartShow.rawValue)&interval=daily"
@@ -89,22 +89,5 @@ class ApiCall: ObservableObject {
     }
 }
 
-struct CurrencyChartResponse: Codable {
-    let prices, marketCaps, totalVolumes: [[Double]]
 
-    enum CodingKeys: String, CodingKey {
-        case prices
-        case marketCaps = "market_caps"
-        case totalVolumes = "total_volumes"
-    }
-}
 
-extension Date {
-    var millisecondsSince1970: Int64 {
-        Int64((self.timeIntervalSince1970 * 1000.0).rounded())
-    }
-
-    init(miliseconds: Int64) {
-        self = Date(timeIntervalSince1970: TimeInterval(miliseconds) / 1000)
-    }
-}
