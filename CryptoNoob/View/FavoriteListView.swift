@@ -14,31 +14,13 @@ struct FavoriteListView: View {
         NavigationView {
             
             if !favoriteVM.favoriteCryptos.isEmpty {
-                List(favoriteVM.favoriteCryptos, id: \.id) { item in
-                    NavigationLink(destination: CurrencyChartView(data: item)) {
-                        HStack {
-                            AsyncImageView(data: item, width: 50, height: 50)
-
-                            VStack(alignment: .leading) {
-                                Text(item.name)
-                                    .font(.headline)
-                                HStack(alignment: .center, spacing: 1) {
-                                    Text("$")
-                                        .bold()
-                                    Text(String(item.currentPrice.formatted()))
-                                    Spacer()
-
-                                }
-                            }
-                            Text("\(String(format: "%.2f", item.priceChangePercentage24h))% ")
-                                .foregroundColor(item.priceChangePercentage24h < 0 ? Color.red : Color.green)
-                        }
-                    }.navigationBarTitle("Favoris")
-                }
+                List(favoriteVM.favoriteCryptos, id: \.id) { data in
+                    NavigationLink(destination: CurrencyChartView(data: data)) {
+                       ListRowCellView(data: data)
+                    }
+                }.navigationBarTitle("Favoris")
             }else {
                 EmptyView()
-
-
             }
         }
     }

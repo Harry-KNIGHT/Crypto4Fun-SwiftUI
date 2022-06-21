@@ -28,3 +28,13 @@ extension Double {
         return truncatingRemainder(dividingBy: 1) == 0 ? String(format: "%.0f") : String(self)
     }
 }
+
+struct CurrencyChartResponse: Codable {
+    let prices, marketCaps, totalVolumes: [[Double]]
+
+    enum CodingKeys: String, CodingKey {
+        case prices
+        case marketCaps = "market_caps"
+        case totalVolumes = "total_volumes"
+    }
+}
