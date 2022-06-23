@@ -27,12 +27,10 @@ struct MainView: View {
                 }else {
                     NftsView()
                 }
-                Spacer()
             }
             .navigationBarItems(trailing: FavoriteButtonSheetView(isOn: $isOn))
             .navigationTitle("Crypto4Fun")
             .navigationBarTitleDisplayMode(.inline)
-            
         }
     }
 }
