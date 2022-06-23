@@ -11,21 +11,28 @@ import SwiftUI
 struct MainView: View {
     @EnvironmentObject var apiCall: ApiCall
     @State private var isOn: Bool = false
+    @State private var selection = 0
+
     var body: some View {
         NavigationStack {
-            List(apiCall.datas, id: \.id) { data in
-                NavigationLink(destination: CurrencyChartView(data: data)) {
-                    ListRowCellView(data: data)
+            VStack {
+                Picker("Select",selection: $selection) {
+                    Text("Cryptos").tag(0)
+                    Text("NTF").tag(1)
                 }
-
+                .pickerStyle(.segmented)
+                    .padding(.horizontal)
+                if selection == 0 {
+                    CryptoCurrencyListView()
+                }else {
+                    NftsView()
+                }
+                Spacer()
             }
             .navigationBarItems(trailing: FavoriteButtonSheetView(isOn: $isOn))
-            .task {
-                await apiCall.fetchData()
-            }
-            .onReceive(apiCall.timer) { time in
-                apiCall.fetchDataTimer()
-            }
+            .navigationTitle("Crypto4Fun")
+            .navigationBarTitleDisplayMode(.inline)
+            
         }
     }
 }
