@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct NftsView: View {
-    var ntfs = ["Bored APE", "Oul ou", "HIHI"]
+    var ntfs = ["Bored APE", "Oul ou", "HIHI", "Didier la Banque Postale", "Fédérico"]
     var body: some View {
-        ForEach(ntfs, id: \.self) { nft in
-            VStack {
-                Text(nft)
+        ScrollView {
+            ForEach(ntfs, id: \.self) { nft in
+                VStack {
+                    HStack {
+                        Text(nft)
+                        Spacer()
+                    }
+                }
             }
-        }
+        }.padding()
     }
 }
 
