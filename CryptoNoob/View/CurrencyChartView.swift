@@ -12,32 +12,34 @@ struct CurrencyChartView: View {
     @EnvironmentObject var favoriteVM: FavoriteViewModel
     @EnvironmentObject var chartApiResponse: ApiCall
     @State private var showAveragePrice: Bool = false
+    @Environment(\.colorScheme) private var colorScheme
     var data: Data
 
     var body: some View {
-        VStack(alignment: .leading) {
-            Group {
+        ScrollView(.vertical, showsIndicators: false) {
+            VStack(alignment: .leading) {
+
                 CurrencyPriceView(data: data)
                     NegativeOrPositiveLast24hView(data: data, font: .body)
-            }
-            .padding(.horizontal)
+
             Chart {
                 ForEach(chartApiResponse.prices, id: \.self) {
                     LineMark(x: .value("Date", Date(miliseconds: Int64($0[0]))),
                              y: .value("Price", $0[1])
                     )
-
                     .foregroundStyle(data.priceChangePercentage24h < 0 ? .red : .green)
-
                 }
 
                 if showAveragePrice {
                     RuleMark(
                         y: .value("Threshold", chartApiResponse.averagePrice)
-                    ).foregroundStyle(.primary)
+                    )
+                    .foregroundStyle(colorScheme == .dark ? .white : .black)
                 }
-
-            }.task {
+            }
+            .frame(minHeight: 350, maxHeight: 450)
+            .padding(5)
+            .task {
                 await chartApiResponse.fetchChart(data.id, timeChartShow: TimeToShow.monthly)
             }
             .navigationBarTitleDisplayMode(.inline)
@@ -46,40 +48,39 @@ struct CurrencyChartView: View {
 
             ToggleAveragePriceView(showAveragePrice: $showAveragePrice)
             Divider()
-                .padding(.horizontal, 50)
-            HStack {
-                Button(action: {
-                    Task {
-                        await chartApiResponse.fetchChart(data.id, timeChartShow: TimeToShow.monthly)
-                        print("Monthly pushed")
-                    }
-                }, label: {
-                    Text("MONTH")
-                })
-                .modifier(ButtonTimeSelected())
+                    .padding(.vertical, 10)
+                HStack {
+                    Button(action: {
+                        Task {
+                            await chartApiResponse.fetchChart(data.id, timeChartShow: TimeToShow.monthly)
+                            print("Monthly pushed")
+                        }
+                    }, label: {
+                        Text("MONTH")
+                    })
 
-                Spacer()
+                    Spacer()
 
-                Button(action: {
-                    Task {
-                        await chartApiResponse.fetchChart(data.id, timeChartShow: TimeToShow.yearly)
-                        print("Yearly pushed")
-                    }
-                }, label: {
-                    Text("YEAR")
-                })
-                .modifier(ButtonTimeSelected())
+                    Button(action: {
+                        Task {
+                            await chartApiResponse.fetchChart(data.id, timeChartShow: TimeToShow.yearly)
+                            print("Yearly pushed")
+                        }
+                    }, label: {
+                        Text("YEAR")
+                    })
 
-                Spacer()
+                    Spacer()
 
-                Button(action: {
-                    Task {
-                        await chartApiResponse.fetchChart(data.id, timeChartShow: TimeToShow.max)
-                    }
-                }, label: {
-                    Text("MAX")
-                })
-                .modifier(ButtonTimeSelected())
+                    Button(action: {
+                        Task {
+                            await chartApiResponse.fetchChart(data.id, timeChartShow: TimeToShow.max)
+                        }
+                    }, label: {
+                        Text("MAX")
+                    })
+
+                }       .modifier(ButtonTimeSelected())
             }.padding()
         }
     }
@@ -99,7 +100,6 @@ struct ToggleAveragePriceView: View {
     var body: some View {
         Toggle("Moyenne", isOn: $showAveragePrice)
             .tint(.primary)
-            .padding(.horizontal)
             .padding(.top)
     }
 }
