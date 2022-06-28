@@ -26,7 +26,7 @@ import Foundation
     @Published public var timeToShow: TimeToShow = .monthly
 
     func fetchData() async {
-        let url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=30&page=1&sparkline=false&price_change_percentage=%271h%2C%2024h%2C%207d"
+        let url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=%271h%2C%2024h%2C%207d"
 
         guard let url = URL(string: url) else {
             print("Invalid url")
