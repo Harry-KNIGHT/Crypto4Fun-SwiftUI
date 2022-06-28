@@ -38,7 +38,7 @@ struct CurrencyChartView: View {
                 }
 
             }.task {
-                await chartApiResponse.fetchChart(data.id, timeChartShow: ApiCall.TimeToShow.monthly)
+                await chartApiResponse.fetchChart(data.id, timeChartShow: TimeToShow.monthly)
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle(data.name)
@@ -50,7 +50,7 @@ struct CurrencyChartView: View {
             HStack {
                 Button(action: {
                     Task {
-                        await chartApiResponse.fetchChart(data.id, timeChartShow: ApiCall.TimeToShow.monthly)
+                        await chartApiResponse.fetchChart(data.id, timeChartShow: TimeToShow.monthly)
                         print("Monthly pushed")
                     }
                 }, label: {
@@ -62,7 +62,7 @@ struct CurrencyChartView: View {
 
                 Button(action: {
                     Task {
-                        await chartApiResponse.fetchChart(data.id, timeChartShow: ApiCall.TimeToShow.yearly)
+                        await chartApiResponse.fetchChart(data.id, timeChartShow: TimeToShow.yearly)
                         print("Yearly pushed")
                     }
                 }, label: {
@@ -74,7 +74,7 @@ struct CurrencyChartView: View {
 
                 Button(action: {
                     Task {
-                        await chartApiResponse.fetchChart(data.id, timeChartShow: ApiCall.TimeToShow.max)
+                        await chartApiResponse.fetchChart(data.id, timeChartShow: TimeToShow.max)
                     }
                 }, label: {
                     Text("MAX")

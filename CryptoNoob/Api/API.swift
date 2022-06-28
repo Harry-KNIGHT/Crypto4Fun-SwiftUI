@@ -25,14 +25,6 @@ import Foundation
 
     @Published public var timeToShow: TimeToShow = .monthly
 
-    enum TimeToShow: String, CaseIterable, Identifiable {
-        case yearly = "365"
-        case daily = "1"
-        case monthly = "31"
-        case max = "10_000"
-        var id: Self { self }
-    }
-
     func fetchData() async {
         let url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=30&page=1&sparkline=false&price_change_percentage=%271h%2C%2024h%2C%207d"
 
