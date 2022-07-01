@@ -31,7 +31,7 @@ extension Double {
 
 enum TimeToShow: String, CaseIterable, Identifiable {
     case yearly = "365"
-    case daily = "1"
+    case weekly = "7"
     case monthly = "31"
     case max = "10_000"
     var id: Self { self }

@@ -14,75 +14,77 @@ struct CurrencyChartView: View {
     @State private var showAveragePrice: Bool = false
     @Environment(\.colorScheme) private var colorScheme
     var data: Data
+    @State private var tagSelected = 2
 
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading) {
-
-                CurrencyPriceView(data: data)
+                Group {
+                    CurrencyPriceView(data: data)
                     NegativeOrPositiveLast24hView(data: data, font: .body)
+                }.padding(.horizontal)
 
-            Chart {
-                ForEach(chartApiResponse.prices, id: \.self) {
-                    LineMark(x: .value("Date", Date(miliseconds: Int64($0[0]))),
-                             y: .value("Price", $0[1])
-                    )
-                    .foregroundStyle(data.priceChangePercentage24h < 0 ? .red : .green)
+
+                Chart {
+                    ForEach(chartApiResponse.prices, id: \.self) {
+                        LineMark(
+                            x: .value("Date", Date(miliseconds: Int64($0[0]))),
+                            y: .value("Price", $0[1])
+                        )
+                        .foregroundStyle(data.priceChangePercentage24h < 0 ? .red : .green)
+                    }
+
+                    if showAveragePrice {
+                        RuleMark(
+                            y: .value("Average price", chartApiResponse.averagePrice)
+                        )
+                        .foregroundStyle(colorScheme == .dark ? .white : .black)
+                    }
                 }
-
-                if showAveragePrice {
-                    RuleMark(
-                        y: .value("Threshold", chartApiResponse.averagePrice)
-                    )
-                    .foregroundStyle(colorScheme == .dark ? .white : .black)
+                .frame(maxWidth: .infinity, minHeight: 400, maxHeight: 550)
+                .padding(.trailing, 5)
+                .task {
+                    await chartApiResponse.fetchChart(data.id, timeChartShow: TimeToShow.yearly)
                 }
-            }
-            .frame(minHeight: 350, maxHeight: 450)
-            .padding(5)
-            .task {
-                await chartApiResponse.fetchChart(data.id, timeChartShow: TimeToShow.monthly)
-            }
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationTitle(data.name)
-            .navigationBarItems(trailing: FavoriteDetailButtonView(data: data))
-
-            ToggleAveragePriceView(showAveragePrice: $showAveragePrice)
-            Divider()
-                    .padding(.vertical, 10)
-                HStack {
-                    Button(action: {
+                .onChange(of: tagSelected, perform: { tag in
+                    switch tagSelected {
+                    case 0:
+                        Task {
+                            await chartApiResponse.fetchChart(data.id, timeChartShow: TimeToShow.weekly)
+                        }
+                    case 1:
                         Task {
                             await chartApiResponse.fetchChart(data.id, timeChartShow: TimeToShow.monthly)
-                            print("Monthly pushed")
                         }
-                    }, label: {
-                        Text("MONTH")
-                    })
-
-                    Spacer()
-
-                    Button(action: {
+                    case 2:
                         Task {
                             await chartApiResponse.fetchChart(data.id, timeChartShow: TimeToShow.yearly)
-                            print("Yearly pushed")
                         }
-                    }, label: {
-                        Text("YEAR")
-                    })
-
-                    Spacer()
-
-                    Button(action: {
+                    default:
                         Task {
                             await chartApiResponse.fetchChart(data.id, timeChartShow: TimeToShow.max)
                         }
-                    }, label: {
-                        Text("MAX")
-                    })
+                    }
+                })
+                Group {
+                    ToggleAveragePriceView(showAveragePrice: $showAveragePrice)
 
-                }       .modifier(ButtonTimeSelected())
-            }.padding()
+                    Divider()
+
+                    Picker("Select time value",selection: $tagSelected) {
+                        Text("Week").tag(0)
+                        Text("Month").tag(1)
+                        Text("Year").tag(2)
+                        Text("Max").tag(3)
+                    }
+                    .pickerStyle(.segmented)
+                }
+                .padding(.horizontal)
+            }
         }
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle(data.name)
+        .navigationBarItems(trailing: FavoriteDetailButtonView(data: data))
     }
 }
 
