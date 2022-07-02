@@ -29,6 +29,14 @@ extension Double {
     }
 }
 
+enum TimeToShow: String, CaseIterable, Identifiable {
+    case yearly = "365"
+    case weekly = "7"
+    case monthly = "31"
+    case max = "10_000"
+    var id: Self { self }
+}
+
 struct CurrencyChartResponse: Codable {
     let prices, marketCaps, totalVolumes: [[Double]]
 

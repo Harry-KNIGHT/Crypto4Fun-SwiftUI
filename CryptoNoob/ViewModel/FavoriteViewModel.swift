@@ -7,31 +7,32 @@
 
 import Foundation
 
+/// Favorite View Model
 class FavoriteViewModel: ObservableObject {
     @Published public var favoriteCryptos = [Data]()
-    
-    // Ajouter un Favoris
-    
+
+    /// Add favorite crypto currency.
+    /// - Parameter item: Add crypto currency to favoriteCryptos array.
     func addFavorite(item: Data) {
         favoriteCryptos.append(item)
     }
-    
-    // Supprimer un Favoris
-    
-    
+
+    /// Delet favorite currency.
+    /// - Parameter item: Delet favorite currency from index set.
     func deleteFavorite(item: IndexSet) {
         favoriteCryptos.remove(atOffsets: item)
     }
-    
+
+    /// Remove favorite crypto
+    /// - Parameter item: Remove favorite crypto currency from id.
     func removeFavoriteCrypto(item: Data) {
         self.favoriteCryptos.removeAll {
             $0.id == item.id
         }
     }
-    
-    // Fonction si déjà en favoris supprimer sinon ajouter
-    
-    
+
+    /// Add or remove favorite crypto currency.
+    /// - Parameter item: Add or remove crypto currency if it's on the favoriteCryptos or no.
     func addOrRemoveFavorite(item: Data) {
         if favoriteCryptos.contains(item) {
             removeFavoriteCrypto(item: item)
@@ -39,5 +40,4 @@ class FavoriteViewModel: ObservableObject {
             addFavorite(item: item)
         }
     }
-    
 }
