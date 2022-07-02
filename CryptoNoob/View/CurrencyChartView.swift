@@ -21,7 +21,7 @@ struct CurrencyChartView: View {
             VStack(alignment: .leading) {
                 Group {
                     CurrencyPriceView(data: data)
-                    NegativeOrPositiveLast24hView(data: data, font: .body)
+                    NegativeOrPositiveTimeView(data: data, font: .body)
                 }.padding(.horizontal)
 
                 Chart {
@@ -30,7 +30,7 @@ struct CurrencyChartView: View {
                             x: .value("Date", Date(miliseconds: Int64($0[0]))),
                             y: .value("Price", $0[1])
                         )
-                        .foregroundStyle(data.priceChangePercentage24h < 0 ? .red : .green)
+						.foregroundStyle(chartApiResponse.pricePercentageValue < 0 ? .red : .green)
                     }
 
                     if showAveragePrice {

@@ -69,7 +69,12 @@ struct ListRowCellView: View {
                     .font(.body)
             }
             Spacer()
-            NegativeOrPositiveLast24hView(data: data, font: .body)
+			HStack(spacing: 5) {
+				Image(systemName: data.priceChangePercentage24h < 0 ? "chevron.down" : "chevron.up")
+				Text("\(String(format: "%.2f", data.priceChangePercentage24h))% ")
+			}
+			.foregroundColor(data.priceChangePercentage24h < 0 ? .red : .green)
+			.font(.body)
         }
     }
 }

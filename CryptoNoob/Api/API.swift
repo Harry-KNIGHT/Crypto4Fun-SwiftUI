@@ -21,6 +21,16 @@ import Foundation
         return sum / Double(valueArray.count)
     }
 
+	var pricePercentageValue: Double {
+		let priceValue = prices.map { $0[1] }
+		let longTimePrice = Double(priceValue.first ?? 0)
+		let actualPrice = Double(priceValue.last ?? 0)
+
+		let percentagePrice =  (actualPrice - longTimePrice) / longTimePrice * 100
+
+		return percentagePrice
+	}
+
     @Published public var timeToShow: TimeToShow = .monthly
 
     func fetchData() async {
