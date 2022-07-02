@@ -12,7 +12,7 @@ struct TimeChartButtonView: View {
     var data: Data
 
     var body: some View {
-      HStack  {
+      HStack {
             Spacer()
             Button(action: {
                 Task {

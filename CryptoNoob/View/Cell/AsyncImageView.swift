@@ -31,7 +31,7 @@ struct AsyncImageView: View {
                     .frame(width: width, height: height)
                     .rotationEffect(Angle(degrees: isLoading ? 360 : 0))
                     .animation(Animation.linear(duration: 1).repeatForever(autoreverses: false))
-                    .onAppear() {
+                    .onAppear {
                         self.isLoading = true
                     }
             }

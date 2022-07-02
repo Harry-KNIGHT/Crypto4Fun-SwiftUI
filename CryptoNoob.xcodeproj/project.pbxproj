@@ -167,6 +167,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C2CFAE9285CF357000EED5D /* Build configuration list for PBXNativeTarget "CryptoNoob" */;
 			buildPhases = (
+				3C1EE55F2870348300EF2E64 /* swiftLint */,
 				3C2CFAD7285CF356000EED5D /* Sources */,
 				3C2CFAD8285CF356000EED5D /* Frameworks */,
 				3C2CFAD9285CF356000EED5D /* Resources */,
@@ -224,6 +225,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3C1EE55F2870348300EF2E64 /* swiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = swiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3C2CFAD7285CF356000EED5D /* Sources */ = {
