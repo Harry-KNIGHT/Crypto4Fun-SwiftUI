@@ -12,13 +12,11 @@ import Foundation
     @Published public var timeRemaining = 10
     public let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
-
     @Published public var prices = [[Double]]()
 
     var averagePrice: Double {
         let valueArray = prices.map { $0[1] }
         let sum = valueArray.reduce(0, +)
-
 
         return sum / Double(valueArray.count)
     }
@@ -49,7 +47,7 @@ import Foundation
     func fetchDataTimer() {
         if timeRemaining > 0 {
             timeRemaining -= 1
-        }else {
+        } else {
             Task {
                 await fetchData()
                 timeRemaining += 10
@@ -74,12 +72,8 @@ import Foundation
                     self.prices = decodedResponse.prices
                 }
             }
-
-        }catch {
+        } catch {
             print("Invalid url chart request")
         }
     }
 }
-
-
-

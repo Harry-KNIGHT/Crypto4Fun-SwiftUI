@@ -11,13 +11,11 @@ import Foundation
 class FavoriteViewModel: ObservableObject {
     @Published public var favoriteCryptos = [Data]()
 
-
     /// Add favorite crypto currency.
     /// - Parameter item: Add crypto currency to favoriteCryptos array.
     func addFavorite(item: Data) {
         favoriteCryptos.append(item)
     }
-    
 
     /// Delet favorite currency.
     /// - Parameter item: Delet favorite currency from index set.
@@ -42,5 +40,4 @@ class FavoriteViewModel: ObservableObject {
             addFavorite(item: item)
         }
     }
-    
 }

@@ -24,7 +24,6 @@ struct CurrencyChartView: View {
                     NegativeOrPositiveLast24hView(data: data, font: .body)
                 }.padding(.horizontal)
 
-
                 Chart {
                     ForEach(chartApiResponse.prices, id: \.self) {
                         LineMark(
@@ -46,7 +45,7 @@ struct CurrencyChartView: View {
                 .task {
                     await chartApiResponse.fetchChart(data.id, timeChartShow: TimeToShow.yearly)
                 }
-                .onChange(of: tagSelected, perform: { tag in
+                .onChange(of: tagSelected, perform: { _ in
                     switch tagSelected {
                     case 0:
                         Task {
@@ -71,7 +70,7 @@ struct CurrencyChartView: View {
 
                     Divider()
 
-                    Picker("Select time value",selection: $tagSelected) {
+                    Picker("Select time value", selection: $tagSelected) {
                         Text("Week").tag(0)
                         Text("Month").tag(1)
                         Text("Year").tag(2)
@@ -87,8 +86,6 @@ struct CurrencyChartView: View {
         .navigationBarItems(trailing: FavoriteDetailButtonView(data: data))
     }
 }
-
-
 
 struct CurrencyChartView_Previews: PreviewProvider {
     static var previews: some View {

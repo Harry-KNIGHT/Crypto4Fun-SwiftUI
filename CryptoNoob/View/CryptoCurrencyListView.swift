@@ -18,7 +18,7 @@ struct CryptoCurrencyListView: View {
         }.task {
             await apiCall.fetchData()
         }
-        .onReceive(apiCall.timer) { time in
+        .onReceive(apiCall.timer) { _ in
             apiCall.fetchDataTimer()
         }
     }

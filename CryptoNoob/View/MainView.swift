@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct MainView: View {
     @EnvironmentObject var apiCall: ApiCall
     @State private var isOn: Bool = false
@@ -16,7 +15,7 @@ struct MainView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                Picker("Select",selection: $selection) {
+                Picker("Select", selection: $selection) {
                     Text("Cryptos").tag(0)
                     Text("NTF").tag(1)
                 }
@@ -24,7 +23,7 @@ struct MainView: View {
                     .padding(.horizontal)
                 if selection == 0 {
                     CryptoCurrencyListView()
-                }else {
+                } else {
                     NftsView()
                 }
             }
@@ -42,7 +41,6 @@ struct MainView_Previews: PreviewProvider {
             .environmentObject(ApiCall())
     }
 }
-
 
 struct FavoriteButtonSheetView: View {
     @Binding var isOn: Bool
