@@ -61,7 +61,6 @@ import Foundation
             Task {
                 await fetchData()
                 timeRemaining += 10
-                print("Data fetched")
             }
         }
     }
