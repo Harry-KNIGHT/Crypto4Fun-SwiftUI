@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct CurrencyPriceView: View {
-    var data: Data
+	var cryptoCurrency: CryptoCurrencyModel
     var body: some View {
-        Text("$" + String(data.currentPrice))
+        Text("$" + String(cryptoCurrency.currentPrice))
             .foregroundColor(.primary)
             .font(.largeTitle.bold())
     }
@@ -18,6 +18,6 @@ struct CurrencyPriceView: View {
 
 struct CurrencyPriceView_Previews: PreviewProvider {
     static var previews: some View {
-        CurrencyPriceView(data: Data(id: "btc", name: "Bitcoin", image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?", currentPrice: 34553.45, priceChangePercentage24h: -0.26766))
+        CurrencyPriceView(cryptoCurrency: CryptoCurrencyModel(id: "btc", name: "Bitcoin", image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?", currentPrice: 34553.45, priceChangePercentage24h: -0.26766))
     }
 }

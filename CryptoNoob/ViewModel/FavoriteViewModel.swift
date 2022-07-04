@@ -9,11 +9,11 @@ import Foundation
 
 /// Favorite View Model
 class FavoriteViewModel: ObservableObject {
-    @Published public var favoriteCryptos = [Data]()
+    @Published public var favoriteCryptos = [CryptoCurrencyModel]()
 
     /// Add favorite crypto currency.
     /// - Parameter item: Add crypto currency to favoriteCryptos array.
-    func addFavorite(item: Data) {
+    func addFavorite(item: CryptoCurrencyModel) {
         favoriteCryptos.append(item)
     }
 
@@ -25,7 +25,7 @@ class FavoriteViewModel: ObservableObject {
 
     /// Remove favorite crypto
     /// - Parameter item: Remove favorite crypto currency from id.
-    func removeFavoriteCrypto(item: Data) {
+    func removeFavoriteCrypto(item: CryptoCurrencyModel) {
         self.favoriteCryptos.removeAll {
             $0.id == item.id
         }
@@ -33,7 +33,7 @@ class FavoriteViewModel: ObservableObject {
 
     /// Add or remove favorite crypto currency.
     /// - Parameter item: Add or remove crypto currency if it's on the favoriteCryptos or no.
-    func addOrRemoveFavorite(item: Data) {
+    func addOrRemoveFavorite(item: CryptoCurrencyModel) {
         if favoriteCryptos.contains(item) {
             removeFavoriteCrypto(item: item)
         } else {

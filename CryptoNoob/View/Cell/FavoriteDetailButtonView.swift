@@ -9,12 +9,12 @@ import SwiftUI
 
 struct FavoriteDetailButtonView: View {
     @EnvironmentObject var favoriteVM: FavoriteViewModel
-    var data: Data
+	var cryptoCurrency: CryptoCurrencyModel
     var body: some View {
         Button(action: {
-            favoriteVM.addOrRemoveFavorite(item: data)
+            favoriteVM.addOrRemoveFavorite(item: cryptoCurrency)
         }, label: {
-            Label("Favorite", systemImage: favoriteVM.favoriteCryptos.contains(data) ? "heart.fill" : "heart")
+            Label("Favorite", systemImage: favoriteVM.favoriteCryptos.contains(cryptoCurrency) ? "heart.fill" : "heart")
                 .foregroundColor(.primary)
                 .font(.title3)
         })
@@ -24,7 +24,7 @@ struct FavoriteDetailButtonView: View {
 
 struct FavoriteDetailButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        FavoriteDetailButtonView(data: Data(id: "btc", name: "Bitcoin", image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?", currentPrice: 34553.45, priceChangePercentage24h: -0.26766))
+		FavoriteDetailButtonView(cryptoCurrency: CryptoCurrencyModel(id: "btc", name: "Bitcoin", image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?", currentPrice: 34553.45, priceChangePercentage24h: -0.26766))
             .environmentObject(FavoriteViewModel())
     }
 }

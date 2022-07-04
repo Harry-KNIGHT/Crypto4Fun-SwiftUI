@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct AsyncImageView: View {
-    let data: Data
+    let cryptoCurrency: CryptoCurrencyModel
     var width: CGFloat = 150
     var height: CGFloat = 150
     @State private var isLoading = false
 
     var body: some View {
-        AsyncImage(url: URL(string: data.image)) { image in
+        AsyncImage(url: URL(string: cryptoCurrency.image)) { image in
             image
                 .resizable()
                 .scaledToFit()
@@ -42,6 +42,6 @@ struct AsyncImageView: View {
 
 struct AsyncImageView_Previews: PreviewProvider {
     static var previews: some View {
-        AsyncImageView(data: Data(id: "btc", name: "Bitcoin", image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?", currentPrice: 34553.45, priceChangePercentage24h: -0.26766))
+        AsyncImageView(cryptoCurrency: CryptoCurrencyModel(id: "btc", name: "Bitcoin", image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?", currentPrice: 34553.45, priceChangePercentage24h: -0.26766))
     }
 }

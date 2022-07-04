@@ -13,9 +13,9 @@ struct FavoriteListView: View {
     var body: some View {
         NavigationView {
             if !favoriteVM.favoriteCryptos.isEmpty {
-                List(favoriteVM.favoriteCryptos, id: \.id) { data in
-                    NavigationLink(destination: CurrencyChartView(data: data)) {
-                       ListRowCellView(data: data)
+                List(favoriteVM.favoriteCryptos, id: \.id) { cryptoCurrency in
+                    NavigationLink(destination: CurrencyChartView(cryptoCurrency: cryptoCurrency)) {
+						ListRowCellView(cryptoCurrency: cryptoCurrency)
                     }
                 }.navigationBarTitle("Favoris")
             } else {

@@ -13,15 +13,15 @@ struct CurrencyChartView: View {
     @EnvironmentObject var chartApiResponse: ApiCall
     @State private var showAveragePrice: Bool = false
     @Environment(\.colorScheme) private var colorScheme
-    var data: Data
+	var cryptoCurrency: CryptoCurrencyModel
     @State private var tagSelected = 2
 
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading) {
                 Group {
-                    CurrencyPriceView(data: data)
-                    NegativeOrPositiveTimeView(data: data, font: .body)
+				CurrencyPriceView(cryptoCurrency: cryptoCurrency)
+				NegativeOrPositiveTimeView(cryptoCurrency: cryptoCurrency)
                 }.padding(.horizontal)
 
                 Chart {
@@ -43,25 +43,25 @@ struct CurrencyChartView: View {
                 .frame(maxWidth: .infinity, minHeight: 400, maxHeight: 550)
                 .padding(.trailing, 5)
                 .task {
-                    await chartApiResponse.fetchChart(data.id, timeChartShow: TimeToShow.yearly)
+                    await chartApiResponse.fetchChart(cryptoCurrency.id, timeChartShow: TimeToShow.yearly)
                 }
                 .onChange(of: tagSelected, perform: { _ in
                     switch tagSelected {
                     case 0:
                         Task {
-                            await chartApiResponse.fetchChart(data.id, timeChartShow: TimeToShow.weekly)
+							await chartApiResponse.fetchChart(cryptoCurrency.id, timeChartShow: TimeToShow.weekly)
                         }
                     case 1:
                         Task {
-                            await chartApiResponse.fetchChart(data.id, timeChartShow: TimeToShow.monthly)
+                            await chartApiResponse.fetchChart(cryptoCurrency.id, timeChartShow: TimeToShow.monthly)
                         }
                     case 2:
                         Task {
-                            await chartApiResponse.fetchChart(data.id, timeChartShow: TimeToShow.yearly)
+                            await chartApiResponse.fetchChart(cryptoCurrency.id, timeChartShow: TimeToShow.yearly)
                         }
                     default:
                         Task {
-                            await chartApiResponse.fetchChart(data.id, timeChartShow: TimeToShow.max)
+                            await chartApiResponse.fetchChart(cryptoCurrency.id, timeChartShow: TimeToShow.max)
                         }
                     }
                 })
@@ -82,14 +82,14 @@ struct CurrencyChartView: View {
             }
         }
         .navigationBarTitleDisplayMode(.inline)
-        .navigationTitle(data.name)
-        .navigationBarItems(trailing: FavoriteDetailButtonView(data: data))
+        .navigationTitle(cryptoCurrency.name)
+		.navigationBarItems(trailing: FavoriteDetailButtonView(cryptoCurrency: cryptoCurrency))
     }
 }
 
 struct CurrencyChartView_Previews: PreviewProvider {
     static var previews: some View {
-        CurrencyChartView(data: Data(id: "btc", name: "Bitcoin", image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?", currentPrice: 34553.45, priceChangePercentage24h: -4032.56))
+        CurrencyChartView(cryptoCurrency: CryptoCurrencyModel(id: "btc", name: "Bitcoin", image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?", currentPrice: 34553.45, priceChangePercentage24h: -4032.56))
             .environmentObject(FavoriteViewModel())
             .environmentObject(ApiCall())
     }
