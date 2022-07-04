@@ -11,12 +11,12 @@ struct CryptoCurrencyListView: View {
     @EnvironmentObject var apiCall: ApiCall
 
     var body: some View {
-        List(apiCall.datas, id: \.id) { data in
-            NavigationLink(destination: CurrencyChartView(data: data)) {
-                ListRowCellView(data: data)
+		List(apiCall.cryptoCurrencies, id: \.self) { cryptoCurrency in
+			NavigationLink(destination: CurrencyChartView(cryptoCurrency: cryptoCurrency)) {
+                ListRowCellView(cryptoCurrency: cryptoCurrency)
             }
         }.task {
-            await apiCall.fetchData()
+            await apiCall.fetchCryptoCurrency()
         }
         .onReceive(apiCall.timer) { _ in
             apiCall.fetchDataTimer()

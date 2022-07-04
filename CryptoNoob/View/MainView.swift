@@ -58,22 +58,22 @@ struct FavoriteButtonSheetView: View {
 }
 
 struct ListRowCellView: View {
-    var data: Data
+	var cryptoCurrency: CryptoCurrencyModel
     var body: some View {
         HStack {
-            AsyncImageView(data: data, width: 50, height: 50)
+            AsyncImageView(cryptoCurrency: cryptoCurrency, width: 50, height: 50)
             VStack(alignment: .leading) {
-                Text(data.name)
+                Text(cryptoCurrency.name)
                     .font(.headline)
-                Text("$" + String(data.currentPrice.formatted()))
+                Text("$" + String(cryptoCurrency.currentPrice.formatted()))
                     .font(.body)
             }
             Spacer()
 			HStack(spacing: 5) {
-				Image(systemName: data.priceChangePercentage24h < 0 ? "chevron.down" : "chevron.up")
-				Text("\(String(format: "%.2f", data.priceChangePercentage24h))% ")
+				Image(systemName: cryptoCurrency.priceChangePercentage24h < 0 ? "chevron.down" : "chevron.up")
+				Text("\(String(format: "%.2f", cryptoCurrency.priceChangePercentage24h))% ")
 			}
-			.foregroundColor(data.priceChangePercentage24h < 0 ? .red : .green)
+			.foregroundColor(cryptoCurrency.priceChangePercentage24h < 0 ? .red : .green)
 			.font(.body)
         }
     }

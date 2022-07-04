@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3C098332285F964400E3C117 /* CurrencyChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C098331285F964400E3C117 /* CurrencyChartView.swift */; };
+		3C2724962872D85C00DAB17C /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2724952872D85C00DAB17C /* StringExtension.swift */; };
+		3C2724992872D89400DAB17C /* ChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2724982872D89400DAB17C /* ChartModel.swift */; };
 		3C2CFADF285CF356000EED5D /* CryptoNoobApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2CFADE285CF356000EED5D /* CryptoNoobApp.swift */; };
 		3C2CFAE1285CF356000EED5D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2CFAE0285CF356000EED5D /* ContentView.swift */; };
 		3C2CFAE3285CF357000EED5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C2CFAE2285CF357000EED5D /* Assets.xcassets */; };
@@ -30,6 +32,8 @@
 
 /* Begin PBXFileReference section */
 		3C098331285F964400E3C117 /* CurrencyChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyChartView.swift; sourceTree = "<group>"; };
+		3C2724952872D85C00DAB17C /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		3C2724982872D89400DAB17C /* ChartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartModel.swift; sourceTree = "<group>"; };
 		3C2CFADB285CF356000EED5D /* CryptoNoob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoNoob.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C2CFADE285CF356000EED5D /* CryptoNoobApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoNoobApp.swift; sourceTree = "<group>"; };
 		3C2CFAE0285CF356000EED5D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,6 +66,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C2724972872D87500DAB17C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3CFA2C102861D9460086BE36 /* DateExtension.swift */,
+				3C2724952872D85C00DAB17C /* StringExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		3C2CFAD2285CF356000EED5D = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +99,7 @@
 				3CD8C7AB285D00D0004D65B9 /* View */,
 				3CD8C7AC285D00DC004D65B9 /* Model */,
 				3CD8C7AD285D00E6004D65B9 /* Api */,
+				3C2724972872D87500DAB17C /* Extension */,
 				3C2CFAE2285CF357000EED5D /* Assets.xcassets */,
 				3C2CFAE4285CF357000EED5D /* Preview Content */,
 			);
@@ -120,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				3C2CFAEE285CF38D000EED5D /* CryptoModel.swift */,
+				3C2724982872D89400DAB17C /* ChartModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -128,7 +143,6 @@
 			isa = PBXGroup;
 			children = (
 				3C2CFAF0285CF394000EED5D /* API.swift */,
-				3CFA2C102861D9460086BE36 /* DateExtension.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -261,12 +275,14 @@
 				3C2CFAEF285CF38D000EED5D /* CryptoModel.swift in Sources */,
 				3CFA2C0F2861D6FA0086BE36 /* FavoriteDetailButtonView.swift in Sources */,
 				3C2CFADF285CF356000EED5D /* CryptoNoobApp.swift in Sources */,
+				3C2724992872D89400DAB17C /* ChartModel.swift in Sources */,
 				3CFA2C0D2861D6B30086BE36 /* CurrencyPriceView.swift in Sources */,
 				3CE98C24285DE24E00539190 /* EmptyView.swift in Sources */,
 				3C2CFAF1285CF394000EED5D /* API.swift in Sources */,
 				3C99C6A828648EA0007A261E /* CryptoCurrencyListView.swift in Sources */,
 				B3314EA2285DC77900BBFF4C /* FavoriteViewModel.swift in Sources */,
 				3CFA2C042861D3960086BE36 /* ButtonModifier.swift in Sources */,
+				3C2724962872D85C00DAB17C /* StringExtension.swift in Sources */,
 				3CFA2C0B2861D6260086BE36 /* NegativeOrPositiveLast24hView.swift in Sources */,
 				3CD8C7AA285CFBDA004D65B9 /* AsyncImageView.swift in Sources */,
 				3C99C6A628648D83007A261E /* NftsView.swift in Sources */,

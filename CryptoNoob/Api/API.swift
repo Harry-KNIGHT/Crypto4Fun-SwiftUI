@@ -8,7 +8,7 @@
 import Foundation
 
 @MainActor class ApiCall: ObservableObject {
-    @Published public var datas = [Data]()
+    @Published public var cryptoCurrencies = [CryptoCurrencyModel]()
     @Published public var timeRemaining = 10
     public let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
@@ -33,7 +33,7 @@ import Foundation
 
     @Published public var timeToShow: TimeToShow = .monthly
 
-    func fetchData() async {
+    func fetchCryptoCurrency() async {
         let url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=%271h%2C%2024h%2C%207d"
 
         guard let url = URL(string: url) else {
@@ -44,9 +44,9 @@ import Foundation
         do {
             let (data, _) = try await URLSession.shared.data(from: url)
 
-            if let decodedResponse = try? JSONDecoder().decode([Data].self, from: data) {
+            if let decodedResponse = try? JSONDecoder().decode([CryptoCurrencyModel].self, from: data) {
                 DispatchQueue.main.async {
-                    self.datas = decodedResponse
+                    self.cryptoCurrencies = decodedResponse
                 }
             }
         } catch {
@@ -59,7 +59,7 @@ import Foundation
             timeRemaining -= 1
         } else {
             Task {
-                await fetchData()
+                await fetchCryptoCurrency()
                 timeRemaining += 10
             }
         }

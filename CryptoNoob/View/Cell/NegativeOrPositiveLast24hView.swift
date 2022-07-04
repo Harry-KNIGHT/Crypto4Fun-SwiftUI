@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NegativeOrPositiveTimeView: View {
-    var data: Data
+	var cryptoCurrency: CryptoCurrencyModel
     var font: Font = .headline
 	@EnvironmentObject var apiCall: ApiCall
     var body: some View {
@@ -23,6 +23,7 @@ struct NegativeOrPositiveTimeView: View {
 
 struct NegativeOrPositiveLast24hView_Previews: PreviewProvider {
     static var previews: some View {
-        NegativeOrPositiveTimeView(data: Data(id: "btc", name: "Bitcoin", image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?", currentPrice: 34553.45, priceChangePercentage24h: -0.26766))
+        NegativeOrPositiveTimeView(cryptoCurrency: CryptoCurrencyModel(id: "btc", name: "Bitcoin", image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?", currentPrice: 34553.45, priceChangePercentage24h: -0.26766))
+			.environmentObject(ApiCall())
     }
 }

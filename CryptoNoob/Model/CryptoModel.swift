@@ -9,7 +9,8 @@ import Foundation
 /*
  Documentation: https://docs.bitfine.com/reference/rest-public-tickers
  */
-struct Data: Codable, Hashable {
+
+struct CryptoCurrencyModel: Codable, Hashable {
     let id, name: String
     let image: String
     let currentPrice: Double
@@ -20,29 +21,5 @@ struct Data: Codable, Hashable {
         case image
         case currentPrice = "current_price"
         case priceChangePercentage24h = "price_change_percentage_24h"
-    }
-}
-
-extension Double {
-    var stringWithoutZeroFraction: String {
-        return truncatingRemainder(dividingBy: 1) == 0 ? String(format: "%.0f") : String(self)
-    }
-}
-
-enum TimeToShow: String, CaseIterable, Identifiable {
-    case yearly = "365"
-    case weekly = "7"
-    case monthly = "31"
-    case max = "10_000"
-    var id: Self { self }
-}
-
-struct CurrencyChartResponse: Codable {
-    let prices, marketCaps, totalVolumes: [[Double]]
-
-    enum CodingKeys: String, CodingKey {
-        case prices
-        case marketCaps = "market_caps"
-        case totalVolumes = "total_volumes"
     }
 }
