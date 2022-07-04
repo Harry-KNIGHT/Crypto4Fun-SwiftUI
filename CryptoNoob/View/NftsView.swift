@@ -8,23 +8,19 @@
 import SwiftUI
 
 struct NftsView: View {
-    var ntfs = ["Bored APE", "Oul ou", "HIHI", "Didier la Banque Postale", "Fédérico"]
-    var body: some View {
-        ScrollView {
-            ForEach(ntfs, id: \.self) { nft in
-                VStack {
-                    HStack {
-                        Text(nft)
-                        Spacer()
-                    }
-                }
-            }
-        }.padding()
-    }
+	@EnvironmentObject var apiCall: ApiCall
+	var body: some View {
+		List(apiCall.articles) { article in
+			Text(article.author ?? "")
+		}.task {
+			await apiCall.fetchArticle()
+		}
+	}
 }
 
 struct NftsView_Previews: PreviewProvider {
-    static var previews: some View {
-        NftsView()
-    }
+	static var previews: some View {
+		NftsView()
+			.environmentObject(ApiCall())
+	}
 }

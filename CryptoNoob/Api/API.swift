@@ -85,4 +85,28 @@ import Foundation
             print("Invalid url chart request")
         }
     }
+
+	@Published public var articles = [ArticleModel]()
+
+	func fetchArticle() async {
+		let url = "https://newsapi.org/v2/everything?q=crypto&from=2022-06-04&sortBy=publishedAt&apiKey=89ffff8dd6bf4abcbb4af01a08334cda"
+
+		guard let url = URL(string: url) else {
+			print("Bad article url")
+			return
+		}
+
+		do {
+			let (data, _) = try await URLSession.shared.data(from: url)
+
+			if let decodedResponse = try? JSONDecoder().decode([ArticleModel].self, from: data) {
+				DispatchQueue.main.async {
+					self.articles = decodedResponse
+				}
+			}
+		} catch {
+			print("Incalid url request")
+		}
+		print("End")
+	}
 }
