@@ -24,7 +24,7 @@ struct MainView: View {
                 if selection == 0 {
                     CryptoCurrencyListView()
                 } else {
-                    NftsView()
+					NftsView()
                 }
             }
             .navigationBarItems(trailing: FavoriteButtonSheetView(isOn: $isOn))
