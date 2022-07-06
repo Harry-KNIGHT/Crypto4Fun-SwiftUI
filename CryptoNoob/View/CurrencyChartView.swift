@@ -66,10 +66,6 @@ struct CurrencyChartView: View {
                     }
                 })
                 Group {
-                    ToggleAveragePriceView(showAveragePrice: $showAveragePrice)
-
-                    Divider()
-
                     Picker("Select time value", selection: $tagSelected) {
                         Text("Week").tag(0)
                         Text("Month").tag(1)
@@ -77,6 +73,8 @@ struct CurrencyChartView: View {
                         Text("Max").tag(3)
                     }
                     .pickerStyle(.segmented)
+					Divider()
+					ToggleAveragePriceView(showAveragePrice: $showAveragePrice)
                 }
                 .padding(.horizontal)
             }
@@ -98,7 +96,7 @@ id: "btc", name: "Bitcoin", image: "https://assets.coingecko.com/coins/images/1/
 struct ToggleAveragePriceView: View {
     @Binding var showAveragePrice: Bool
     var body: some View {
-        Toggle("Moyenne", isOn: $showAveragePrice)
+        Toggle("Average", isOn: $showAveragePrice)
             .tint(.primary)
             .padding(.top)
     }

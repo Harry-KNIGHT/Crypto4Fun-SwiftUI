@@ -19,22 +19,7 @@ struct AsyncImageView: View {
                 .resizable()
                 .scaledToFit()
         }placeholder: {
-            ZStack {
-
-                Circle()
-                    .stroke(Color(.systemGray5), lineWidth: 10)
-                    .frame(width: width, height: height)
-
-                Circle()
-                    .trim(from: 0, to: 0.2)
-                    .stroke(Color.orange, lineWidth: 7)
-                    .frame(width: width, height: height)
-                    .rotationEffect(Angle(degrees: isLoading ? 360 : 0))
-                    .animation(Animation.linear(duration: 1).repeatForever(autoreverses: false))
-                    .onAppear {
-                        self.isLoading = true
-                    }
-            }
+				ProgressView()
         }
         .frame(width: width, height: height, alignment: .center)
     }

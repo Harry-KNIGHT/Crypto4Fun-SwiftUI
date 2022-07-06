@@ -10,6 +10,17 @@ import SwiftUI
 struct NftsView: View {
 	@EnvironmentObject var apiCall: ApiCall
 	var body: some View {
+		if apiCall.nft.isEmpty {
+			VStack {
+				Spacer()
+				HStack(spacing: 10) {
+					ProgressView()
+					Text("Fetching Data...")
+						.font(.title2)
+						.foregroundStyle(.secondary)
+				}
+			}
+		}
         List(apiCall.nft) { nft in
             Text(nft.contractName)
 		}.task {
