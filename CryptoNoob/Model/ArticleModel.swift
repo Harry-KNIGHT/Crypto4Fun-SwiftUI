@@ -12,6 +12,13 @@ struct ArticleResponse: Codable {
 	let status: String
 	let totalResults: Int
 	let articles: [ArticleModel]
+
+    enum CodingKeys: String, CodingKey {
+
+        case status
+        case totalResults
+        case articles
+    }
 }
 
 // MARK: - Article

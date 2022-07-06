@@ -29,6 +29,7 @@
 		3CFA2C112861D9460086BE36 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFA2C102861D9460086BE36 /* DateExtension.swift */; };
 		B3314EA2285DC77900BBFF4C /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3314EA1285DC77900BBFF4C /* FavoriteViewModel.swift */; };
 		B3314EA5285DD03300BBFF4C /* FavoriteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3314EA4285DD03300BBFF4C /* FavoriteListView.swift */; };
+		B3A64EC92875E52D002C8211 /* NFTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A64EC82875E52D002C8211 /* NFTModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		3CFA2C102861D9460086BE36 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		B3314EA1285DC77900BBFF4C /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 		B3314EA4285DD03300BBFF4C /* FavoriteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListView.swift; sourceTree = "<group>"; };
+		B3A64EC82875E52D002C8211 /* NFTModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				3C2CFAEE285CF38D000EED5D /* CryptoModel.swift */,
 				3C2724982872D89400DAB17C /* ChartModel.swift */,
 				3C27249A2872E96F00DAB17C /* ArticleModel.swift */,
+				B3A64EC82875E52D002C8211 /* NFTModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				3C2724992872D89400DAB17C /* ChartModel.swift in Sources */,
 				3CFA2C0D2861D6B30086BE36 /* CurrencyPriceView.swift in Sources */,
 				3CE98C24285DE24E00539190 /* EmptyView.swift in Sources */,
+				B3A64EC92875E52D002C8211 /* NFTModel.swift in Sources */,
 				3C2CFAF1285CF394000EED5D /* API.swift in Sources */,
 				3C99C6A828648EA0007A261E /* CryptoCurrencyListView.swift in Sources */,
 				B3314EA2285DC77900BBFF4C /* FavoriteViewModel.swift in Sources */,

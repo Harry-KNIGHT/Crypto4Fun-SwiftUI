@@ -10,10 +10,10 @@ import SwiftUI
 struct NftsView: View {
 	@EnvironmentObject var apiCall: ApiCall
 	var body: some View {
-		List(apiCall.articles) { article in
-			Text(article.author ?? "")
+        List(apiCall.nft) { nft in
+            Text(nft.contractName)
 		}.task {
-			await apiCall.fetchArticle()
+			await apiCall.fetchNFT()
 		}
 	}
 }
