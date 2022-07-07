@@ -17,7 +17,7 @@ struct MainView: View {
             VStack {
                 Picker("Select", selection: $selection) {
                     Text("Cryptos").tag(0)
-                    Text("NTF").tag(1)
+                    Text("NFT").tag(1)
                 }
                 .pickerStyle(.segmented)
                     .padding(.horizontal)
