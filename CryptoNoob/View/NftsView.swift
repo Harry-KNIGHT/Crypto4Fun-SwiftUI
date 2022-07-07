@@ -26,16 +26,41 @@ struct NftsView: View {
 		VStack {
 			HStack {
 				Spacer()
-				Picker("Select time range", selection: $timeRange) {
-					Text("Day").tag(0)
-					Text("Week").tag(1)
-					Text("Mont").tag(2)
-					Text("All").tag(3)
-				}
-				.pickerStyle(.segmented)
-				.padding(.trailing, 7)
+				Button(action: {
+					Task {
+						await apiCall.fetchNFT(NftTimeRange.day)
+					}
+					timeRange = 0
+				}, label: {
+					Text("Day")
+						.font(.headline)
+						.foregroundColor(.white)
+						.frame(width: 100, height: 30)
+				})
+				.buttonBorderShape(.roundedRectangle(radius: 10))
+				.buttonStyle(.borderedProminent)
+				.tint(timeRange == 0 ? .purple: .blue)
+
+				Spacer()
+
+				Button(action: {
+					Task {
+						await apiCall.fetchNFT(NftTimeRange.week)
+					}
+					timeRange = 1
+				}, label: {
+					Text("Week")
+						.font(.headline)
+						.foregroundColor(.white)
+						.frame(width: 100, height: 30)
+				})
+				.buttonBorderShape(.roundedRectangle(radius: 10))
+				.buttonStyle(.borderedProminent)
+				.tint(timeRange == 1 ? .purple: .blue)
+				Spacer()
 
 			}
+
 			List(apiCall.nft) { nft in
 				NavigationLink(destination: NftDetailView(nft: nft)) {
 					HStack {
@@ -54,7 +79,7 @@ struct NftsView: View {
 				}
 			}
 			.listStyle(.plain)
-			
+
 			.onChange(of: timeRange, perform: { _ in
 				switch timeRange {
 				case 0:

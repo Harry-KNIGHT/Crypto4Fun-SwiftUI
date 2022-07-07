@@ -34,7 +34,7 @@ struct NftDetailView: View {
 				}
 
 				HStack {
-					Text("Price change")
+					Text("Price change:")
 					Spacer()
 					NftLastTimeRangePercentage(nft: nft)
 				}
@@ -54,6 +54,9 @@ struct NftDetailView: View {
 				ToolbarItemGroup(placement: .navigationBarTrailing) {
 					Button(action: {}, label: {
 						Label("Add to favorites", systemImage: "heart")
+							.font(.title3)
+							.foregroundColor(.primary)
+
 					})
 				}
 		}
