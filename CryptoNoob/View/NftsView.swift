@@ -19,10 +19,25 @@ struct NftsView: View {
 						.font(.title2)
 						.foregroundStyle(.secondary)
 				}
+				Spacer()
 			}
 		}
         List(apiCall.nft) { nft in
-            Text(nft.contractName)
+			NavigationLink(destination: NftDetailView(nft: nft)) {
+				HStack {
+					AsyncIconUrlView(nft: nft, width: 50, height: 50)
+						.clipShape(RoundedRectangle(cornerRadius: 10))
+					VStack(alignment: .leading) {
+						Text(nft.contractName)
+							.font(.headline)
+						Text(nft.baseCurrency.rawValue)
+					}
+
+					Spacer()
+
+					Text(String(apiCall.percentageNFTValue.formatted()))
+				}
+			}
 		}.task {
 			await apiCall.fetchNFT()
 		}

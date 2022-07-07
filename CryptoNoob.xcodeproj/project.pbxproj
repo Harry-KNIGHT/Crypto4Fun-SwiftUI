@@ -18,8 +18,10 @@
 		3C2CFAED285CF37E000EED5D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2CFAEC285CF37E000EED5D /* MainView.swift */; };
 		3C2CFAEF285CF38D000EED5D /* CryptoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2CFAEE285CF38D000EED5D /* CryptoModel.swift */; };
 		3C2CFAF1285CF394000EED5D /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2CFAF0285CF394000EED5D /* API.swift */; };
+		3C8620F42876D3CF00D4FA1A /* AsyncIconUrlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8620F32876D3CF00D4FA1A /* AsyncIconUrlView.swift */; };
 		3C99C6A628648D83007A261E /* NftsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C99C6A528648D83007A261E /* NftsView.swift */; };
 		3C99C6A828648EA0007A261E /* CryptoCurrencyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C99C6A728648EA0007A261E /* CryptoCurrencyListView.swift */; };
+		3C9C78CB2876D55300276962 /* NftDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C78CA2876D55300276962 /* NftDetailView.swift */; };
 		3CD8C7AA285CFBDA004D65B9 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD8C7A9285CFBDA004D65B9 /* AsyncImageView.swift */; };
 		3CE98C24285DE24E00539190 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE98C23285DE24E00539190 /* EmptyView.swift */; };
 		3CFA2C042861D3960086BE36 /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFA2C032861D3960086BE36 /* ButtonModifier.swift */; };
@@ -45,8 +47,10 @@
 		3C2CFAEC285CF37E000EED5D /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		3C2CFAEE285CF38D000EED5D /* CryptoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoModel.swift; sourceTree = "<group>"; };
 		3C2CFAF0285CF394000EED5D /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		3C8620F32876D3CF00D4FA1A /* AsyncIconUrlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncIconUrlView.swift; sourceTree = "<group>"; };
 		3C99C6A528648D83007A261E /* NftsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NftsView.swift; sourceTree = "<group>"; };
 		3C99C6A728648EA0007A261E /* CryptoCurrencyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCurrencyListView.swift; sourceTree = "<group>"; };
+		3C9C78CA2876D55300276962 /* NftDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NftDetailView.swift; sourceTree = "<group>"; };
 		3CD8C7A9285CFBDA004D65B9 /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		3CE98C23285DE24E00539190 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		3CFA2C032861D3960086BE36 /* ButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifier.swift; sourceTree = "<group>"; };
@@ -128,6 +132,7 @@
 				3CE98C23285DE24E00539190 /* EmptyView.swift */,
 				3C098331285F964400E3C117 /* CurrencyChartView.swift */,
 				3C99C6A528648D83007A261E /* NftsView.swift */,
+				3C9C78CA2876D55300276962 /* NftDetailView.swift */,
 				3CFA2C052861D4420086BE36 /* ViewModifier */,
 				3CD8C7AE285D0278004D65B9 /* Cell */,
 			);
@@ -158,6 +163,7 @@
 			children = (
 				3CFA2C0E2861D6FA0086BE36 /* FavoriteDetailButtonView.swift */,
 				3CD8C7A9285CFBDA004D65B9 /* AsyncImageView.swift */,
+				3C8620F32876D3CF00D4FA1A /* AsyncIconUrlView.swift */,
 				3CFA2C0C2861D6B30086BE36 /* CurrencyPriceView.swift */,
 				3CFA2C0A2861D6260086BE36 /* NegativeOrPositiveLast24hView.swift */,
 			);
@@ -187,7 +193,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C2CFAE9285CF357000EED5D /* Build configuration list for PBXNativeTarget "CryptoNoob" */;
 			buildPhases = (
-				3C1EE55F2870348300EF2E64 /* swiftLint */,
 				3C2CFAD7285CF356000EED5D /* Sources */,
 				3C2CFAD8285CF356000EED5D /* Frameworks */,
 				3C2CFAD9285CF356000EED5D /* Resources */,
@@ -246,28 +251,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		3C1EE55F2870348300EF2E64 /* swiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = swiftLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		3C2CFAD7285CF356000EED5D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -282,6 +265,7 @@
 				3C27249B2872E96F00DAB17C /* ArticleModel.swift in Sources */,
 				3CFA2C0F2861D6FA0086BE36 /* FavoriteDetailButtonView.swift in Sources */,
 				3C2CFADF285CF356000EED5D /* CryptoNoobApp.swift in Sources */,
+				3C9C78CB2876D55300276962 /* NftDetailView.swift in Sources */,
 				3C2724992872D89400DAB17C /* ChartModel.swift in Sources */,
 				3CFA2C0D2861D6B30086BE36 /* CurrencyPriceView.swift in Sources */,
 				3CE98C24285DE24E00539190 /* EmptyView.swift in Sources */,
@@ -293,6 +277,7 @@
 				3C2724962872D85C00DAB17C /* StringExtension.swift in Sources */,
 				3CFA2C0B2861D6260086BE36 /* NegativeOrPositiveLast24hView.swift in Sources */,
 				3CD8C7AA285CFBDA004D65B9 /* AsyncImageView.swift in Sources */,
+				3C8620F42876D3CF00D4FA1A /* AsyncIconUrlView.swift in Sources */,
 				3C99C6A628648D83007A261E /* NftsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
