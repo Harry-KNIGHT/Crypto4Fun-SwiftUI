@@ -31,7 +31,10 @@ struct NftsView: View {
 					Text("Week").tag(1)
 					Text("Mont").tag(2)
 					Text("All").tag(3)
-				}.pickerStyle(.segmented)
+				}
+				.pickerStyle(.segmented)
+				.padding(.trailing, 7)
+
 			}
 			List(apiCall.nft) { nft in
 				NavigationLink(destination: NftDetailView(nft: nft)) {
