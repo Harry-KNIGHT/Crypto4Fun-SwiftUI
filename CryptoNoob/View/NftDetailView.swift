@@ -27,28 +27,14 @@ struct NftDetailView: View {
 					}
 					Spacer()
 				}
-				HStack {
-					Text("Price:")
-					Spacer()
-					Text("$\(String(nft.valueUSD))")
-				}
-			}
-			HStack {
-				Text("Buyers:")
-				Spacer()
-				Text(String(nft.buyers))
+				NftCollectionInformationView(information: "Price", value: "$\(String(nft.valueUSD))")
 			}
 
-			HStack {
-				Text("Sellers:")
-				Spacer()
-				Text(String(nft.sellers))
-			}
-			HStack {
-				Text("Transactions")
-				Spacer()
-				Text(String(nft.transactions))
-			}
+			NftCollectionInformationView(information: "Buyers:", value: String(nft.buyers))
+
+			NftCollectionInformationView(information: "Sellers:", value: String(nft.sellers))
+
+			NftCollectionInformationView(information: "Transactions:", value: String(nft.transactions))
 
 		}.listStyle(.plain)
 			.navigationBarTitleDisplayMode(.inline)
@@ -66,6 +52,20 @@ struct NftDetailView_Previews: PreviewProvider {
 	static var previews: some View {
 		NavigationStack {
 			NftDetailView(nft: NFTModel(rank: 1, iconURL: "https://d1nht67oz99wd1.cloudfront.net/resized/BoredApeYachtClub_resized.ico", contractName: "Bored Ape Yacht Club", productPath: "bored-ape-yacht-club", baseCurrency: .eth, isSalesOnly: false, value: 165809.354511213, valueUSD: 10207307.4, platform: 0, buyers: 76, sellers: 97, owners: 0, transactions: 122, changeInValueUSD: -17.106837664027900, previousValue: 182801.49779153, previousValueUSD: 12313811.07, isSlamLandDisabled: false))
+		}
+	}
+}
+
+struct NftCollectionInformationView: View {
+	var information: String
+	var value: String
+
+	var body: some View {
+		HStack {
+			Text(information)
+			Spacer()
+			Text(value)
+				.font(.headline)
 		}
 	}
 }
