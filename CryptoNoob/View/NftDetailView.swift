@@ -11,32 +11,44 @@ struct NftDetailView: View {
 	var nft: NFTModel
 	let gradient = LinearGradient(colors: [.green, .black], startPoint: .top, endPoint: .center)
 	var body: some View {
-		List {
-			VStack(spacing: 35) {
-				HStack {
-					Spacer()
-					VStack {
-						AsyncIconUrlView(nft: nft)
-							.clipShape(RoundedRectangle(cornerRadius: 10))
+
+		VStack {
+			List {
+				VStack(spacing: 35) {
+					HStack {
+						Spacer()
+						VStack {
+							AsyncIconUrlView(nft: nft)
+								.clipShape(RoundedRectangle(cornerRadius: 10))
 
 
-						Text(nft.contractName)
-							.font(.title3.bold())
-						Text(nft.baseCurrency.rawValue)
-							.font(.headline)
+							Text(nft.contractName)
+								.font(.title3.bold())
+							Text(nft.baseCurrency.rawValue)
+								.font(.headline)
+						}
+						Spacer()
 					}
-					Spacer()
+
+					NftCollectionInformationView(information: "Price:", value: "$\(String(format: "%.2f", nft.valueUSD))")
 				}
-				NftCollectionInformationView(information: "Price", value: "$\(String(nft.valueUSD))")
+
+				HStack {
+					Text("Price change")
+					Spacer()
+					NftLastTimeRangePercentage(nft: nft)
+				}
+
+
+				NftCollectionInformationView(information: "Buyers:", value: String(nft.buyers))
+
+				NftCollectionInformationView(information: "Sellers:", value: String(nft.sellers))
+
+				NftCollectionInformationView(information: "Transactions:", value: String(nft.transactions))
 			}
 
-			NftCollectionInformationView(information: "Buyers:", value: String(nft.buyers))
 
-			NftCollectionInformationView(information: "Sellers:", value: String(nft.sellers))
-
-			NftCollectionInformationView(information: "Transactions:", value: String(nft.transactions))
-
-		}.listStyle(.plain)
+			.listStyle(.plain)
 			.navigationBarTitleDisplayMode(.inline)
 			.toolbar {
 				ToolbarItemGroup(placement: .navigationBarTrailing) {
@@ -44,7 +56,20 @@ struct NftDetailView: View {
 						Label("Add to favorites", systemImage: "heart")
 					})
 				}
-			}
+		}
+			Button(action: {
+
+			}, label: {
+				Label("Voir la collection", systemImage: "network")
+					.font(.headline)
+					.padding(8)
+
+			})
+			.buttonBorderShape(.roundedRectangle(radius: 10))
+			.buttonStyle(.bordered)
+
+			.tint(.primary)
+		}
 	}
 }
 
@@ -63,6 +88,7 @@ struct NftCollectionInformationView: View {
 	var body: some View {
 		HStack {
 			Text(information)
+				.foregroundColor(.primary)
 			Spacer()
 			Text(value)
 				.font(.headline)

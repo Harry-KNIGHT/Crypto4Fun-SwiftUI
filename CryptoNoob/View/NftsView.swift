@@ -49,8 +49,7 @@ struct NftsView: View {
 
 						Spacer()
 
-						Text("\(String(format: "%.2f", nft.changeInValueUSD ?? "0"))%")
-							.foregroundStyle(nft.changeInValueUSD ?? 0 >= 0 ? .green : .red)
+						NftLastTimeRangePercentage(nft: nft)
 					}
 				}
 			}
@@ -86,5 +85,13 @@ struct NftsView_Previews: PreviewProvider {
 	static var previews: some View {
 		NftsView()
 			.environmentObject(ApiCall())
+	}
+}
+
+struct NftLastTimeRangePercentage: View {
+	var nft: NFTModel
+	var body: some View {
+		Text("\(String(format: "%.2f", nft.changeInValueUSD ?? "0"))%")
+			.foregroundStyle(nft.changeInValueUSD ?? 0 >= 0 ? .green : .red)
 	}
 }
