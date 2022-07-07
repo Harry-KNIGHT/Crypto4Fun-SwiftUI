@@ -88,8 +88,8 @@ import Foundation
 
     @Published public var nft = [NFTModel]()
 
-    func fetchNFT() async {
-        let url = "https://api.cryptoslam.io/v1/collections/top-100?timeRange=week"
+	func fetchNFT(_ timeRange: NftTimeRange) async {
+		let url = "https://api.cryptoslam.io/v1/collections/top-100?timeRange=\(timeRange.rawValue)"
 
         guard let url = URL(string: url) else {
             print("Invalid NFT url")

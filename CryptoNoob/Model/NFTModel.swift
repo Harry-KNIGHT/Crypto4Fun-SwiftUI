@@ -39,3 +39,12 @@ enum BaseCurrency: String, Codable {
 }
 
 typealias NFTResponse = [NFTModel]
+
+
+enum NftTimeRange: String, Hashable {
+	case day = "day"
+	case week = "week"
+	case month = "month"
+	case all = "all"
+
+}
