@@ -26,7 +26,7 @@ struct CryptoCurrencyListView: View {
         }
 		.onAppear {
 			Task {
-				await apiCall.fetchNFT()
+				await apiCall.fetchNFT(NftTimeRange.day)
 			}
 		}
     }
