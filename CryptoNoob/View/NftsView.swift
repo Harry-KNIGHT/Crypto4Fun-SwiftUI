@@ -54,9 +54,7 @@ struct NftsView: View {
 				}
 			}
 			.listStyle(.plain)
-			.task {
-				await apiCall.fetchNFT(NftTimeRange.day)
-			}
+			
 			.onChange(of: timeRange, perform: { _ in
 				switch timeRange {
 				case 0:
