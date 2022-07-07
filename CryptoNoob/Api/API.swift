@@ -86,30 +86,8 @@ import Foundation
         }
     }
 
-    @Published public var articles = [ArticleModel]()
     @Published public var nft = [NFTModel]()
 
-	func fetchArticle() async {
-		let url = "https://newsapi.org/v2/everything?q=crypto&from=2022-06-04&sortBy=publishedAt&apiKey=89ffff8dd6bf4abcbb4af01a08334cda"
-
-		guard let url = URL(string: url) else {
-			print("Bad article url")
-			return
-		}
-
-		do {
-			let (data, _) = try await URLSession.shared.data(from: url)
-
-			if let decodedResponse = try? JSONDecoder().decode([ArticleModel].self, from: data) {
-				DispatchQueue.main.async {
-					self.articles = decodedResponse
-				}
-			}
-		} catch {
-			print("Incalid url request")
-		}
-		print("End")
-	}
     func fetchNFT() async {
         let url = "https://api.cryptoslam.io/v1/collections/top-100?timeRange=week"
 
@@ -119,15 +97,20 @@ import Foundation
         }
 
         do {
-            let (data, _) = try await URLSession.shared.data(from: url)
+            let (data, response) = try await URLSession.shared.data(from: url)
+
+			guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode >= 200 && httpResponse.statusCode < 300 else {
+				print("Bad http response")
+				return
+			}
 
             if let decodedResponse = try? JSONDecoder().decode([NFTModel].self, from: data) {
                 DispatchQueue.main.async {
                     self.nft = decodedResponse
                 }
             }
-        } catch {
-            print("Invalid NFT request")
+        } catch let jsonError as NSError {
+			print("JSON decode failed: \(jsonError.localizedDescription)")
         }
     }
 }

@@ -11,7 +11,7 @@ import Foundation
 struct NFTModel: Codable, Identifiable {
     let id = UUID()
     let rank: Int
-    let iconURL: String
+    let iconURL: String?
     let contractName, productPath: String
     let baseCurrency: BaseCurrency
     let isSalesOnly: Bool
