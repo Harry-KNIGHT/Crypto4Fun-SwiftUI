@@ -14,8 +14,11 @@ struct CryptoCurrencyListView: View {
 		List(apiCall.cryptoCurrencies, id: \.self) { cryptoCurrency in
 			NavigationLink(destination: CurrencyChartView(cryptoCurrency: cryptoCurrency)) {
                 ListRowCellView(cryptoCurrency: cryptoCurrency)
-            }
-        }.task {
+			}
+		}
+		.listStyle(.plain)
+
+		.task {
             await apiCall.fetchCryptoCurrency()
         }
         .onReceive(apiCall.timer) { _ in

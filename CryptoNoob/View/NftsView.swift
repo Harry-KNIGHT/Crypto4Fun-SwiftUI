@@ -35,10 +35,13 @@ struct NftsView: View {
 
 					Spacer()
 
-					Text(String(apiCall.percentageNFTValue.formatted()))
+					Text("\(String(format: "%.2f", nft.changeInValueUSD ?? "0"))%")
+						.foregroundStyle(nft.changeInValueUSD ?? 0 >= 0 ? .green : .red)
 				}
 			}
-		}.task {
+		}
+		.listStyle(.plain)
+		.task {
 			await apiCall.fetchNFT()
 		}
 	}

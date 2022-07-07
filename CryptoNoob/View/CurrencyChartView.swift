@@ -71,9 +71,13 @@ struct CurrencyChartView: View {
                         Text("Month").tag(1)
                         Text("Year").tag(2)
                         Text("Max").tag(3)
-                    }
+					}
                     .pickerStyle(.segmented)
+					.padding(.vertical)
+
 					Divider()
+						.padding(.horizontal,40)
+					
 					ToggleAveragePriceView(showAveragePrice: $showAveragePrice)
                 }
                 .padding(.horizontal)
