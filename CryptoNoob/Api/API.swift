@@ -78,6 +78,7 @@ import Foundation
 
             if let decodedResponse = try? JSONDecoder().decode(CurrencyChartResponse.self, from: data) {
                 DispatchQueue.main.async {
+					print("Succes request for currency: \(id), time: \(timeChartShow) in chart")
                     self.prices = decodedResponse.prices
                 }
             }
