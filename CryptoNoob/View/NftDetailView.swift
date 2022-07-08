@@ -11,7 +11,6 @@ struct NftDetailView: View {
 	var nft: NFTModel
 	let gradient = LinearGradient(colors: [.green, .black], startPoint: .top, endPoint: .center)
 	var body: some View {
-
 		VStack {
 			List {
 				VStack(spacing: 35) {

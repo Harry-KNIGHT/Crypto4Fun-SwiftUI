@@ -106,11 +106,14 @@ import Foundation
 
             if let decodedResponse = try? JSONDecoder().decode([NFTModel].self, from: data) {
                 DispatchQueue.main.async {
+					print("Succes request for \(timeRange)")
                     self.nft = decodedResponse
-                }
+				}
             }
         } catch let jsonError as NSError {
 			print("JSON decode failed: \(jsonError.localizedDescription)")
-        }
+		} catch {
+			print("Error occured")
+		}
     }
 }
