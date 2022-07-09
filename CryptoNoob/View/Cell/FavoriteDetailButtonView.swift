@@ -13,6 +13,7 @@ struct FavoriteDetailButtonView: View {
     var body: some View {
         Button(action: {
             favoriteVM.addOrRemoveFavorite(item: cryptoCurrency)
+			favoriteVM.save()
         }, label: {
             Label("Favorite", systemImage: favoriteVM.favoriteCryptos.contains(cryptoCurrency) ? "heart.fill" : "heart")
                 .foregroundColor(.primary)
