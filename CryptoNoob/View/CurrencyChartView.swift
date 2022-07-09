@@ -91,12 +91,15 @@ struct CurrencyChartView: View {
 
 struct CurrencyChartView_Previews: PreviewProvider {
     static var previews: some View {
-        CurrencyChartView(cryptoCurrency: CryptoCurrencyModel(
-id: "btc", name: "Bitcoin", image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?", currentPrice: 34553.45, priceChangePercentage24h: -4032.56))
-            .environmentObject(FavoriteViewModel())
-            .environmentObject(ApiCall())
+		NavigationStack {
+			CurrencyChartView(cryptoCurrency: CryptoCurrencyModel(
+				id: "btc", name: "Bitcoin", image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?", currentPrice: 34553.45, priceChangePercentage24h: -4032.56))
+			.environmentObject(FavoriteViewModel())
+			.environmentObject(ApiCall())
+		}
     }
 }
+
 struct ToggleAveragePriceView: View {
     @Binding var showAveragePrice: Bool
     var body: some View {

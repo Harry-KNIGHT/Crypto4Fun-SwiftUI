@@ -9,12 +9,30 @@ import Foundation
 
 /// Favorite View Model
 class FavoriteViewModel: ObservableObject {
-    @Published public var favoriteCryptos = [CryptoCurrencyModel]()
+	@Published public var favoriteCryptos: [CryptoCurrencyModel]
+
+	init() {
+		if let data = UserDefaults.standard.data(forKey: "SavedData") {
+			if let decoded = try? JSONDecoder().decode([CryptoCurrencyModel].self, from: data) {
+				favoriteCryptos = decoded
+				return
+			}
+		}
+		// No Saved data
+		favoriteCryptos = []
+	}
+
+	func save() {
+		if let encoded = try? JSONEncoder().encode(favoriteCryptos) {
+			UserDefaults.standard.set(encoded, forKey: "SavedData")
+		}
+	}
 
     /// Add favorite crypto currency.
     /// - Parameter item: Add crypto currency to favoriteCryptos array.
     func addFavorite(item: CryptoCurrencyModel) {
         favoriteCryptos.append(item)
+		save()
     }
 
     /// Delet favorite currency.
