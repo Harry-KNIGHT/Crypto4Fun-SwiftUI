@@ -15,12 +15,7 @@ struct MainView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                Picker("Select", selection: $selection) {
-                    Text("Cryptos").tag(0)
-                    Text("NFT").tag(1)
-                }
-                .pickerStyle(.segmented)
-                    .padding(.horizontal)
+				SelectViewPickerView(info: "Select view to show", selection: $selection)
                 if selection == 0 {
                     CryptoCurrencyListView()
                 } else {
@@ -52,29 +47,8 @@ struct FavoriteButtonSheetView: View {
                 .font(.title3)
                 .foregroundColor(.primary)
         }).sheet(isPresented: $isOn) {
-            FavoriteListView()
+			FavoritesSheetView()
         }
     }
 }
 
-struct ListRowCellView: View {
-	var cryptoCurrency: CryptoCurrencyModel
-    var body: some View {
-        HStack {
-            AsyncImageView(cryptoCurrency: cryptoCurrency, width: 50, height: 50)
-            VStack(alignment: .leading) {
-                Text(cryptoCurrency.name)
-                    .font(.headline)
-                Text("$" + String(cryptoCurrency.currentPrice.formatted()))
-                    .font(.body)
-            }
-            Spacer()
-			HStack(spacing: 5) {
-				Image(systemName: cryptoCurrency.priceChangePercentage24h < 0 ? "chevron.down" : "chevron.up")
-				Text("\(String(format: "%.2f", cryptoCurrency.priceChangePercentage24h))% ")
-			}
-			.foregroundColor(cryptoCurrency.priceChangePercentage24h < 0 ? .red : .green)
-			.font(.body)
-        }
-    }
-}

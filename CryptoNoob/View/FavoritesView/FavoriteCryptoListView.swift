@@ -7,11 +7,10 @@
 
 import SwiftUI
 
-struct FavoriteListView: View {
+struct FavoriteCryptoListView: View {
     @EnvironmentObject var favoriteVM: FavoriteViewModel
 
     var body: some View {
-        NavigationView {
             if !favoriteVM.favoriteCryptos.isEmpty {
 				List {
 					ForEach(favoriteVM.favoriteCryptos, id: \.id) { cryptoCurrency in
@@ -19,18 +18,17 @@ struct FavoriteListView: View {
 							ListRowCellView(cryptoCurrency: cryptoCurrency)
 						}
 					}.onDelete(perform: favoriteVM.deleteFavorite)
-
-				}.navigationBarTitle("Favoris")
+				}
             } else {
-                EmptyView()
+				EmptyView(text: "Aucune crypto favorite", sfSymbol: "xmark.seal.fill")
+				Spacer()
             }
-        }
     }
 }
 
-struct FavoriteListView_Previews: PreviewProvider {
+struct FavoriteCryptoListView_Previews: PreviewProvider {
     static var previews: some View {
-        FavoriteListView()
+		FavoriteCryptoListView()
             .environmentObject(FavoriteViewModel())
     }
 }

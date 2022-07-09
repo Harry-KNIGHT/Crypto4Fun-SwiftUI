@@ -9,22 +9,17 @@ import SwiftUI
 
 struct EmptyView: View {
     @EnvironmentObject var favoriteVM: FavoriteViewModel
+	var text: String
+	var sfSymbol: String
     var body: some View {
         VStack(spacing: 10) {
-            if favoriteVM.favoriteCryptos.isEmpty {
-                Image(systemName: "xmark.seal.fill")
-                Text("Aucun favoris")
-            }
+                Image(systemName: sfSymbol)
+                Text(text)
         }
-        .font(.system(size: 50))
+		.multilineTextAlignment(.center)
+		.font(.largeTitle.bold())
         .foregroundColor(.secondary)
         .padding()
     }
 }
 
-struct EmptyView_Previews: PreviewProvider {
-    static var previews: some View {
-        EmptyView()
-            .environmentObject(FavoriteViewModel())
-    }
-}

@@ -22,6 +22,10 @@
 		3C99C6A628648D83007A261E /* NftsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C99C6A528648D83007A261E /* NftsView.swift */; };
 		3C99C6A828648EA0007A261E /* CryptoCurrencyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C99C6A728648EA0007A261E /* CryptoCurrencyListView.swift */; };
 		3C9C78CB2876D55300276962 /* NftDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C78CA2876D55300276962 /* NftDetailView.swift */; };
+		3CA78159287A05E000473EB8 /* SelectViewPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA78158287A05E000473EB8 /* SelectViewPickerView.swift */; };
+		3CA7815C287A063000473EB8 /* ListRowCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA7815B287A063000473EB8 /* ListRowCellView.swift */; };
+		3CA7815E287A06B500473EB8 /* FavoriteNftsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA7815D287A06B500473EB8 /* FavoriteNftsView.swift */; };
+		3CA78161287A075100473EB8 /* FavoritesSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA78160287A075100473EB8 /* FavoritesSheetView.swift */; };
 		3CD8C7AA285CFBDA004D65B9 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD8C7A9285CFBDA004D65B9 /* AsyncImageView.swift */; };
 		3CE98C24285DE24E00539190 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE98C23285DE24E00539190 /* EmptyView.swift */; };
 		3CFA2C042861D3960086BE36 /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFA2C032861D3960086BE36 /* ButtonModifier.swift */; };
@@ -30,7 +34,7 @@
 		3CFA2C0F2861D6FA0086BE36 /* FavoriteDetailButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFA2C0E2861D6FA0086BE36 /* FavoriteDetailButtonView.swift */; };
 		3CFA2C112861D9460086BE36 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFA2C102861D9460086BE36 /* DateExtension.swift */; };
 		B3314EA2285DC77900BBFF4C /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3314EA1285DC77900BBFF4C /* FavoriteViewModel.swift */; };
-		B3314EA5285DD03300BBFF4C /* FavoriteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3314EA4285DD03300BBFF4C /* FavoriteListView.swift */; };
+		B3314EA5285DD03300BBFF4C /* FavoriteCryptoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3314EA4285DD03300BBFF4C /* FavoriteCryptoListView.swift */; };
 		B3A64EC92875E52D002C8211 /* NFTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A64EC82875E52D002C8211 /* NFTModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +55,10 @@
 		3C99C6A528648D83007A261E /* NftsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NftsView.swift; sourceTree = "<group>"; };
 		3C99C6A728648EA0007A261E /* CryptoCurrencyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCurrencyListView.swift; sourceTree = "<group>"; };
 		3C9C78CA2876D55300276962 /* NftDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NftDetailView.swift; sourceTree = "<group>"; };
+		3CA78158287A05E000473EB8 /* SelectViewPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectViewPickerView.swift; sourceTree = "<group>"; };
+		3CA7815B287A063000473EB8 /* ListRowCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowCellView.swift; sourceTree = "<group>"; };
+		3CA7815D287A06B500473EB8 /* FavoriteNftsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteNftsView.swift; sourceTree = "<group>"; };
+		3CA78160287A075100473EB8 /* FavoritesSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesSheetView.swift; sourceTree = "<group>"; };
 		3CD8C7A9285CFBDA004D65B9 /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		3CE98C23285DE24E00539190 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		3CFA2C032861D3960086BE36 /* ButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifier.swift; sourceTree = "<group>"; };
@@ -59,7 +67,7 @@
 		3CFA2C0E2861D6FA0086BE36 /* FavoriteDetailButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDetailButtonView.swift; sourceTree = "<group>"; };
 		3CFA2C102861D9460086BE36 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		B3314EA1285DC77900BBFF4C /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
-		B3314EA4285DD03300BBFF4C /* FavoriteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListView.swift; sourceTree = "<group>"; };
+		B3314EA4285DD03300BBFF4C /* FavoriteCryptoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCryptoListView.swift; sourceTree = "<group>"; };
 		B3A64EC82875E52D002C8211 /* NFTModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,17 +130,37 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		3CA7815A287A060C00473EB8 /* ExtractedView */ = {
+			isa = PBXGroup;
+			children = (
+				3CA78158287A05E000473EB8 /* SelectViewPickerView.swift */,
+				3CA7815B287A063000473EB8 /* ListRowCellView.swift */,
+			);
+			path = ExtractedView;
+			sourceTree = "<group>";
+		};
+		3CA7815F287A06C000473EB8 /* FavoritesView */ = {
+			isa = PBXGroup;
+			children = (
+				3CA78160287A075100473EB8 /* FavoritesSheetView.swift */,
+				3CA7815D287A06B500473EB8 /* FavoriteNftsView.swift */,
+				B3314EA4285DD03300BBFF4C /* FavoriteCryptoListView.swift */,
+			);
+			path = FavoritesView;
+			sourceTree = "<group>";
+		};
 		3CD8C7AB285D00D0004D65B9 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				3C2CFAE0285CF356000EED5D /* ContentView.swift */,
 				3C2CFAEC285CF37E000EED5D /* MainView.swift */,
 				3C99C6A728648EA0007A261E /* CryptoCurrencyListView.swift */,
-				B3314EA4285DD03300BBFF4C /* FavoriteListView.swift */,
 				3CE98C23285DE24E00539190 /* EmptyView.swift */,
 				3C098331285F964400E3C117 /* CurrencyChartView.swift */,
 				3C99C6A528648D83007A261E /* NftsView.swift */,
 				3C9C78CA2876D55300276962 /* NftDetailView.swift */,
+				3CA7815F287A06C000473EB8 /* FavoritesView */,
+				3CA7815A287A060C00473EB8 /* ExtractedView */,
 				3CFA2C052861D4420086BE36 /* ViewModifier */,
 				3CD8C7AE285D0278004D65B9 /* Cell */,
 			);
@@ -258,10 +286,12 @@
 			files = (
 				3C2CFAE1285CF356000EED5D /* ContentView.swift in Sources */,
 				3CFA2C112861D9460086BE36 /* DateExtension.swift in Sources */,
+				3CA78159287A05E000473EB8 /* SelectViewPickerView.swift in Sources */,
 				3C098332285F964400E3C117 /* CurrencyChartView.swift in Sources */,
-				B3314EA5285DD03300BBFF4C /* FavoriteListView.swift in Sources */,
+				B3314EA5285DD03300BBFF4C /* FavoriteCryptoListView.swift in Sources */,
 				3C2CFAED285CF37E000EED5D /* MainView.swift in Sources */,
 				3C2CFAEF285CF38D000EED5D /* CryptoModel.swift in Sources */,
+				3CA78161287A075100473EB8 /* FavoritesSheetView.swift in Sources */,
 				3C27249B2872E96F00DAB17C /* ArticleModel.swift in Sources */,
 				3CFA2C0F2861D6FA0086BE36 /* FavoriteDetailButtonView.swift in Sources */,
 				3C2CFADF285CF356000EED5D /* CryptoNoobApp.swift in Sources */,
@@ -270,7 +300,9 @@
 				3CFA2C0D2861D6B30086BE36 /* CurrencyPriceView.swift in Sources */,
 				3CE98C24285DE24E00539190 /* EmptyView.swift in Sources */,
 				B3A64EC92875E52D002C8211 /* NFTModel.swift in Sources */,
+				3CA7815C287A063000473EB8 /* ListRowCellView.swift in Sources */,
 				3C2CFAF1285CF394000EED5D /* API.swift in Sources */,
+				3CA7815E287A06B500473EB8 /* FavoriteNftsView.swift in Sources */,
 				3C99C6A828648EA0007A261E /* CryptoCurrencyListView.swift in Sources */,
 				B3314EA2285DC77900BBFF4C /* FavoriteViewModel.swift in Sources */,
 				3CFA2C042861D3960086BE36 /* ButtonModifier.swift in Sources */,
