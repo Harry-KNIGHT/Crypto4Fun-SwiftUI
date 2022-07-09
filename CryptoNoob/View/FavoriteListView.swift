@@ -13,11 +13,14 @@ struct FavoriteListView: View {
     var body: some View {
         NavigationView {
             if !favoriteVM.favoriteCryptos.isEmpty {
-                List(favoriteVM.favoriteCryptos, id: \.id) { cryptoCurrency in
-                    NavigationLink(destination: CurrencyChartView(cryptoCurrency: cryptoCurrency)) {
-						ListRowCellView(cryptoCurrency: cryptoCurrency)
-                    }
-                }.navigationBarTitle("Favoris")
+				List {
+					ForEach(favoriteVM.favoriteCryptos, id: \.id) { cryptoCurrency in
+						NavigationLink(destination: CurrencyChartView(cryptoCurrency: cryptoCurrency)) {
+							ListRowCellView(cryptoCurrency: cryptoCurrency)
+						}
+					}.onDelete(perform: favoriteVM.deleteFavorite)
+
+				}.navigationBarTitle("Favoris")
             } else {
                 EmptyView()
             }
