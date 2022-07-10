@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ListRowCellView: View {
+struct CryptoListRowCellView: View {
 	var cryptoCurrency: CryptoCurrencyModel
 	var body: some View {
 		HStack {
