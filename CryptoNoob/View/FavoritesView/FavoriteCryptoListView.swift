@@ -15,7 +15,7 @@ struct FavoriteCryptoListView: View {
 				List {
 					ForEach(favoriteVM.favoriteCryptos, id: \.id) { cryptoCurrency in
 						NavigationLink(destination: CurrencyChartView(cryptoCurrency: cryptoCurrency)) {
-							ListRowCellView(cryptoCurrency: cryptoCurrency)
+							CryptoListRowCellView(cryptoCurrency: cryptoCurrency)
 						}
 					}.onDelete(perform: favoriteVM.deleteFavorite)
 				}

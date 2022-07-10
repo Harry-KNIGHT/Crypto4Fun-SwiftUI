@@ -13,7 +13,7 @@ struct CryptoCurrencyListView: View {
     var body: some View {
 		List(apiCall.cryptoCurrencies, id: \.self) { cryptoCurrency in
 			NavigationLink(destination: CurrencyChartView(cryptoCurrency: cryptoCurrency)) {
-                ListRowCellView(cryptoCurrency: cryptoCurrency)
+				CryptoListRowCellView(cryptoCurrency: cryptoCurrency)
 			}
 		}
 		.listStyle(.plain)

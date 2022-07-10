@@ -63,19 +63,7 @@ struct NftsView: View {
 				
 				List(apiCall.nft) { nft in
 					NavigationLink(destination: NftDetailView(nft: nft)) {
-						HStack {
-							AsyncIconUrlView(nft: nft, width: 50, height: 50)
-								.clipShape(RoundedRectangle(cornerRadius: 10))
-							VStack(alignment: .leading) {
-								Text(nft.contractName)
-									.font(.headline)
-								Text(nft.baseCurrency.rawValue)
-							}
-							
-							Spacer()
-							
-							NftLastTimeRangePercentage(nft: nft)
-						}
+						NftListRowCell(nft: nft)
 					}
 				}
 				.listStyle(.plain)
