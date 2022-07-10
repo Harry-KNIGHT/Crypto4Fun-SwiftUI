@@ -55,7 +55,7 @@ struct NftDetailView: View {
 				ToolbarItemGroup(placement: .navigationBarTrailing) {
 					Button(action: {
                         nftVM.addOrRemoveNft(nft: nft)
-                        
+                        nftVM.saveNft()
                     }, label: {
                         Label("Add to favorites", systemImage: !nftVM.favoriteNfts.contains(nft) ? "heart" : "heart.fill")
 							.font(.title3)
