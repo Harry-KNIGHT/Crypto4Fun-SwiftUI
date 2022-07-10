@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct FavoriteNftsView: View {
+    @EnvironmentObject var nftVM: FavoriteNftsViewModel
     var body: some View {
 		List {
-			Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            ForEach(nftVM.favoriteNfts) { nft in
+                    NftListRowCell(nft: nft)
+            }
 		}
     }
 }
@@ -18,5 +21,6 @@ struct FavoriteNftsView: View {
 struct FavoriteNftsView_Previews: PreviewProvider {
     static var previews: some View {
         FavoriteNftsView()
+            .environmentObject(FavoriteNftsViewModel())
     }
 }

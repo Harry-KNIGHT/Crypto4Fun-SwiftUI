@@ -11,11 +11,13 @@ import SwiftUI
 struct CryptoNoobApp: App {
     @StateObject var apiCall = ApiCall()
     @StateObject var favoriteVM = FavoriteViewModel()
+    @StateObject var nftVM = FavoriteNftsViewModel()
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(apiCall)
                 .environmentObject(favoriteVM)
+                .environmentObject(nftVM)
         }
     }
 }
