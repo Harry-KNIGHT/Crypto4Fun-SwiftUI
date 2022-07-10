@@ -39,6 +39,7 @@ class FavoriteViewModel: ObservableObject {
     /// - Parameter item: Delet favorite currency from index set.
     func deleteFavorite(item: IndexSet) {
         favoriteCryptos.remove(atOffsets: item)
+		save()
     }
 
     /// Remove favorite crypto
@@ -54,6 +55,7 @@ class FavoriteViewModel: ObservableObject {
     func addOrRemoveFavorite(item: CryptoCurrencyModel) {
         if favoriteCryptos.contains(item) {
             removeFavoriteCrypto(item: item)
+			save()
         } else {
             addFavorite(item: item)
         }
