@@ -17,7 +17,7 @@ struct FavoriteNftsView: View {
 			List {
 				ForEach(nftVM.favoriteNfts) { nft in
 					NftListRowCell(nft: nft)
-				}
+				}.onDelete(perform: nftVM.deleteNft)
 			}
 		}
     }
