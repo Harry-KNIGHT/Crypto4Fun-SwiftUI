@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NftsView: View {
 	@EnvironmentObject var apiCall: ApiCall
-	@State private var timeRange = 1
+	@State private var timeRange = 0
 	var body: some View {
 		if apiCall.nft.isEmpty {
 			VStack {

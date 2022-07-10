@@ -34,8 +34,11 @@ struct NFTModel: Codable, Identifiable, Hashable {
 enum BaseCurrency: String, Codable {
     case eth = "ETH"
     case flow = "Flow"
+    case matic = "MATIC"
     case sol = "SOL"
     case usd = "USD"
+    case xtz = "XTZ"
+    case wax = "WAX"
 }
 
 typealias NFTResponse = [NFTModel]
