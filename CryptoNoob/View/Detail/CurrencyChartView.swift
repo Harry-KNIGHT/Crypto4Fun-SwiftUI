@@ -40,7 +40,8 @@ struct CurrencyChartView: View {
                         .foregroundStyle(colorScheme == .dark ? .white : .black)
                     }
                 }
-                .frame(maxWidth: .infinity, minHeight: 400, maxHeight: 550)
+				.chartYScale(domain: .automatic(includesZero: false))
+				.frame(maxWidth: .infinity, minHeight: 400, maxHeight: 550)
                 .padding(.trailing, 5)
                 .task {
                     await chartApiResponse.fetchChart(cryptoCurrency.id, timeChartShow: TimeToShow.yearly)
