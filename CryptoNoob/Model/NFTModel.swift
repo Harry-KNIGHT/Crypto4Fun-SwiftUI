@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - NFTResponseElement
-struct NFTModel: Codable, Identifiable {
+struct NFTModel: Codable, Identifiable, Hashable {
     let id = UUID()
     let rank: Int
     let iconURL: String?

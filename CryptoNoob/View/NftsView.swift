@@ -62,9 +62,7 @@ struct NftsView: View {
 				}
 				
 				List(apiCall.nft) { nft in
-					NavigationLink(destination: NftDetailView(nft: nft)) {
 						NftListRowCell(nft: nft)
-					}
 				}
 				.listStyle(.plain)
 				

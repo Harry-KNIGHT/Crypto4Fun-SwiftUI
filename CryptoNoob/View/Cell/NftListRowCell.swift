@@ -10,18 +10,21 @@ import Foundation
 struct NftListRowCell: View {
 	var nft: NFTModel
 	var body: some View {
-		HStack {
-			AsyncIconUrlView(nft: nft, width: 50, height: 50)
-				.clipShape(RoundedRectangle(cornerRadius: 10))
-			VStack(alignment: .leading) {
-				Text(nft.contractName)
-					.font(.headline)
-				Text(nft.baseCurrency.rawValue)
-			}
+        
+        NavigationLink(destination: NftDetailView(nft: nft)) {
+            HStack {
+                AsyncIconUrlView(nft: nft, width: 50, height: 50)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                VStack(alignment: .leading) {
+                    Text(nft.contractName)
+                        .font(.headline)
+                    Text(nft.baseCurrency.rawValue)
+                }
 
-			Spacer()
+                Spacer()
 
-			NftLastTimeRangePercentage(nft: nft)
-		}
+                NftLastTimeRangePercentage(nft: nft)
+            }
+        }
 	}
 }
