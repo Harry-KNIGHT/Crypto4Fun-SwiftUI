@@ -10,10 +10,15 @@ import SwiftUI
 struct FavoriteNftsView: View {
     @EnvironmentObject var nftVM: FavoriteNftsViewModel
     var body: some View {
-		List {
-            ForEach(nftVM.favoriteNfts) { nft in
-                    NftListRowCell(nft: nft)
-            }
+		if nftVM.favoriteNfts.isEmpty {
+			EmptyView(text: "No favorite NFT", sfSymbol: "xmark.seal.fill")
+			Spacer()
+		}else {
+			List {
+				ForEach(nftVM.favoriteNfts) { nft in
+					NftListRowCell(nft: nft)
+				}
+			}
 		}
     }
 }
