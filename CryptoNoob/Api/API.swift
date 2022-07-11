@@ -88,8 +88,8 @@ import Foundation
     }
 
 
-	func fetchDailyChart(_ id: String, from yesterday: Double = (Date().timeIntervalSince1970 - 86400), to today: Double = Date().timeIntervalSince1970) async {
-	 let url = "https://api.coingecko.com/api/v3/coins/\(id)/market_chart/range?vs_currency=usd&from=\(yesterday)&to=\(today)"
+	func fetchDailyChart(_ id: String, from firstDate: Double, to today: Double = Date().timeIntervalSince1970) async {
+	 let url = "https://api.coingecko.com/api/v3/coins/\(id)/market_chart/range?vs_currency=usd&from=\(firstDate)&to=\(today)"
 
 	 guard let url = URL(string: url) else {
 		 print("Invalid url")
