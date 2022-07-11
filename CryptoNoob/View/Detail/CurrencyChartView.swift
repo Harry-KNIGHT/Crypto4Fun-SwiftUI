@@ -50,11 +50,11 @@ struct CurrencyChartView: View {
                     switch tagSelected {
 					case 0:
 						Task {
-							await chartApiResponse.fetchDailyChart(cryptoCurrency.id)
+							await chartApiResponse.fetchDailyChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.day.rawValue) ?? 0))
 						}
                     case 1:
                         Task {
-							await chartApiResponse.fetchChart(cryptoCurrency.id, timeChartShow: TimeToShow.weekly)
+							await chartApiResponse.fetchDailyChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.week.rawValue) ?? 0))
                         }
                     case 2:
                         Task {
@@ -66,7 +66,7 @@ struct CurrencyChartView: View {
                         }
                     default:
                         Task {
-                            await chartApiResponse.fetchChart(cryptoCurrency.id, timeChartShow: TimeToShow.max)
+							await chartApiResponse.fetchDailyChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.max.rawValue) ?? 0))
                         }
                     }
                 })

@@ -24,3 +24,10 @@ enum TimeToShow: String, CaseIterable, Identifiable {
 	case max = "10_000"
 	var id: Self { self }
 }
+
+enum EpochUnixTime: String, CaseIterable {
+	case day = "86400"
+	case week = "604800"
+	case max = "450000000"
+
+}
