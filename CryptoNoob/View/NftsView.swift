@@ -39,7 +39,9 @@ struct NftsView: View {
 					})
 					.buttonBorderShape(.roundedRectangle(radius: 10))
 					.buttonStyle(.borderedProminent)
-					.tint(timeRange == 0 ? .purple: .blue)
+					.tint(timeRange == 0 ? .blue: .secondary)
+
+
 					
 					Spacer()
 					
@@ -56,7 +58,7 @@ struct NftsView: View {
 					})
 					.buttonBorderShape(.roundedRectangle(radius: 10))
 					.buttonStyle(.borderedProminent)
-					.tint(timeRange == 1 ? .purple: .blue)
+					.tint(timeRange == 1 ? .blue : .secondary)
 					Spacer()
 					
 				}
