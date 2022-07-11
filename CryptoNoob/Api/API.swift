@@ -87,6 +87,28 @@ import Foundation
         }
     }
 
+
+	func fetchDailyChart(_ id: String, from yesterday: Double = (Date().timeIntervalSince1970 - 86400), to today: Double = Date().timeIntervalSince1970) async {
+	 let url = "https://api.coingecko.com/api/v3/coins/\(id)/market_chart/range?vs_currency=usd&from=\(yesterday)&to=\(today)"
+
+	 guard let url = URL(string: url) else {
+		 print("Invalid url")
+		 return
+	 }
+
+	 do {
+		 let (data, _) = try await URLSession.shared.data(from: url)
+
+		 if let decodedResponse = try? JSONDecoder().decode(CurrencyChartResponse.self, from: data) {
+			 DispatchQueue.main.async {
+				 self.prices = decodedResponse.prices
+			 }
+		 }
+	 } catch {
+		 print("Invalid url chart request")
+	 }
+ }
+
     @Published public var nft = [NFTModel]()
 
 	func fetchNFT(_ timeRange: NftTimeRange) async {
