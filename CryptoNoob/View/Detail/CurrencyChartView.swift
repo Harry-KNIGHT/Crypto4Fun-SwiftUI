@@ -41,22 +41,26 @@ struct CurrencyChartView: View {
                     }
                 }
 				.chartYScale(domain: .automatic(includesZero: false))
-				.frame(maxWidth: .infinity, minHeight: 400, maxHeight: 550)
+				.frame(maxWidth: .infinity, minHeight: 500, maxHeight: 700)
                 .padding(.trailing, 5)
                 .task {
                     await chartApiResponse.fetchChart(cryptoCurrency.id, timeChartShow: TimeToShow.yearly)
                 }
                 .onChange(of: tagSelected, perform: { _ in
                     switch tagSelected {
-                    case 0:
+					case 0:
+						Task {
+							await chartApiResponse.fetchDailyChart(cryptoCurrency.id)
+						}
+                    case 1:
                         Task {
 							await chartApiResponse.fetchChart(cryptoCurrency.id, timeChartShow: TimeToShow.weekly)
                         }
-                    case 1:
+                    case 2:
                         Task {
                             await chartApiResponse.fetchChart(cryptoCurrency.id, timeChartShow: TimeToShow.monthly)
                         }
-                    case 2:
+                    case 3:
                         Task {
                             await chartApiResponse.fetchChart(cryptoCurrency.id, timeChartShow: TimeToShow.yearly)
                         }
@@ -68,10 +72,11 @@ struct CurrencyChartView: View {
                 })
                 Group {
                     Picker("Select time value", selection: $tagSelected) {
-                        Text("Week").tag(0)
-                        Text("Month").tag(1)
-                        Text("Year").tag(2)
-                        Text("Max").tag(3)
+						Text("Day").tag(0)
+                        Text("Week").tag(1)
+                        Text("Month").tag(2)
+                        Text("Year").tag(3)
+                        Text("Max").tag(4)
 					}
                     .pickerStyle(.segmented)
 					.padding(.vertical)
