@@ -22,14 +22,10 @@ struct NftDetailView: View {
 							AsyncIconUrlView(nft: nft)
 								.clipShape(RoundedRectangle(cornerRadius: 10))
 
-
 							Text(nft.contractName)
 								.font(.title3.bold())
-							if let nft = nft.baseCurrency {
-								Text(nft.rawValue)
-							}else {
-								Text("Zebi la")
-							}
+
+							Text(nft.baseCurrency.rawValue)
 						}
 						Spacer()
 					}
