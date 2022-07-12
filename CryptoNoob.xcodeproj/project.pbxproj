@@ -53,7 +53,6 @@
 		3C2CFAEC285CF37E000EED5D /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		3C2CFAEE285CF38D000EED5D /* CryptoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoModel.swift; sourceTree = "<group>"; };
 		3C2CFAF0285CF394000EED5D /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		3C2E9249287D612100F70D6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3C8620F32876D3CF00D4FA1A /* AsyncIconUrlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncIconUrlView.swift; sourceTree = "<group>"; };
 		3C99C6A528648D83007A261E /* NftsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NftsView.swift; sourceTree = "<group>"; };
 		3C99C6A728648EA0007A261E /* CryptoCurrencyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCurrencyListView.swift; sourceTree = "<group>"; };
@@ -115,7 +114,6 @@
 		3C2CFADD285CF356000EED5D /* CryptoNoob */ = {
 			isa = PBXGroup;
 			children = (
-				3C2E9249287D612100F70D6F /* Info.plist */,
 				3C2CFADE285CF356000EED5D /* CryptoNoobApp.swift */,
 				B3314EA3285DC78600BBFF4C /* ViewModel */,
 				3CD8C7AB285D00D0004D65B9 /* View */,
