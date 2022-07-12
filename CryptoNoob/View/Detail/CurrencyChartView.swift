@@ -44,7 +44,7 @@ struct CurrencyChartView: View {
 				.frame(maxWidth: .infinity, minHeight: 500, maxHeight: 700)
                 .padding(.trailing, 5)
                 .task {
-                    await chartApiResponse.fetchChart(cryptoCurrency.id, timeChartShow: TimeToShow.yearly)
+                    await chartApiResponse.fetchChart(cryptoCurrency.id, timeChartShow: TimeToShow.monthly)
                 }
                 .onChange(of: tagSelected, perform: { _ in
                     switch tagSelected {
