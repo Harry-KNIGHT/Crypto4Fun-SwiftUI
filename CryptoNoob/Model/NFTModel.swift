@@ -38,6 +38,13 @@ enum BaseCurrency: String, Codable {
 	case sol = "SOL"
 	case usd = "USD"
 	case xtz = "XTZ"
+	case bnb = "BNB"
+	case one = "ONE"
+	case algo = "ALGO"
+	case near = "NEAR"
+	case osmo = "OSMO"
+	case egld = "EGLD"
+	case wax = "WAX"
 }
 
 typealias NFTResponse = [NFTModel]

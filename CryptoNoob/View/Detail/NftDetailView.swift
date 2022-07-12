@@ -25,8 +25,11 @@ struct NftDetailView: View {
 
 							Text(nft.contractName)
 								.font(.title3.bold())
-							Text(nft.baseCurrency.rawValue)
-								.font(.headline)
+							if let nft = nft.baseCurrency {
+								Text(nft.rawValue)
+							}else {
+								Text("Zebi la")
+							}
 						}
 						Spacer()
 					}
@@ -64,7 +67,7 @@ struct NftDetailView: View {
 					})
 				}
 		}
-			Button(action: {
+			/*Button(action: {
 
 			}, label: {
 				Label("Voir la collection", systemImage: "network")
@@ -75,7 +78,7 @@ struct NftDetailView: View {
 			.buttonBorderShape(.roundedRectangle(radius: 10))
 			.buttonStyle(.bordered)
 
-			.tint(.primary)
+			.tint(.primary)*/
 		}
 	}
 }
