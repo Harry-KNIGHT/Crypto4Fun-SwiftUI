@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CryptoCurrencyListView: View {
-	@EnvironmentObject var apiCall: ApiCall
+	@EnvironmentObject var nft: NftApi
 	@EnvironmentObject var cryptoApi: FetchCryptoCurrencyApi
 
     var body: some View {
@@ -27,7 +27,7 @@ struct CryptoCurrencyListView: View {
         }
 		.onAppear {
 			Task {
-				await apiCall.fetchNFT(NftTimeRange.day)
+				await nft.fetchNft(NftTimeRange.day)
 			}
 		}
     }
@@ -36,7 +36,7 @@ struct CryptoCurrencyListView: View {
 struct CryptoCurrencyListView_Previews: PreviewProvider {
     static var previews: some View {
         CryptoCurrencyListView()
-            .environmentObject(ApiCall())
+            .environmentObject(NftApi())
 			.environmentObject(FetchCryptoCurrencyApi())
     }
 }

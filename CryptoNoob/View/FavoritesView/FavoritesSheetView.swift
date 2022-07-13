@@ -35,7 +35,7 @@ struct FavoritesSheetView: View {
 struct FavoritesSheetView_Previews: PreviewProvider {
     static var previews: some View {
         FavoritesSheetView()
-			.environmentObject(ApiCall())
+			.environmentObject(NftApi())
 			.environmentObject(FavoriteViewModel())
     }
 }

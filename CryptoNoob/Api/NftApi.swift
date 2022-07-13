@@ -6,11 +6,17 @@
 //
 
 import Foundation
+protocol Nft {
+	var nfts: [NFTModel] { get set }
 
-class ApiCall: ObservableObject {
-    @Published public var nft = [NFTModel]()
+	func fetchNft(_ timeRange: NftTimeRange) async
+}
 
-	func fetchNFT(_ timeRange: NftTimeRange) async {
+class NftApi: ObservableObject {
+
+	@Published public var nfts: [NFTModel] = [NFTModel]()
+
+	func fetchNft(_ timeRange: NftTimeRange) async {
 		let url = "https://api.cryptoslam.io/v1/collections/top-100?timeRange=\(timeRange.rawValue)"
 
         guard let url = URL(string: url) else {
@@ -29,7 +35,7 @@ class ApiCall: ObservableObject {
             if let decodedResponse = try? JSONDecoder().decode([NFTModel].self, from: data) {
                 DispatchQueue.main.async {
 					print("Succes request for \(timeRange)")
-                    self.nft = decodedResponse
+                    self.nfts = decodedResponse
 				}
             }
         } catch let jsonError as NSError {

@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var apiCall: ApiCall
     var body: some View {
        MainView()
     }
@@ -17,6 +16,5 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .environmentObject(ApiCall())
     }
 }
