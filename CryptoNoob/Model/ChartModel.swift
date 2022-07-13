@@ -17,17 +17,10 @@ struct CurrencyChartResponse: Codable {
 	}
 }
 
-enum TimeToShow: String, CaseIterable, Identifiable {
-	case yearly = "365"
-	case weekly = "7"
-	case monthly = "31"
-	case max = "10_000"
-	var id: Self { self }
-}
-
 enum EpochUnixTime: String, CaseIterable {
 	case day = "86400"
 	case week = "604800"
+	case month = "2419200"
+	case year = "29030400"
 	case max = "450000000"
-
 }

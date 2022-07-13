@@ -10,7 +10,7 @@ import Charts
 
 struct CurrencyChartView: View {
     @EnvironmentObject var favoriteVM: FavoriteViewModel
-    @EnvironmentObject var chartApiResponse: ApiCall
+    @EnvironmentObject var chartApiResponse: FetchChartApi
     @State private var showAveragePrice: Bool = false
     @Environment(\.colorScheme) private var colorScheme
 	var cryptoCurrency: CryptoCurrencyModel
@@ -25,7 +25,7 @@ struct CurrencyChartView: View {
                 }.padding(.horizontal)
 
                 Chart {
-                    ForEach(chartApiResponse.prices, id: \.self) {
+					ForEach(chartApiResponse.prices, id: \.self) {
                         LineMark(
                             x: .value("Date", Date(miliseconds: Int64($0[0]))),
                             y: .value("Price", $0[1])
@@ -43,30 +43,30 @@ struct CurrencyChartView: View {
 				.chartYScale(domain: .automatic(includesZero: false))
 				.frame(maxWidth: .infinity, minHeight: 500, maxHeight: 700)
                 .padding(.trailing, 5)
-                .task {
-                    await chartApiResponse.fetchChart(cryptoCurrency.id, timeChartShow: TimeToShow.monthly)
+				.task {
+                    await chartApiResponse.fetchChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.month.rawValue) ?? 0))
                 }
                 .onChange(of: tagSelected, perform: { _ in
                     switch tagSelected {
 					case 0:
 						Task {
-							await chartApiResponse.fetchDailyChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.day.rawValue) ?? 0))
+							await chartApiResponse.fetchChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.day.rawValue) ?? 0))
 						}
                     case 1:
                         Task {
-							await chartApiResponse.fetchDailyChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.week.rawValue) ?? 0))
+							await chartApiResponse.fetchChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.week.rawValue) ?? 0))
                         }
                     case 2:
                         Task {
-                            await chartApiResponse.fetchChart(cryptoCurrency.id, timeChartShow: TimeToShow.monthly)
+							await chartApiResponse.fetchChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.month.rawValue) ?? 0))
                         }
                     case 3:
                         Task {
-                            await chartApiResponse.fetchChart(cryptoCurrency.id, timeChartShow: TimeToShow.yearly)
+							await chartApiResponse.fetchChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.year.rawValue) ?? 0))
                         }
                     default:
                         Task {
-							await chartApiResponse.fetchDailyChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.max.rawValue) ?? 0))
+							await chartApiResponse.fetchChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.max.rawValue) ?? 0))
                         }
                     }
                 })
@@ -101,7 +101,7 @@ struct CurrencyChartView_Previews: PreviewProvider {
 			CurrencyChartView(cryptoCurrency: CryptoCurrencyModel(
 				id: "btc", name: "Bitcoin", image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?", currentPrice: 34553.45, priceChangePercentage24h: -4032.56))
 			.environmentObject(FavoriteViewModel())
-			.environmentObject(ApiCall())
+			.environmentObject(FetchChartApi())
 		}
     }
 }
