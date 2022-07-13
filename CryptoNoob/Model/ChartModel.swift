@@ -28,6 +28,8 @@ enum TimeToShow: String, CaseIterable, Identifiable {
 enum EpochUnixTime: String, CaseIterable {
 	case day = "86400"
 	case week = "604800"
-	case max = "450000000"
+	case month = "2419200"
+	case year = "29030400"
+	case max = "145152000"
 
 }

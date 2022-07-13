@@ -13,6 +13,7 @@ struct CryptoNoobApp: App {
     @StateObject var favoriteVM = FavoriteViewModel()
     @StateObject var nftVM = FavoriteNftsViewModel()
 	@StateObject var cryptoCurrencyApi = CryptoApiCall()
+	@StateObject var fetchChartApi = FetchChartApi()
     var body: some Scene {
         WindowGroup {
             ContentView()
@@ -20,6 +21,7 @@ struct CryptoNoobApp: App {
                 .environmentObject(favoriteVM)
                 .environmentObject(nftVM)
 				.environmentObject(cryptoCurrencyApi)
+				.environmentObject(fetchChartApi)
         }
     }
 }
