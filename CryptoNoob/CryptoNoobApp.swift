@@ -9,19 +9,19 @@ import SwiftUI
 
 @main
 struct CryptoNoobApp: App {
-    @StateObject var apiCall = ApiCall()
     @StateObject var favoriteVM = FavoriteViewModel()
     @StateObject var nftVM = FavoriteNftsViewModel()
 	@StateObject var cryptoCurrencyApi = CryptoApiCall()
 	@StateObject var fetchChartApi = FetchChartApi()
+	@StateObject var fetchNftApi = FetchNftApi()
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(apiCall)
                 .environmentObject(favoriteVM)
                 .environmentObject(nftVM)
 				.environmentObject(cryptoCurrencyApi)
 				.environmentObject(fetchChartApi)
+				.environmentObject(fetchNftApi)
         }
     }
 }
