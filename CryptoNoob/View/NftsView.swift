@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct NftsView: View {
-	@EnvironmentObject var apiCall: ApiCall
+	@EnvironmentObject var fetchNft: FetchNftApi
 	@State private var timeRange = 0
 	var body: some View {
-		if apiCall.nft.isEmpty {
+		if fetchNft.nfts.isEmpty {
 			VStack {
 				Spacer()
 				HStack(spacing: 10) {
@@ -28,7 +28,7 @@ struct NftsView: View {
 					Spacer()
 					Button(action: {
 						Task {
-							await apiCall.fetchNFT(NftTimeRange.day)
+							await fetchNft.fetchNFT(NftTimeRange.day)
 						}
 						timeRange = 0
 					}, label: {
@@ -47,7 +47,7 @@ struct NftsView: View {
 					
 					Button(action: {
 						Task {
-							await apiCall.fetchNFT(NftTimeRange.week)
+							await fetchNft.fetchNFT(NftTimeRange.week)
 						}
 						timeRange = 1
 					}, label: {
@@ -63,7 +63,7 @@ struct NftsView: View {
 					
 				}
 				
-				List(apiCall.nft) { nft in
+				List(fetchNft.nfts) { nft in
 						NftListRowCell(nft: nft)
 				}
 				.listStyle(.plain)
@@ -72,19 +72,19 @@ struct NftsView: View {
 					switch timeRange {
 					case 0:
 						Task {
-							await apiCall.fetchNFT(NftTimeRange.day)
+							await fetchNft.fetchNFT(NftTimeRange.day)
 						}
 					case 1:
 						Task {
-							await apiCall.fetchNFT(NftTimeRange.week)
+							await fetchNft.fetchNFT(NftTimeRange.week)
 						}
 					case 2:
 						Task {
-							await apiCall.fetchNFT(NftTimeRange.month)
+							await fetchNft.fetchNFT(NftTimeRange.month)
 						}
 					default:
 						Task {
-							await apiCall.fetchNFT(NftTimeRange.all)
+							await fetchNft.fetchNFT(NftTimeRange.all)
 						}
 					}
 				})
@@ -96,7 +96,7 @@ struct NftsView: View {
 struct NftsView_Previews: PreviewProvider {
 	static var previews: some View {
 		NftsView()
-			.environmentObject(ApiCall())
+			.environmentObject(FetchNftApi())
 	}
 }
 
