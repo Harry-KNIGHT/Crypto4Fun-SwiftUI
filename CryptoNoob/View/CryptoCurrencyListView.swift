@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct CryptoCurrencyListView: View {
-    @EnvironmentObject var apiCall: ApiCall
+	@EnvironmentObject var crypto: CryptoApiCall
+	@EnvironmentObject var apiCall: ApiCall
 
     var body: some View {
-		List(apiCall.cryptoCurrencies, id: \.self) { cryptoCurrency in
+		List(crypto.cryptoCurrencies, id: \.self) { cryptoCurrency in
 			NavigationLink(destination: CurrencyChartView(cryptoCurrency: cryptoCurrency)) {
 				CryptoListRowCellView(cryptoCurrency: cryptoCurrency)
 			}
@@ -19,10 +20,10 @@ struct CryptoCurrencyListView: View {
 		.listStyle(.plain)
 
 		.task {
-            await apiCall.fetchCryptoCurrency()
+            await crypto.fetchCryptoCurrency()
         }
-        .onReceive(apiCall.timer) { _ in
-            apiCall.fetchDataTimer()
+        .onReceive(crypto.timer) { _ in
+            crypto.fetchDataTimer()
         }
 		.onAppear {
 			Task {
@@ -35,6 +36,7 @@ struct CryptoCurrencyListView: View {
 struct CryptoCurrencyListView_Previews: PreviewProvider {
     static var previews: some View {
         CryptoCurrencyListView()
-            .environmentObject(ApiCall())
+            .environmentObject(CryptoApiCall())
+			.environmentObject(ApiCall())
     }
 }
