@@ -1,4 +1,4 @@
-//
+back//
 //  CryptoCurrencyApi.swift
 //  CryptoNoob
 //
@@ -10,7 +10,7 @@ import Foundation
 protocol FetchCrypto {
 	var cryptoCurrencies: [CryptoCurrencyModel] { get set }
 
-	var timeRemaining: Int { get set }
+	//var timeRemaining: Int { get set }
 
 	func fetchCryptoCurrency() async
 
@@ -18,11 +18,11 @@ protocol FetchCrypto {
 }
 
 
-class CryptoApiCall: ObservableObject, FetchCrypto {
+ class CryptoApiCall: ObservableObject, FetchCrypto {
 	@Published var cryptoCurrencies: [CryptoCurrencyModel] = [CryptoCurrencyModel]()
 
 	@Published public var timeRemaining: Int = 10
-	public var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+	@MainActor public var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
 	func fetchCryptoCurrency() async {
 		let url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=%271h%2C%2024h%2C%207d"
