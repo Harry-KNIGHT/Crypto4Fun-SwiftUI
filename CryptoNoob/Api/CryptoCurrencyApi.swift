@@ -1,4 +1,4 @@
-back//
+//
 //  CryptoCurrencyApi.swift
 //  CryptoNoob
 //
@@ -51,8 +51,8 @@ protocol FetchCrypto {
 		} else {
 			Task {
 				await fetchCryptoCurrency()
-				timeRemaining += 10
 			}
+			timeRemaining += 10
 		}
 	}
 
