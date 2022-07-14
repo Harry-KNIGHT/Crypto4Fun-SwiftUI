@@ -20,7 +20,7 @@ struct FavoriteCryptoListView: View {
 					}.onDelete(perform: favoriteVM.deleteFavorite)
 				}
             } else {
-				EmptyView(text: "Aucune crypto favorite", sfSymbol: "xmark.seal.fill")
+				EmptyView(text: "No favorite Crypto", sfSymbol: "xmark.seal.fill")
 				Spacer()
             }
     }
