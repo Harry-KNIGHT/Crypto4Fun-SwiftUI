@@ -33,7 +33,12 @@ protocol FetchCrypto {
 		}
 
 		do {
-			let (data, _) = try await URLSession.shared.data(from: url)
+			let (data, response) = try await URLSession.shared.data(from: url)
+
+			guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode >= 200 && httpResponse.statusCode < 300 else {
+				print("Bad http response \(response)")
+				return
+			}
 
 			if let decodedResponse = try? JSONDecoder().decode([CryptoCurrencyModel].self, from: data) {
 				DispatchQueue.main.async {
