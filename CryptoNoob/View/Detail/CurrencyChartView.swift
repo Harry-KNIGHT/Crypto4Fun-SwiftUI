@@ -17,7 +17,7 @@ struct CurrencyChartView: View {
     @State private var tagSelected = 2
     @State private var timeRemaining: Double = 1.3
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    @State private var CanClick: Bool = true
+    @State private var canClick: Bool = true
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading) {
@@ -26,7 +26,7 @@ struct CurrencyChartView: View {
 				NegativeOrPositiveTimeView(cryptoCurrency: cryptoCurrency)
                 }.padding(.horizontal)
                 //DEBUG
-                Text("\(timeRemaining)" + " " + "\(CanClick)")
+                Text("\(timeRemaining)" + " " + "\(canClick)")
                 // FIN DEBUG
                 Chart {
                     ForEach(fetchChart.prices, id: \.self) {
@@ -48,16 +48,16 @@ struct CurrencyChartView: View {
 				.frame(maxWidth: .infinity, minHeight: 500, maxHeight: 700)
                 .padding(.trailing, 5)
                 .task {
-                    if CanClick {
+                    if canClick {
                         await  fetchChart.fetchChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.month.rawValue) ?? 0))
                         timeRemaining += 0
                     }
                 }
                 .onReceive(timer, perform: { _ in
                     if timeRemaining < 0{
-                        CanClick = true
+                        canClick = true
                     } else {
-                        CanClick = false
+                        canClick = false
                         timeRemaining -= 1
                     }
                 })
@@ -65,35 +65,35 @@ struct CurrencyChartView: View {
                     switch tagSelected {
 					case 0:
 						Task {
-                            if CanClick {
+                            if canClick {
                                 await fetchChart.fetchChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.day.rawValue) ?? 0))
                                 timeRemaining = 1.3
                             }
 						}
                     case 1:
                         Task {
-                            if CanClick {
+                            if canClick {
                                 await fetchChart.fetchChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.week.rawValue) ?? 0))
                                 timeRemaining = 1.3
                             }
                         }
                     case 2:
                         Task {
-                            if CanClick {
+                            if canClick {
                                 await fetchChart.fetchChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.month.rawValue) ?? 0))
                                 timeRemaining = 1.3
                             }
                         }
                     case 3:
                         Task {
-                            if CanClick {
+                            if canClick {
                                 await fetchChart.fetchChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.year.rawValue) ?? 0))
                                 timeRemaining = 1.3
                             }
                         }
                     default:
                         Task {
-                            if CanClick {
+                            if canClick {
                                 await fetchChart.fetchChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.max.rawValue) ?? 0))
                                 timeRemaining = 1.3
                             }
@@ -102,12 +102,13 @@ struct CurrencyChartView: View {
                 })
                 Group {
                     Picker("Select time value", selection: $tagSelected) {
-						Text("Day").tag(0)
-                        Text("Week").tag(1)
-                        Text("Month").tag(2)
-                        Text("Year").tag(3)
-                        Text("Max").tag(4)
+							Text("Day").tag(0)
+							Text("Week").tag(1)
+							Text("Month").tag(2)
+							Text("Year").tag(3)
+							Text("Max").tag(4)
 					}
+					.disabled(canClick == false)
                     .pickerStyle(.segmented)
 					.padding(.vertical)
 
