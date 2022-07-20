@@ -15,7 +15,9 @@ struct CurrencyChartView: View {
     @Environment(\.colorScheme) private var colorScheme
 	var cryptoCurrency: CryptoCurrencyModel
     @State private var tagSelected = 2
-
+    @State private var timeRemaining: Double = 1.3
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    @State private var CanClick: Bool = true
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading) {
@@ -23,7 +25,9 @@ struct CurrencyChartView: View {
 				CurrencyPriceView(cryptoCurrency: cryptoCurrency)
 				NegativeOrPositiveTimeView(cryptoCurrency: cryptoCurrency)
                 }.padding(.horizontal)
-
+                //DEBUG
+                Text("\(timeRemaining)" + " " + "\(CanClick)")
+                // FIN DEBUG
                 Chart {
                     ForEach(fetchChart.prices, id: \.self) {
                         LineMark(
@@ -44,29 +48,55 @@ struct CurrencyChartView: View {
 				.frame(maxWidth: .infinity, minHeight: 500, maxHeight: 700)
                 .padding(.trailing, 5)
                 .task {
-                    await  fetchChart.fetchChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.month.rawValue) ?? 0))
+                    if CanClick {
+                        await  fetchChart.fetchChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.month.rawValue) ?? 0))
+                        timeRemaining += 0
+                    }
                 }
+                .onReceive(timer, perform: { _ in
+                    if timeRemaining < 0{
+                        CanClick = true
+                    } else {
+                        CanClick = false
+                        timeRemaining -= 1
+                    }
+                })
                 .onChange(of: tagSelected, perform: { _ in
                     switch tagSelected {
 					case 0:
 						Task {
-							await fetchChart.fetchChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.day.rawValue) ?? 0))
+                            if CanClick {
+                                await fetchChart.fetchChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.day.rawValue) ?? 0))
+                                timeRemaining = 1.3
+                            }
 						}
                     case 1:
                         Task {
-							await fetchChart.fetchChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.week.rawValue) ?? 0))
+                            if CanClick {
+                                await fetchChart.fetchChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.week.rawValue) ?? 0))
+                                timeRemaining = 1.3
+                            }
                         }
                     case 2:
                         Task {
-							await fetchChart.fetchChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.month.rawValue) ?? 0))
+                            if CanClick {
+                                await fetchChart.fetchChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.month.rawValue) ?? 0))
+                                timeRemaining = 1.3
+                            }
                         }
                     case 3:
                         Task {
-                            await fetchChart.fetchChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.year.rawValue) ?? 0))
+                            if CanClick {
+                                await fetchChart.fetchChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.year.rawValue) ?? 0))
+                                timeRemaining = 1.3
+                            }
                         }
                     default:
                         Task {
-							await fetchChart.fetchChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.max.rawValue) ?? 0))
+                            if CanClick {
+                                await fetchChart.fetchChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.max.rawValue) ?? 0))
+                                timeRemaining = 1.3
+                            }
                         }
                     }
                 })
