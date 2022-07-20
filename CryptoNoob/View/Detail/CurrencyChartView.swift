@@ -28,10 +28,6 @@ struct CurrencyChartView: View {
 				CurrencyPriceView(cryptoCurrency: cryptoCurrency)
 				NegativeOrPositiveTimeView(cryptoCurrency: cryptoCurrency)
                 }.padding(.horizontal)
-                //DEBUG
-                Text("\(timeRemaining)" + " " + "\(canClick)")
-
-                // FIN DEBUG
                 Chart {
                     ForEach(fetchChart.prices, id: \.self) {
                         LineMark(
