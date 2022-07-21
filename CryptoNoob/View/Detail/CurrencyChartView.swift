@@ -36,6 +36,12 @@ struct CurrencyChartView: View {
                         )
 						.foregroundStyle(fetchChart.pricePercentageValue < 0 ? .red : .green)
                     }
+					if showAveragePrice {
+						RuleMark(
+							y: .value("Average price", fetchChart.averagePrice)
+						)
+						.foregroundStyle(colorScheme == .dark ? .white : .black)
+					}
 					if let (start, end) = range {
 								   RectangleMark(
 									   xStart: .value("Selection Start", start),
