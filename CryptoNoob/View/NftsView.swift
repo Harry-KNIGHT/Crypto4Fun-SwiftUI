@@ -76,6 +76,7 @@ struct NftsView: View {
 							}
 						}
 						.padding(.horizontal)
+						.padding(.top)
 					}
 				
 				.onChange(of: timeRange, perform: { _ in

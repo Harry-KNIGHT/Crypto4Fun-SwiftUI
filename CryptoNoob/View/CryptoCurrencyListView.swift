@@ -26,6 +26,7 @@ struct CryptoCurrencyListView: View {
 					}
 				}
 				.padding(.horizontal)
+				.padding(.top)
 			}
 			.task {
 				await crypto.fetchCryptoCurrency()

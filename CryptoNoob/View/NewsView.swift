@@ -33,6 +33,7 @@ struct NewsView: View {
 				}
 				.shadow(color: .secondary, radius: 1.5)
 				.padding(.horizontal)
+				.padding(.top)
 			}.task {
 				do {
 					try await news.fetchNews()
