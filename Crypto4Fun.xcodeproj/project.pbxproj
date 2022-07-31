@@ -44,6 +44,7 @@
 		B3314EA5285DD03300BBFF4C /* FavoriteCryptoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3314EA4285DD03300BBFF4C /* FavoriteCryptoListView.swift */; };
 		B3A64EC92875E52D002C8211 /* NFTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A64EC82875E52D002C8211 /* NFTModel.swift */; };
 		B3A64ECB287ABEE6002C8211 /* FavoriteNftsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A64ECA287ABEE6002C8211 /* FavoriteNftsViewModel.swift */; };
+		B3E11B5B2896EF3F00C31880 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E11B5A2896EF3F00C31880 /* GameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -100,6 +101,7 @@
 		B3314EA4285DD03300BBFF4C /* FavoriteCryptoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCryptoListView.swift; sourceTree = "<group>"; };
 		B3A64EC82875E52D002C8211 /* NFTModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTModel.swift; sourceTree = "<group>"; };
 		B3A64ECA287ABEE6002C8211 /* FavoriteNftsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteNftsViewModel.swift; sourceTree = "<group>"; };
+		B3E11B5A2896EF3F00C31880 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +219,7 @@
 				3C99C6A528648D83007A261E /* NftsView.swift */,
 				3C5411352896AE0D001EC00D /* NewsView.swift */,
 				3C5411372896B8F5001EC00D /* WebView.swift */,
+				B3E11B5A2896EF3F00C31880 /* GameView.swift */,
 				3CA21781287AB9C700511659 /* Detail */,
 				3CA7815F287A06C000473EB8 /* FavoritesView */,
 				3CA7815A287A060C00473EB8 /* ExtractedView */,
@@ -376,6 +379,7 @@
 				3C2CFAF1285CF394000EED5D /* FetchNFTApi.swift in Sources */,
 				3CA7815E287A06B500473EB8 /* FavoriteNftsView.swift in Sources */,
 				3CA21783287ABA8D00511659 /* NftListRowCell.swift in Sources */,
+				B3E11B5B2896EF3F00C31880 /* GameView.swift in Sources */,
 				3C99C6A828648EA0007A261E /* CryptoCurrencyListView.swift in Sources */,
 				B3314EA2285DC77900BBFF4C /* FavoriteViewModel.swift in Sources */,
 				B3A64ECB287ABEE6002C8211 /* FavoriteNftsViewModel.swift in Sources */,
