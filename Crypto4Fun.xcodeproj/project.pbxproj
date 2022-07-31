@@ -29,8 +29,6 @@
 		3CA7815C287A063000473EB8 /* CryptoListRowCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA7815B287A063000473EB8 /* CryptoListRowCellView.swift */; };
 		3CA7815E287A06B500473EB8 /* FavoriteNftsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA7815D287A06B500473EB8 /* FavoriteNftsView.swift */; };
 		3CA78161287A075100473EB8 /* FavoritesSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA78160287A075100473EB8 /* FavoritesSheetView.swift */; };
-		3CCCCFE32888915F00EACE9D /* Stickers.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CCCCFE22888915F00EACE9D /* Stickers.xcassets */; };
-		3CCCCFE72888915F00EACE9D /* C4FStickers.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 3CCCCFE02888915E00EACE9D /* C4FStickers.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3CD8C7AA285CFBDA004D65B9 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD8C7A9285CFBDA004D65B9 /* AsyncImageView.swift */; };
 		3CE98C24285DE24E00539190 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE98C23285DE24E00539190 /* EmptyView.swift */; };
 		3CFA2C042861D3960086BE36 /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFA2C032861D3960086BE36 /* ButtonModifier.swift */; };
@@ -44,16 +42,6 @@
 		B3A64ECB287ABEE6002C8211 /* FavoriteNftsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A64ECA287ABEE6002C8211 /* FavoriteNftsViewModel.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		3CCCCFE52888915F00EACE9D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3C2CFAD3285CF356000EED5D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3CCCCFDF2888915E00EACE9D;
-			remoteInfo = C4FStickers;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		3CCCCFE82888915F00EACE9D /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -61,7 +49,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				3CCCCFE72888915F00EACE9D /* C4FStickers.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,7 +79,6 @@
 		3CA7815B287A063000473EB8 /* CryptoListRowCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListRowCellView.swift; sourceTree = "<group>"; };
 		3CA7815D287A06B500473EB8 /* FavoriteNftsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteNftsView.swift; sourceTree = "<group>"; };
 		3CA78160287A075100473EB8 /* FavoritesSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesSheetView.swift; sourceTree = "<group>"; };
-		3CCCCFE02888915E00EACE9D /* C4FStickers.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = C4FStickers.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CCCCFE22888915F00EACE9D /* Stickers.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Stickers.xcassets; sourceTree = "<group>"; };
 		3CCCCFE42888915F00EACE9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CD8C7A9285CFBDA004D65B9 /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
@@ -141,7 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				3C2CFADB285CF356000EED5D /* Crypto4Fun.app */,
-				3CCCCFE02888915E00EACE9D /* C4FStickers.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -297,27 +282,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				3CCCCFE62888915F00EACE9D /* PBXTargetDependency */,
 			);
 			name = Crypto4Fun;
 			productName = CryptoNoob;
 			productReference = 3C2CFADB285CF356000EED5D /* Crypto4Fun.app */;
 			productType = "com.apple.product-type.application";
-		};
-		3CCCCFDF2888915E00EACE9D /* C4FStickers */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3CCCCFEB2888915F00EACE9D /* Build configuration list for PBXNativeTarget "C4FStickers" */;
-			buildPhases = (
-				3CCCCFDE2888915E00EACE9D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = C4FStickers;
-			productName = C4FStickers;
-			productReference = 3CCCCFE02888915E00EACE9D /* C4FStickers.appex */;
-			productType = "com.apple.product-type.app-extension.messages-sticker-pack";
 		};
 /* End PBXNativeTarget section */
 
@@ -331,9 +300,6 @@
 				TargetAttributes = {
 					3C2CFADA285CF356000EED5D = {
 						CreatedOnToolsVersion = 13.4.1;
-					};
-					3CCCCFDF2888915E00EACE9D = {
-						CreatedOnToolsVersion = 14.0;
 					};
 				};
 			};
@@ -351,7 +317,6 @@
 			projectRoot = "";
 			targets = (
 				3C2CFADA285CF356000EED5D /* Crypto4Fun */,
-				3CCCCFDF2888915E00EACE9D /* C4FStickers */,
 			);
 		};
 /* End PBXProject section */
@@ -363,14 +328,6 @@
 			files = (
 				3C2CFAE6285CF357000EED5D /* Preview Assets.xcassets in Resources */,
 				3C2CFAE3285CF357000EED5D /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3CCCCFDE2888915E00EACE9D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3CCCCFE32888915F00EACE9D /* Stickers.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,14 +373,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		3CCCCFE62888915F00EACE9D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3CCCCFDF2888915E00EACE9D /* C4FStickers */;
-			targetProxy = 3CCCCFE52888915F00EACE9D /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		3C2CFAE7285CF357000EED5D /* Debug */ = {
@@ -548,7 +497,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"CryptoNoob/Preview Content\"";
 				DEVELOPMENT_TEAM = 99M75C322U;
 				ENABLE_PREVIEWS = YES;
@@ -564,7 +513,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.knight.elliot.Crypto4Fun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -580,7 +529,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"CryptoNoob/Preview Content\"";
 				DEVELOPMENT_TEAM = 99M75C322U;
 				ENABLE_PREVIEWS = YES;
@@ -596,51 +545,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.knight.elliot.Crypto4Fun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		3CCCCFE92888915F00EACE9D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 99M75C322U;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = C4FStickers/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.knight.elliot.Crypto4Fun.C4FStickers;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		3CCCCFEA2888915F00EACE9D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 99M75C322U;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = C4FStickers/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.knight.elliot.Crypto4Fun.C4FStickers;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -662,15 +571,6 @@
 			buildConfigurations = (
 				3C2CFAEA285CF357000EED5D /* Debug */,
 				3C2CFAEB285CF357000EED5D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3CCCCFEB2888915F00EACE9D /* Build configuration list for PBXNativeTarget "C4FStickers" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3CCCCFE92888915F00EACE9D /* Debug */,
-				3CCCCFEA2888915F00EACE9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

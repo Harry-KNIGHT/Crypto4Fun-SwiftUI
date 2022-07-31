@@ -17,7 +17,7 @@ struct CryptoListRowCellView: View {
 					.font(.headline)
 				Text("$" + String(cryptoCurrency.currentPrice.formatted()))
 					.font(.body)
-			}
+			}.foregroundColor(.primary)
 			Spacer()
 			HStack(spacing: 5) {
 				Image(systemName: cryptoCurrency.priceChangePercentage24h < 0 ? "chevron.down" : "chevron.up")
