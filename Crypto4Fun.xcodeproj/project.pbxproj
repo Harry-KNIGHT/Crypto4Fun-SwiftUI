@@ -23,6 +23,7 @@
 		3C5411322896ABC0001EC00D /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5411312896ABC0001EC00D /* NewsModel.swift */; };
 		3C5411342896AC31001EC00D /* FetchNewsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5411332896AC31001EC00D /* FetchNewsApi.swift */; };
 		3C5411362896AE0E001EC00D /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5411352896AE0D001EC00D /* NewsView.swift */; };
+		3C5411382896B8F5001EC00D /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5411372896B8F5001EC00D /* WebView.swift */; };
 		3C8620F42876D3CF00D4FA1A /* AsyncIconUrlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8620F32876D3CF00D4FA1A /* AsyncIconUrlView.swift */; };
 		3C99C6A628648D83007A261E /* NftsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C99C6A528648D83007A261E /* NftsView.swift */; };
 		3C99C6A828648EA0007A261E /* CryptoCurrencyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C99C6A728648EA0007A261E /* CryptoCurrencyListView.swift */; };
@@ -76,6 +77,7 @@
 		3C5411312896ABC0001EC00D /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 		3C5411332896AC31001EC00D /* FetchNewsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchNewsApi.swift; sourceTree = "<group>"; };
 		3C5411352896AE0D001EC00D /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
+		3C5411372896B8F5001EC00D /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		3C8620F32876D3CF00D4FA1A /* AsyncIconUrlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncIconUrlView.swift; sourceTree = "<group>"; };
 		3C99C6A528648D83007A261E /* NftsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NftsView.swift; sourceTree = "<group>"; };
 		3C99C6A728648EA0007A261E /* CryptoCurrencyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCurrencyListView.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				3C99C6A728648EA0007A261E /* CryptoCurrencyListView.swift */,
 				3C99C6A528648D83007A261E /* NftsView.swift */,
 				3C5411352896AE0D001EC00D /* NewsView.swift */,
+				3C5411372896B8F5001EC00D /* WebView.swift */,
 				3CA21781287AB9C700511659 /* Detail */,
 				3CA7815F287A06C000473EB8 /* FavoritesView */,
 				3CA7815A287A060C00473EB8 /* ExtractedView */,
@@ -357,6 +360,7 @@
 				3C098332285F964400E3C117 /* CurrencyChartView.swift in Sources */,
 				B3314EA5285DD03300BBFF4C /* FavoriteCryptoListView.swift in Sources */,
 				3C5411362896AE0E001EC00D /* NewsView.swift in Sources */,
+				3C5411382896B8F5001EC00D /* WebView.swift in Sources */,
 				3C2CFAED285CF37E000EED5D /* MainView.swift in Sources */,
 				3C2CFAEF285CF38D000EED5D /* CryptoModel.swift in Sources */,
 				3CA78161287A075100473EB8 /* FavoritesSheetView.swift in Sources */,

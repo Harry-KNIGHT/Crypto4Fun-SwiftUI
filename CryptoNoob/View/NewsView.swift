@@ -9,37 +9,37 @@ import SwiftUI
 
 struct NewsView: View {
 	@EnvironmentObject public var news: FetchNewsApi
+	@State private var showNewsSheet: Bool = false
     var body: some View {
-		ScrollView {
-			LazyVStack(alignment: .center) {
-				ForEach(news.latestNews, id: \.self) { new in
-					LazyVStack() {
-						Text(new.title.trimmingCharacters(in: .whitespacesAndNewlines))
-							.foregroundColor(.primary)
-							.font(.headline)
-							.multilineTextAlignment(.center)
-
-						Button(action: {}, label: {
-							Label("Read article", systemImage: "newspaper")
-								.font(.headline)
-						})
-						.buttonStyle(.bordered)
-						.tint(.blue)
-
+		NavigationView {
+			ScrollView(.vertical, showsIndicators: false) {
+				LazyVStack {
+					ForEach(news.latestNews, id: \.self) { new in
+						NavigationLink(destination: WebView(url: URL(string: new.url) ?? URL(string: "http://google.com")!)) {
+							LazyVStack(alignment: .leading) {
+							Text(new.title.trimmingCharacters(in: .whitespacesAndNewlines))
+								.foregroundColor(.primary)
+								.font(.title3.bold())
+								Text("Website: \(new.url)")
+									.font(.body)
+									.foregroundColor(.secondary)
+						}
+						.padding()
+						.background(.regularMaterial)
+						.cornerRadius(10)
+						.multilineTextAlignment(.leading)
 					}
-					.padding()
-					.background(.regularMaterial)
-					.cornerRadius(10)
+					}
 				}
-			}
-			.shadow(color: .secondary, radius: 1.5)
-			.padding(.horizontal)
-		}.task {
-			do {
-				try await news.fetchNews()
-			} catch {
-				print("Someting wrong happend, \(error.localizedDescription)")
-			}
+				.shadow(color: .secondary, radius: 1.5)
+				.padding(.horizontal)
+			}.task {
+				do {
+					try await news.fetchNews()
+				} catch {
+					print("Someting wrong happend, \(error.localizedDescription)")
+				}
+		}
 		}
     }
 }
