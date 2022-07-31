@@ -19,8 +19,6 @@ struct CurrencyChartView: View {
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @State private var canClick: Bool = true
 
-	@State var range: (Date, Date)? = nil
-
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading) {
@@ -42,33 +40,7 @@ struct CurrencyChartView: View {
 						)
 						.foregroundStyle(colorScheme == .dark ? .white : .black)
 					}
-					if let (start, end) = range {
-								   RectangleMark(
-									   xStart: .value("Selection Start", start),
-									   xEnd: .value("Selection End", end)
-								   )
-								   .foregroundStyle(.gray.opacity(0.2))
-
-					}
                 }
-				.chartOverlay { proxy in
-					   GeometryReader { nthGeoItem in
-						   Rectangle().fill(.clear).contentShape(Rectangle())
-							   .gesture(DragGesture()
-								   .onChanged { value in
-									   // Find the x-coordinates in the chart’s plot area.
-									   let xStart = value.startLocation.x - nthGeoItem[proxy.plotAreaFrame].origin.x
-									   let xCurrent = value.location.x - nthGeoItem[proxy.plotAreaFrame].origin.x
-									   // Find the date values at the x-coordinates.
-									   if let dateStart: Date = proxy.value(atX: xStart),
-										  let dateCurrent: Date = proxy.value(atX: xCurrent) {
-										   range = (dateStart, dateCurrent)
-									   }
-								   }
-								   .onEnded { _ in range = nil } // Clear the state on gesture end.
-							   )
-					   }
-				   }
 				.chartYScale(domain: .automatic(includesZero: false))
 				.frame(maxWidth: .infinity, minHeight: 500, maxHeight: 700)
                 .padding(.trailing, 5)
