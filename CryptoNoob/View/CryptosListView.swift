@@ -1,19 +1,20 @@
 //
-//  CryptoCurrencyListView.swift
-//  CryptoNoob
+//  CryptosListView.swift
+//  Crypto4Fun
 //
-//  Created by Elliot Knight on 23/06/2022.
+//  Created by Elliot Knight on 31/07/2022.
 //
 
 import SwiftUI
 
-struct CryptoCurrencyListView: View {
-	@EnvironmentObject var crypto: CryptoApiCall
+struct CryptosListView: View {
+	@EnvironmentObject var cryptos: CryptoApiCall
 	@EnvironmentObject var fetchNft: FetchNftApi
 
-    var body: some View {
+
+	var body: some View {
 		ScrollView(.vertical, showsIndicators: false) {
-				ForEach(crypto.cryptoCurrencies, id: \.id) { crypto in
+				ForEach(cryptos.cryptoCurrencies, id: \.id) { crypto in
 					NavigationLink(destination: CurrencyChartView(cryptoCurrency: crypto)) {
 						LazyVStack(alignment: .leading) {
 							CryptoListRowCellView(cryptoCurrency: crypto)
@@ -24,26 +25,27 @@ struct CryptoCurrencyListView: View {
 					}
 				}
 				.padding(.horizontal)
+
 			}
 			.task {
-				await crypto.fetchCryptoCurrency()
+				await cryptos.fetchCryptoCurrency()
 			}
-			.onReceive(crypto.timer) { _ in
-				crypto.fetchDataTimer()
+			.onReceive(cryptos.timer) { _ in
+				cryptos.fetchDataTimer()
 			}
 			.onAppear {
 				Task {
 					await fetchNft.fetchNFT(NftTimeRange.day)
 				}
 			}
-    }
+	}
 }
 
-struct CryptoCurrencyListView_Previews: PreviewProvider {
-    static var previews: some View {
-        CryptoCurrencyListView()
-            .environmentObject(CryptoApiCall())
+struct CryptosListView_Previews: PreviewProvider {
+	static var previews: some View {
+		CryptosListView()
+			.environmentObject(CryptoApiCall())
 			.environmentObject(FetchNftApi())
 
-    }
+	}
 }

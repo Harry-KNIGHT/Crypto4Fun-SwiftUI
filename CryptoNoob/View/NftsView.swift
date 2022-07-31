@@ -62,11 +62,19 @@ struct NftsView: View {
 					Spacer()
 					
 				}
-				
-				List(fetchNft.nfts) { nft in
-						NftListRowCell(nft: nft)
-				}
-				.listStyle(.plain)
+				ScrollView(.vertical, showsIndicators: false) {
+					ForEach(fetchNft.nfts) { nft in
+							NavigationLink(destination: NftDetailView(nft: nft)) {
+								LazyVStack(alignment: .leading) {
+									NftListRowCell(nft: nft)
+								}
+								.padding(10)
+								.background(.regularMaterial)
+								.cornerRadius(10)
+							}
+						}
+						.padding(.horizontal)
+					}
 				
 				.onChange(of: timeRange, perform: { _ in
 					switch timeRange {

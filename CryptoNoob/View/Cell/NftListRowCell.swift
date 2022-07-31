@@ -19,7 +19,7 @@ struct NftListRowCell: View {
                     Text(nft.contractName)
                         .font(.headline)
                     Text(nft.baseCurrency.rawValue)
-                }
+				}.foregroundColor(.primary)
 
                 Spacer()
 
