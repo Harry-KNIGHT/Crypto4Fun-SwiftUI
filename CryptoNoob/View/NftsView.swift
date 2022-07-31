@@ -71,6 +71,8 @@ struct NftsView: View {
 								.padding(10)
 								.background(.regularMaterial)
 								.cornerRadius(10)
+								.shadow(color: .secondary, radius: 1.5)
+
 							}
 						}
 						.padding(.horizontal)
