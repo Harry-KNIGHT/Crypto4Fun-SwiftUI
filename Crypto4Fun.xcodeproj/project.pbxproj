@@ -20,6 +20,7 @@
 		3C2CFAED285CF37E000EED5D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2CFAEC285CF37E000EED5D /* MainView.swift */; };
 		3C2CFAEF285CF38D000EED5D /* CryptoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2CFAEE285CF38D000EED5D /* CryptoModel.swift */; };
 		3C2CFAF1285CF394000EED5D /* FetchNFTApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2CFAF0285CF394000EED5D /* FetchNFTApi.swift */; };
+		3C54112E2896991D001EC00D /* SwipeActions in Frameworks */ = {isa = PBXBuildFile; productRef = 3C54112D2896991D001EC00D /* SwipeActions */; };
 		3C8620F42876D3CF00D4FA1A /* AsyncIconUrlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8620F32876D3CF00D4FA1A /* AsyncIconUrlView.swift */; };
 		3C99C6A628648D83007A261E /* NftsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C99C6A528648D83007A261E /* NftsView.swift */; };
 		3C99C6A828648EA0007A261E /* CryptoCurrencyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C99C6A728648EA0007A261E /* CryptoCurrencyListView.swift */; };
@@ -99,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C54112E2896991D001EC00D /* SwipeActions in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +286,9 @@
 			dependencies = (
 			);
 			name = Crypto4Fun;
+			packageProductDependencies = (
+				3C54112D2896991D001EC00D /* SwipeActions */,
+			);
 			productName = CryptoNoob;
 			productReference = 3C2CFADB285CF356000EED5D /* Crypto4Fun.app */;
 			productType = "com.apple.product-type.application";
@@ -312,6 +317,9 @@
 				Base,
 			);
 			mainGroup = 3C2CFAD2285CF356000EED5D;
+			packageReferences = (
+				3C54112C2896991D001EC00D /* XCRemoteSwiftPackageReference "SwipeActions" */,
+			);
 			productRefGroup = 3C2CFADC285CF356000EED5D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -576,6 +584,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3C54112C2896991D001EC00D /* XCRemoteSwiftPackageReference "SwipeActions" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/c-villain/SwipeActions";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3C54112D2896991D001EC00D /* SwipeActions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3C54112C2896991D001EC00D /* XCRemoteSwiftPackageReference "SwipeActions" */;
+			productName = SwipeActions;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3C2CFAD3285CF356000EED5D /* Project object */;
 }

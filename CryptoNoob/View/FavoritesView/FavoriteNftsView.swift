@@ -14,19 +14,13 @@ struct FavoriteNftsView: View {
 			EmptyView(text: "No favorite NFT", sfSymbol: "xmark.seal.fill")
 			Spacer()
 		}else {
-			ScrollView{
-				VStack{
-					ForEach(nftVM.favoriteNfts) { nft in
-						NavigationLink(destination: NftDetailView(nft: nft)) {
-							NftListRowCell(nft: nft)
-						}
-						.padding(10)
-						.background(.regularMaterial)
-						.cornerRadius(10)
+			List {
+				ForEach(nftVM.favoriteNfts) { nft in
+					NavigationLink(destination: NftDetailView(nft: nft)) {
+						NftListRowCell(nft: nft)
 					}
-				}
+				}.onDelete(perform: nftVM.deleteNft)
 			}
-			.padding(.horizontal)
 		}
 	}
 

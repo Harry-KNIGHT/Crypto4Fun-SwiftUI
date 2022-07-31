@@ -12,19 +12,15 @@ struct FavoriteCryptoListView: View {
 
     var body: some View {
             if !favoriteVM.favoriteCryptos.isEmpty {
-				ScrollView(.vertical, showsIndicators: false) {
+				List {
 					ForEach(favoriteVM.favoriteCryptos, id: \.id) { crypto in
 							NavigationLink(destination: CurrencyChartView(cryptoCurrency: crypto)) {
 								LazyVStack(alignment: .leading) {
 									CryptoListRowCellView(cryptoCurrency: crypto)
 								}
-								.padding(10)
-								.background(.regularMaterial)
-								.cornerRadius(10)
 							}
 					}
 					.onDelete(perform: favoriteVM.deleteFavorite)
-					.padding(.horizontal)
 				}
             } else {
 				EmptyView(text: "No favorite Crypto", sfSymbol: "xmark.seal.fill")
