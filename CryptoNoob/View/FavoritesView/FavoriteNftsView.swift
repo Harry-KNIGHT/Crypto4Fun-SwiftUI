@@ -8,24 +8,33 @@
 import SwiftUI
 
 struct FavoriteNftsView: View {
-    @EnvironmentObject var nftVM: FavoriteNftsViewModel
-    var body: some View {
+	@EnvironmentObject var nftVM: FavoriteNftsViewModel
+	var body: some View {
 		if nftVM.favoriteNfts.isEmpty {
 			EmptyView(text: "No favorite NFT", sfSymbol: "xmark.seal.fill")
 			Spacer()
 		}else {
-			List {
-				ForEach(nftVM.favoriteNfts) { nft in
-					NftListRowCell(nft: nft)
-				}.onDelete(perform: nftVM.deleteNft)
+			ScrollView{
+				VStack{
+					ForEach(nftVM.favoriteNfts) { nft in
+						NavigationLink(destination: NftDetailView(nft: nft)) {
+							NftListRowCell(nft: nft)
+						}
+						.padding(10)
+						.background(.regularMaterial)
+						.cornerRadius(10)
+					}
+				}
 			}
+			.padding(.horizontal)
 		}
-    }
+	}
+
 }
 
 struct FavoriteNftsView_Previews: PreviewProvider {
-    static var previews: some View {
-        FavoriteNftsView()
-            .environmentObject(FavoriteNftsViewModel())
-    }
+	static var previews: some View {
+		FavoriteNftsView()
+			.environmentObject(FavoriteNftsViewModel())
+	}
 }
