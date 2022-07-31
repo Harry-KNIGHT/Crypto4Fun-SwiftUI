@@ -10,17 +10,30 @@ import SwiftUI
 struct NewsView: View {
 	@EnvironmentObject public var news: FetchNewsApi
     var body: some View {
-		VStack {
-			List {
+		ScrollView {
+			LazyVStack(alignment: .center) {
 				ForEach(news.latestNews, id: \.self) { new in
-					Text(new.title)
-						.foregroundColor(.primary)
-						.font(.headline)
-					Text(new.url)
-						.foregroundColor(.secondary)
-				}
+					LazyVStack() {
+						Text(new.title.trimmingCharacters(in: .whitespacesAndNewlines))
+							.foregroundColor(.primary)
+							.font(.headline)
+							.multilineTextAlignment(.center)
 
+						Button(action: {}, label: {
+							Label("Read article", systemImage: "newspaper")
+								.font(.headline)
+						})
+						.buttonStyle(.bordered)
+						.tint(.blue)
+
+					}
+					.padding()
+					.background(.regularMaterial)
+					.cornerRadius(10)
+				}
 			}
+			.shadow(color: .secondary, radius: 1.5)
+			.padding(.horizontal)
 		}.task {
 			do {
 				try await news.fetchNews()
