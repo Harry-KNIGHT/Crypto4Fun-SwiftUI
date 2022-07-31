@@ -14,6 +14,7 @@ struct CryptoNoobApp: App {
 	@StateObject var cryptoCurrencyApi = CryptoApiCall()
 	@StateObject var fetchChartApi = FetchChartApi()
 	@StateObject var fetchNftApi = FetchNftApi()
+	@StateObject var fetchNewsApi = FetchNewsApi()
     var body: some Scene {
         WindowGroup {
             ContentView()
@@ -22,6 +23,7 @@ struct CryptoNoobApp: App {
 				.environmentObject(cryptoCurrencyApi)
 				.environmentObject(fetchChartApi)
 				.environmentObject(fetchNftApi)
+				.environmentObject(fetchNewsApi)
         }
     }
 }

@@ -18,9 +18,11 @@ struct MainView: View {
 				SelectViewPickerView(info: "Select view to show", selection: $selection)
                 if selection == 0 {
                     CryptoCurrencyListView()
-                } else {
+                } else if selection == 1 {
 					NftsView()
-                }
+				}else {
+					NewsView()
+				}
             }
             .navigationBarItems(trailing: FavoriteButtonSheetView(isOn: $isOn))
             .navigationTitle("Crypto4Fun")
