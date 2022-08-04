@@ -44,6 +44,8 @@
 		B3314EA5285DD03300BBFF4C /* FavoriteCryptoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3314EA4285DD03300BBFF4C /* FavoriteCryptoListView.swift */; };
 		B3A64EC92875E52D002C8211 /* NFTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A64EC82875E52D002C8211 /* NFTModel.swift */; };
 		B3A64ECB287ABEE6002C8211 /* FavoriteNftsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A64ECA287ABEE6002C8211 /* FavoriteNftsViewModel.swift */; };
+		B3AD315D2899A3B800E6FC4B /* GameBetCustomShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD315C2899A3B800E6FC4B /* GameBetCustomShape.swift */; };
+		B3AD315F2899C1C500E6FC4B /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD315E2899C1C500E6FC4B /* BlurView.swift */; };
 		B3E11B5B2896EF3F00C31880 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E11B5A2896EF3F00C31880 /* GameView.swift */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +103,8 @@
 		B3314EA4285DD03300BBFF4C /* FavoriteCryptoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCryptoListView.swift; sourceTree = "<group>"; };
 		B3A64EC82875E52D002C8211 /* NFTModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTModel.swift; sourceTree = "<group>"; };
 		B3A64ECA287ABEE6002C8211 /* FavoriteNftsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteNftsViewModel.swift; sourceTree = "<group>"; };
+		B3AD315C2899A3B800E6FC4B /* GameBetCustomShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBetCustomShape.swift; sourceTree = "<group>"; };
+		B3AD315E2899C1C500E6FC4B /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		B3E11B5A2896EF3F00C31880 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -213,6 +217,7 @@
 		3CD8C7AB285D00D0004D65B9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B3AD315B2899A2C800E6FC4B /* Component */,
 				3C2CFAE0285CF356000EED5D /* ContentView.swift */,
 				3C2CFAEC285CF37E000EED5D /* MainView.swift */,
 				3C99C6A728648EA0007A261E /* CryptoCurrencyListView.swift */,
@@ -280,6 +285,15 @@
 				B3A64ECA287ABEE6002C8211 /* FavoriteNftsViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B3AD315B2899A2C800E6FC4B /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				B3AD315C2899A3B800E6FC4B /* GameBetCustomShape.swift */,
+				B3AD315E2899C1C500E6FC4B /* BlurView.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,9 +375,11 @@
 				3CFA2C112861D9460086BE36 /* DateExtension.swift in Sources */,
 				3CA78159287A05E000473EB8 /* SelectViewPickerView.swift in Sources */,
 				3C098332285F964400E3C117 /* CurrencyChartView.swift in Sources */,
+				B3AD315D2899A3B800E6FC4B /* GameBetCustomShape.swift in Sources */,
 				B3314EA5285DD03300BBFF4C /* FavoriteCryptoListView.swift in Sources */,
 				3C5411362896AE0E001EC00D /* NewsView.swift in Sources */,
 				3C5411382896B8F5001EC00D /* WebView.swift in Sources */,
+				B3AD315F2899C1C500E6FC4B /* BlurView.swift in Sources */,
 				3C2CFAED285CF37E000EED5D /* MainView.swift in Sources */,
 				3C2CFAEF285CF38D000EED5D /* CryptoModel.swift in Sources */,
 				3CA78161287A075100473EB8 /* FavoritesSheetView.swift in Sources */,
