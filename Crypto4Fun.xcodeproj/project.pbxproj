@@ -42,6 +42,7 @@
 		3CFA2C112861D9460086BE36 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFA2C102861D9460086BE36 /* DateExtension.swift */; };
 		B3314EA2285DC77900BBFF4C /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3314EA1285DC77900BBFF4C /* FavoriteViewModel.swift */; };
 		B3314EA5285DD03300BBFF4C /* FavoriteCryptoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3314EA4285DD03300BBFF4C /* FavoriteCryptoListView.swift */; };
+		B3617F0828A2E5DA00DE3AA8 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3617F0728A2E5DA00DE3AA8 /* PlayerModel.swift */; };
 		B3A64EC92875E52D002C8211 /* NFTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A64EC82875E52D002C8211 /* NFTModel.swift */; };
 		B3A64ECB287ABEE6002C8211 /* FavoriteNftsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A64ECA287ABEE6002C8211 /* FavoriteNftsViewModel.swift */; };
 		B3AD315D2899A3B800E6FC4B /* GameBetCustomShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD315C2899A3B800E6FC4B /* GameBetCustomShape.swift */; };
@@ -101,6 +102,8 @@
 		3CFA2C102861D9460086BE36 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		B3314EA1285DC77900BBFF4C /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 		B3314EA4285DD03300BBFF4C /* FavoriteCryptoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCryptoListView.swift; sourceTree = "<group>"; };
+		B3617F0728A2E5DA00DE3AA8 /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
+		B3617F0928A2ECB000DE3AA8 /* DisplayCryptos.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = DisplayCryptos.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B3A64EC82875E52D002C8211 /* NFTModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTModel.swift; sourceTree = "<group>"; };
 		B3A64ECA287ABEE6002C8211 /* FavoriteNftsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteNftsViewModel.swift; sourceTree = "<group>"; };
 		B3AD315C2899A3B800E6FC4B /* GameBetCustomShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBetCustomShape.swift; sourceTree = "<group>"; };
@@ -231,6 +234,7 @@
 				3CA21784287ABB2F00511659 /* AsyncImage */,
 				3CFA2C052861D4420086BE36 /* ViewModifier */,
 				3CD8C7AE285D0278004D65B9 /* Cell */,
+				B3617F0928A2ECB000DE3AA8 /* DisplayCryptos.playground */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -243,6 +247,7 @@
 				3C27249A2872E96F00DAB17C /* ArticleModel.swift */,
 				B3A64EC82875E52D002C8211 /* NFTModel.swift */,
 				3C5411312896ABC0001EC00D /* NewsModel.swift */,
+				B3617F0728A2E5DA00DE3AA8 /* PlayerModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -374,6 +379,7 @@
 				3C2CFAE1285CF356000EED5D /* ContentView.swift in Sources */,
 				3CFA2C112861D9460086BE36 /* DateExtension.swift in Sources */,
 				3CA78159287A05E000473EB8 /* SelectViewPickerView.swift in Sources */,
+				B3617F0828A2E5DA00DE3AA8 /* PlayerModel.swift in Sources */,
 				3C098332285F964400E3C117 /* CurrencyChartView.swift in Sources */,
 				B3AD315D2899A3B800E6FC4B /* GameBetCustomShape.swift in Sources */,
 				B3314EA5285DD03300BBFF4C /* FavoriteCryptoListView.swift in Sources */,
