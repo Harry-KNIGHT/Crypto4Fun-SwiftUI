@@ -11,7 +11,7 @@ import Crypto4FunKit
 
 struct CurrencyChartView: View {
 	@EnvironmentObject var favoriteVM: FavoriteViewModel
-	@EnvironmentObject var fetchChart: FetchChartApi
+	@EnvironmentObject var fetchChart: FetchChartViewModel
 	@State private var showAveragePrice: Bool = false
 	@Environment(\.colorScheme) private var colorScheme
 	var cryptoCurrency: CryptoCurrencyModel
@@ -161,7 +161,7 @@ struct CurrencyChartView_Previews: PreviewProvider {
 		NavigationStack {
 			CurrencyChartView(cryptoCurrency: .cryptoSample)
 				.environmentObject(FavoriteViewModel())
-				.environmentObject(FetchChartApi())
+				.environmentObject(FetchChartViewModel())
 		}
 	}
 }

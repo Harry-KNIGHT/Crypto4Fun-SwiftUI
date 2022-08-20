@@ -14,7 +14,7 @@ protocol FetchChart {
 	func getChart(_ id: String, from firstDay: Double, to today: Double) async throws
 }
 
-class FetchChartApi: ObservableObject, FetchChart {
+class FetchChartViewModel: ObservableObject, FetchChart {
 	@Published var prices: [[Double]] = [[Double]]()
 	var averagePrice: Double {
 		let valueArray = prices.map { $0[1] }

@@ -13,7 +13,7 @@ struct CryptoNoobApp: App {
     @StateObject var favoriteVM = FavoriteViewModel()
     @StateObject var nftVM = FavoriteNftsViewModel()
 	@StateObject var cryptoCurrencyApi = CryptoViewModel()
-	@StateObject var fetchChartApi = FetchChartApi()
+	@StateObject var fetchChartApi = FetchChartViewModel()
 	@StateObject var fetchNftApi = FetchNftApi()
 	@StateObject var fetchNewsApi = FetchNewsApi()
     var body: some Scene {

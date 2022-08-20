@@ -11,7 +11,7 @@ import Crypto4FunKit
 struct NegativeOrPositiveTimeView: View {
 	var cryptoCurrency: CryptoCurrencyModel
     var font: Font = .headline
-	@EnvironmentObject var fetchChart: FetchChartApi
+	@EnvironmentObject var fetchChart: FetchChartViewModel
     var body: some View {
         HStack(spacing: 5) {
 			Image(systemName: fetchChart.pricePercentageValue < 0 ? "chevron.down" : "chevron.up")
@@ -25,6 +25,6 @@ struct NegativeOrPositiveTimeView: View {
 struct NegativeOrPositiveLast24hView_Previews: PreviewProvider {
     static var previews: some View {
 		NegativeOrPositiveTimeView(cryptoCurrency: .cryptoSample)
-			.environmentObject(FetchChartApi())
+			.environmentObject(FetchChartViewModel())
     }
 }
