@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Charts
+import Crypto4FunKit
 
 struct CurrencyChartView: View {
     @EnvironmentObject var favoriteVM: FavoriteViewModel
@@ -126,8 +127,7 @@ struct CurrencyChartView: View {
 struct CurrencyChartView_Previews: PreviewProvider {
     static var previews: some View {
 		NavigationStack {
-			CurrencyChartView(cryptoCurrency: CryptoCurrencyModel(
-				id: "btc", name: "Bitcoin", image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?", currentPrice: 34553.45, priceChangePercentage24h: -4032.56))
+			CurrencyChartView(cryptoCurrency: .cryptoSample)
 			.environmentObject(FavoriteViewModel())
 			.environmentObject(FetchChartApi())
 		}

@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import Crypto4FunKit
 
 struct CryptoCurrencyListView: View {
-	@EnvironmentObject var crypto: CryptoApiCall
+	@EnvironmentObject var crypto: CryptoViewModel
 	@EnvironmentObject var fetchNft: FetchNftApi
 
     var body: some View {
@@ -29,7 +30,7 @@ struct CryptoCurrencyListView: View {
 				.padding(.top)
 			}
 			.task {
-				await crypto.fetchCryptoCurrency()
+				await crypto.getCryptos()
 			}
 			.onReceive(crypto.timer) { _ in
 				crypto.fetchDataTimer()
@@ -45,7 +46,7 @@ struct CryptoCurrencyListView: View {
 struct CryptoCurrencyListView_Previews: PreviewProvider {
     static var previews: some View {
         CryptoCurrencyListView()
-            .environmentObject(CryptoApiCall())
+            .environmentObject(CryptoViewModel())
 			.environmentObject(FetchNftApi())
 
     }

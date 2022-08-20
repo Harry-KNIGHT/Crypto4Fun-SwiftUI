@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Crypto4FunKit
 
 struct AsyncImageView: View {
     let cryptoCurrency: CryptoCurrencyModel
@@ -27,6 +28,6 @@ struct AsyncImageView: View {
 
 struct AsyncImageView_Previews: PreviewProvider {
     static var previews: some View {
-        AsyncImageView(cryptoCurrency: CryptoCurrencyModel(id: "btc", name: "Bitcoin", image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?", currentPrice: 34553.45, priceChangePercentage24h: -0.26766))
+		AsyncImageView(cryptoCurrency: .cryptoSample)
     }
 }

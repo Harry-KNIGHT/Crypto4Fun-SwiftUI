@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Crypto4FunKit
 
 /// Favorite View Model
 class FavoriteViewModel: ObservableObject {

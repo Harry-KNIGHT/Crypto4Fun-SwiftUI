@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import Crypto4FunKit
 
 @main
 struct CryptoNoobApp: App {
     @StateObject var favoriteVM = FavoriteViewModel()
     @StateObject var nftVM = FavoriteNftsViewModel()
-	@StateObject var cryptoCurrencyApi = CryptoApiCall()
+	@StateObject var cryptoCurrencyApi = CryptoViewModel()
 	@StateObject var fetchChartApi = FetchChartApi()
 	@StateObject var fetchNftApi = FetchNftApi()
 	@StateObject var fetchNewsApi = FetchNewsApi()

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Crypto4FunKit
 
 struct FavoriteDetailButtonView: View {
     @EnvironmentObject var favoriteVM: FavoriteViewModel
@@ -25,7 +26,7 @@ struct FavoriteDetailButtonView: View {
 
 struct FavoriteDetailButtonView_Previews: PreviewProvider {
     static var previews: some View {
-		FavoriteDetailButtonView(cryptoCurrency: CryptoCurrencyModel(id: "btc", name: "Bitcoin", image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?", currentPrice: 34553.45, priceChangePercentage24h: -0.26766))
+		FavoriteDetailButtonView(cryptoCurrency: .cryptoSample)
             .environmentObject(FavoriteViewModel())
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Crypto4FunKit
 
 struct CryptoListRowCellView: View {
 	var cryptoCurrency: CryptoCurrencyModel
