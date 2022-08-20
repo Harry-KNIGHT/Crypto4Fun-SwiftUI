@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import Crypto4FunKit
+
 protocol FetchNft {
 	var nfts: [NFTModel] { get set }
 

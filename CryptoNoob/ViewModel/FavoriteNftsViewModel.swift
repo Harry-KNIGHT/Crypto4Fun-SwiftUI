@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Crypto4FunKit
 
 class FavoriteNftsViewModel: ObservableObject {
     @Published var favoriteNfts: [NFTModel]

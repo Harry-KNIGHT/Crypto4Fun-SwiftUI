@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Crypto4FunKit
 
 class FetchNewsApi: ObservableObject {
 	@Published public var latestNews = [NewsResponseElement]()

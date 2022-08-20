@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Crypto4FunKit
 
 struct NftsView: View {
 	@EnvironmentObject var fetchNft: FetchNftApi

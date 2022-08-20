@@ -7,6 +7,8 @@
 import SwiftUI
 
 import Foundation
+import Crypto4FunKit
+
 struct NftListRowCell: View {
 	var nft: NFTModel
 	var body: some View {
