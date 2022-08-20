@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		3C098332285F964400E3C117 /* CurrencyChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C098331285F964400E3C117 /* CurrencyChartView.swift */; };
 		3C0D9872287F560A000EDAD0 /* CryptoCurrencyVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0D9871287F560A000EDAD0 /* CryptoCurrencyVM.swift */; };
-		3C0D9874287F5B32000EDAD0 /* FetchChartApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0D9873287F5B32000EDAD0 /* FetchChartApi.swift */; };
+		3C0D9874287F5B32000EDAD0 /* FetchChartVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0D9873287F5B32000EDAD0 /* FetchChartVM.swift */; };
 		3C2724962872D85C00DAB17C /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2724952872D85C00DAB17C /* StringExtension.swift */; };
 		3C2724992872D89400DAB17C /* ChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2724982872D89400DAB17C /* ChartModel.swift */; };
 		3C27249B2872E96F00DAB17C /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C27249A2872E96F00DAB17C /* ArticleModel.swift */; };
@@ -63,7 +63,7 @@
 /* Begin PBXFileReference section */
 		3C098331285F964400E3C117 /* CurrencyChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyChartView.swift; sourceTree = "<group>"; };
 		3C0D9871287F560A000EDAD0 /* CryptoCurrencyVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCurrencyVM.swift; sourceTree = "<group>"; };
-		3C0D9873287F5B32000EDAD0 /* FetchChartApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchChartApi.swift; sourceTree = "<group>"; };
+		3C0D9873287F5B32000EDAD0 /* FetchChartVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchChartVM.swift; sourceTree = "<group>"; };
 		3C2724952872D85C00DAB17C /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		3C2724982872D89400DAB17C /* ChartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartModel.swift; sourceTree = "<group>"; };
 		3C27249A2872E96F00DAB17C /* ArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
@@ -233,7 +233,6 @@
 			isa = PBXGroup;
 			children = (
 				3C2CFAF0285CF394000EED5D /* FetchNFTApi.swift */,
-				3C0D9873287F5B32000EDAD0 /* FetchChartApi.swift */,
 				3C5411332896AC31001EC00D /* FetchNewsApi.swift */,
 			);
 			path = Api;
@@ -265,6 +264,7 @@
 				B3314EA1285DC77900BBFF4C /* FavoriteViewModel.swift */,
 				B3A64ECA287ABEE6002C8211 /* FavoriteNftsViewModel.swift */,
 				3C0D9871287F560A000EDAD0 /* CryptoCurrencyVM.swift */,
+				3C0D9873287F5B32000EDAD0 /* FetchChartVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -379,7 +379,7 @@
 				3C0D9872287F560A000EDAD0 /* CryptoCurrencyVM.swift in Sources */,
 				3CD8C7AA285CFBDA004D65B9 /* AsyncImageView.swift in Sources */,
 				3C8620F42876D3CF00D4FA1A /* AsyncIconUrlView.swift in Sources */,
-				3C0D9874287F5B32000EDAD0 /* FetchChartApi.swift in Sources */,
+				3C0D9874287F5B32000EDAD0 /* FetchChartVM.swift in Sources */,
 				3C99C6A628648D83007A261E /* NftsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

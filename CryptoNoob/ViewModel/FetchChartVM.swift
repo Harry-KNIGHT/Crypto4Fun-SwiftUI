@@ -6,13 +6,12 @@
 //
 
 import Foundation
+import Crypto4FunKit
 protocol FetchChart {
 	var prices: [[Double]] { get set }
 	//var averagePrice: Double { get set }
 	//var pricePercentageValue: Double { get set }
-
-	func fetchChart(_ id: String, from firstDay: Double, to today: Double) async
-
+	func getChart(_ id: String, from firstDay: Double, to today: Double) async throws
 }
 
 class FetchChartApi: ObservableObject, FetchChart {
@@ -23,6 +22,7 @@ class FetchChartApi: ObservableObject, FetchChart {
 
 		return sum / Double(valueArray.count)
 	}
+
 	var pricePercentageValue: Double {
 		let priceValue = prices.map { $0[1] }
 		let longTimePrice = Double(priceValue.first ?? 0)
@@ -33,24 +33,12 @@ class FetchChartApi: ObservableObject, FetchChart {
 		return percentagePrice
 	}
 
-	func fetchChart(_ id: String, from firstDate: Double, to today: Double = Date().timeIntervalSince1970) async {
-		let url = "https://api.coingecko.com/api/v3/coins/\(id)/market_chart/range?vs_currency=usd&from=\(firstDate)&to=\(today)"
-
-		guard let url = URL(string: url) else {
-			print("Invalid url")
-			return
-		}
-
+	@MainActor func getChart(_ id: String, from firstDate: Double, to today: Double = Date().timeIntervalSince1970) async throws {
 		do {
-			let (data, _) = try await URLSession.shared.data(from: url)
-
-			if let decodedResponse = try? JSONDecoder().decode(CurrencyChartResponse.self, from: data) {
-				DispatchQueue.main.async {
-					self.prices = decodedResponse.prices
-				}
-			}
+			let data = try await ChartApi.fetchChart(id, from: firstDate)
+			prices = data.prices
 		} catch {
-			print("Invalid url chart request")
+			throw error
 		}
 	}
 }
