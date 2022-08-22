@@ -8,27 +8,27 @@
 import SwiftUI
 
 struct NewsView: View {
-	@EnvironmentObject public var news: FetchNewsApi
+	@ObservedObject public var news = FetchNewsViewModel()
 	@State private var showNewsSheet: Bool = false
-    var body: some View {
+	var body: some View {
 		NavigationView {
 			ScrollView(.vertical, showsIndicators: false) {
 				LazyVStack {
 					ForEach(news.latestNews, id: \.self) { new in
 						NavigationLink(destination: WebView(url: URL(string: new.url) ?? URL(string: "http://google.com")!)) {
 							LazyVStack(alignment: .leading) {
-							Text(new.title.trimmingCharacters(in: .whitespacesAndNewlines))
-								.foregroundColor(.primary)
-								.font(.title3.bold())
+								Text(new.title.trimmingCharacters(in: .whitespacesAndNewlines))
+									.foregroundColor(.primary)
+									.font(.title3.bold())
 								Text("Website: \(new.url)")
 									.font(.body)
 									.foregroundColor(.secondary)
+							}
+							.padding()
+							.background(.regularMaterial)
+							.cornerRadius(10)
+							.multilineTextAlignment(.leading)
 						}
-						.padding()
-						.background(.regularMaterial)
-						.cornerRadius(10)
-						.multilineTextAlignment(.leading)
-					}
 					}
 				}
 				.shadow(color: .secondary, radius: 1.5)
@@ -36,18 +36,18 @@ struct NewsView: View {
 				.padding(.top)
 			}.task {
 				do {
-					try await news.fetchNews()
+					try await news.getNews()
 				} catch {
 					print("Someting wrong happend, \(error.localizedDescription)")
 				}
+			}
 		}
-		}
-    }
+	}
 }
 
 struct NewsView_Previews: PreviewProvider {
-    static var previews: some View {
-        NewsView()
-			.environmentObject(FetchNewsApi())
-    }
+	static var previews: some View {
+		NewsView()
+			.environmentObject(FetchNewsViewModel())
+	}
 }

@@ -15,7 +15,7 @@ struct CryptoNoobApp: App {
 	@StateObject var cryptoCurrencyApi = CryptoViewModel()
 	@StateObject var fetchChartApi = FetchChartViewModel()
 	@StateObject var fetchNftApi = FetchNftApi()
-	@StateObject var fetchNewsApi = FetchNewsApi()
+	@StateObject var fetchNewsApi = FetchNewsViewModel()
     var body: some Scene {
         WindowGroup {
             ContentView()

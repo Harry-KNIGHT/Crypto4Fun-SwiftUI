@@ -11,7 +11,7 @@ struct ContentView: View {
 	@ObservedObject public var fetchNFT = FetchNftApi()
 	@ObservedObject public var fetchChart = FetchChartViewModel()
 	@ObservedObject public var fetchCryptoCurrency = CryptoViewModel()
-	@ObservedObject public var fetchNews = FetchNewsApi()
+	@ObservedObject public var fetchNews = FetchNewsViewModel()
     var body: some View {
        MainView()
     }
@@ -23,6 +23,6 @@ struct ContentView_Previews: PreviewProvider {
 			.environmentObject(FetchNftApi())
 			.environmentObject(FetchChartViewModel())
 			.environmentObject(CryptoViewModel())
-			.environmentObject(FetchNewsApi())
+			.environmentObject(FetchNewsViewModel())
     }
 }
