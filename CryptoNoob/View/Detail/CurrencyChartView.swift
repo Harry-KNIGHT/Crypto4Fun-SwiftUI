@@ -51,7 +51,7 @@ struct CurrencyChartView: View {
 							try await fetchChart.getChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.month.rawValue) ?? 0))
 							timeRemaining += 0
 						} catch {
-							print("Error")
+							print("Error \(error.localizedDescription)")
 
 						}
 					}
@@ -60,7 +60,7 @@ struct CurrencyChartView: View {
 					do {
 						try await fetchChart.getChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.week.rawValue) ?? 0))
 					} catch {
-						print("Error")
+						print("Error \(error.localizedDescription)")
 					}
 				}
 				.onReceive(timer, perform: { _ in
@@ -80,7 +80,7 @@ struct CurrencyChartView: View {
 									try await fetchChart.getChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.day.rawValue) ?? 0))
 									timeRemaining = 1.3
 								}catch {
-									throw error
+									print("Error \(error.localizedDescription)")
 								}
 							}
 						}
@@ -91,7 +91,7 @@ struct CurrencyChartView: View {
 									try await fetchChart.getChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.week.rawValue) ?? 0))
 									timeRemaining = 1.3
 								} catch {
-									throw error
+									print("Error \(error.localizedDescription)")
 								}
 							}
 						}
@@ -102,7 +102,7 @@ struct CurrencyChartView: View {
 									try await fetchChart.getChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.month.rawValue) ?? 0))
 									timeRemaining = 1.3
 								} catch {
-									throw error
+									print("Error \(error.localizedDescription)")
 								}
 							}
 						}
@@ -113,7 +113,7 @@ struct CurrencyChartView: View {
 									try await fetchChart.getChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.year.rawValue) ?? 0))
 									timeRemaining = 1.3
 								} catch {
-									throw error
+									print("Error \(error.localizedDescription)")
 								}
 							}
 						}
@@ -124,7 +124,7 @@ struct CurrencyChartView: View {
 									try await fetchChart.getChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.max.rawValue) ?? 0))
 									timeRemaining = 1.3
 								} catch {
-									throw error
+									print("Error \(error.localizedDescription)")
 								}
 							}
 						}
