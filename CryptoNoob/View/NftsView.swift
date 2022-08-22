@@ -9,7 +9,7 @@ import SwiftUI
 import Crypto4FunKit
 
 struct NftsView: View {
-	@EnvironmentObject var fetchNft: FetchNftApi
+	@EnvironmentObject var fetchNft: FetchNftViewModel
 	@State private var timeRange = 0
 	var body: some View {
 		if fetchNft.nfts.isEmpty {
@@ -29,39 +29,47 @@ struct NftsView: View {
 					Spacer()
 					Button(action: {
 						Task {
-							await fetchNft.fetchNFT(NftTimeRange.day)
+							do {
+								try	await fetchNft.getNFT(NftTimeRange.day)
+							} catch {
+								print("Error: \(error.localizedDescription)")
+							}
+							timeRange = 0
 						}
-						timeRange = 0
-					}, label: {
-						Text("Day")
-							.font(.headline)
-							.foregroundColor(.white)
-							.frame(width: 100, height: 30)
-					})
-					.buttonBorderShape(.roundedRectangle(radius: 10))
-					.buttonStyle(.borderedProminent)
-					.tint(timeRange == 0 ? .blue: .secondary)
+						}, label: {
+							Text("Day")
+								.font(.headline)
+								.foregroundColor(.white)
+								.frame(width: 100, height: 30)
+						})
+						.buttonBorderShape(.roundedRectangle(radius: 10))
+						.buttonStyle(.borderedProminent)
+						.tint(timeRange == 0 ? .blue: .secondary)
 
 
-					
-					Spacer()
-					
-					Button(action: {
-						Task {
-							await fetchNft.fetchNFT(NftTimeRange.week)
-						}
-						timeRange = 1
-					}, label: {
-						Text("Week")
-							.font(.headline)
-							.foregroundColor(.white)
-							.frame(width: 100, height: 30)
-					})
-					.buttonBorderShape(.roundedRectangle(radius: 10))
-					.buttonStyle(.borderedProminent)
-					.tint(timeRange == 1 ? .blue : .secondary)
-					Spacer()
-					
+
+						Spacer()
+
+						Button(action: {
+							Task {
+								do {
+									try await fetchNft.getNFT(NftTimeRange.week)
+								} catch {
+									print("Error: \(error.localizedDescription)")
+								}
+							}
+							timeRange = 1
+						}, label: {
+							Text("Week")
+								.font(.headline)
+								.foregroundColor(.white)
+								.frame(width: 100, height: 30)
+						})
+						.buttonBorderShape(.roundedRectangle(radius: 10))
+						.buttonStyle(.borderedProminent)
+						.tint(timeRange == 1 ? .blue : .secondary)
+						Spacer()
+
 				}
 				ScrollView(.vertical, showsIndicators: false) {
 					ForEach(fetchNft.nfts) { nft in
@@ -84,19 +92,35 @@ struct NftsView: View {
 					switch timeRange {
 					case 0:
 						Task {
-							await fetchNft.fetchNFT(NftTimeRange.day)
+							do {
+								try await fetchNft.getNFT(NftTimeRange.day)
+							} catch {
+								print("Error: \(error.localizedDescription)")
+							}
 						}
 					case 1:
 						Task {
-							await fetchNft.fetchNFT(NftTimeRange.week)
+							do {
+								try await fetchNft.getNFT(NftTimeRange.week)
+							} catch {
+								print("Error: \(error.localizedDescription)")
+							}
 						}
 					case 2:
 						Task {
-							await fetchNft.fetchNFT(NftTimeRange.month)
+							do {
+								try await fetchNft.getNFT(NftTimeRange.month)
+							} catch {
+								print("Error: \(error.localizedDescription)")
+							}
 						}
 					default:
 						Task {
-							await fetchNft.fetchNFT(NftTimeRange.all)
+							do {
+								try await fetchNft.getNFT(NftTimeRange.all)
+							} catch {
+								print("Error: \(error.localizedDescription)")
+							}
 						}
 					}
 				})
@@ -108,7 +132,7 @@ struct NftsView: View {
 struct NftsView_Previews: PreviewProvider {
 	static var previews: some View {
 		NftsView()
-			.environmentObject(FetchNftApi())
+			.environmentObject(FetchNftViewModel())
 	}
 }
 

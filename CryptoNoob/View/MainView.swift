@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
-	@EnvironmentObject var fetchNft: FetchNftApi
+	@EnvironmentObject var fetchNft: FetchNftViewModel
     @State private var isOn: Bool = false
     @State private var selection = 0
 
@@ -35,7 +35,7 @@ struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
             .preferredColorScheme(.dark)
-            .environmentObject(FetchNftApi())
+            .environmentObject(FetchNftViewModel())
     }
 }
 

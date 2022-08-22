@@ -10,7 +10,7 @@ import Crypto4FunKit
 
 struct CryptoCurrencyListView: View {
 	@EnvironmentObject var crypto: CryptoViewModel
-	@EnvironmentObject var fetchNft: FetchNftApi
+	@EnvironmentObject var fetchNft: FetchNftViewModel
 
     var body: some View {
 		ScrollView(.vertical, showsIndicators: false) {
@@ -41,7 +41,11 @@ struct CryptoCurrencyListView: View {
 			}
 			.onAppear {
 				Task {
-					await fetchNft.fetchNFT(NftTimeRange.day)
+					do {
+						try await fetchNft.getNFT(NftTimeRange.day)
+					} catch {
+						print("Error: \(error.localizedDescription)")
+					}
 				}
 			}
     }
@@ -51,7 +55,7 @@ struct CryptoCurrencyListView_Previews: PreviewProvider {
     static var previews: some View {
         CryptoCurrencyListView()
             .environmentObject(CryptoViewModel())
-			.environmentObject(FetchNftApi())
+			.environmentObject(FetchNftViewModel())
 
     }
 }
