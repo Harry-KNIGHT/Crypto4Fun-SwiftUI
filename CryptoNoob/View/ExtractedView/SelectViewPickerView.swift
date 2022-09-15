@@ -13,8 +13,7 @@ struct SelectViewPickerView: View {
 	var body: some View {
 		Picker(info, selection: $selection) {
 			Text("Cryptos").tag(0)
-			Text("NFT").tag(1)
-			Text("News").tag(2)
+			Text("News").tag(1)
 		}
 		.pickerStyle(.segmented)
 		.padding(.horizontal)

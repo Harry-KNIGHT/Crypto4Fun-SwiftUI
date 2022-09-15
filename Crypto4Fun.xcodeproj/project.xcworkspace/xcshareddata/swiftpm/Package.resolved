@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "crypto4funkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Harry-KNIGHT/Crypto4FunKit",
+      "state" : {
+        "branch" : "main",
+        "revision" : "6c73b33b6e402ea8589d9845f2ea201f8af11cdb"
+      }
+    }
+  ],
+  "version" : 2
+}

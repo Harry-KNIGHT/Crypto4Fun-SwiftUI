@@ -11,19 +11,15 @@ import Crypto4FunKit
 @main
 struct CryptoNoobApp: App {
     @StateObject var favoriteVM = FavoriteViewModel()
-    @StateObject var nftVM = FavoriteNftsViewModel()
 	@StateObject var cryptoCurrencyApi = CryptoViewModel()
 	@StateObject var fetchChartApi = FetchChartViewModel()
-	@StateObject var fetchNftApi = FetchNftViewModel()
 	@StateObject var fetchNewsApi = FetchNewsViewModel()
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(favoriteVM)
-                .environmentObject(nftVM)
 				.environmentObject(cryptoCurrencyApi)
 				.environmentObject(fetchChartApi)
-				.environmentObject(fetchNftApi)
 				.environmentObject(fetchNewsApi)
         }
     }
