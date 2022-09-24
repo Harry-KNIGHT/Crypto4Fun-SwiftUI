@@ -15,10 +15,8 @@ struct CurrencyChartView: View {
 	@State private var showAveragePrice: Bool = false
 	@Environment(\.colorScheme) private var colorScheme
 	var cryptoCurrency: CryptoCurrencyModel
-	@State private var tagSelected = 2
-	@State private var timeRemaining: Double = 1.3
-	let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-	@State private var canClick: Bool = true
+
+	@State private var epochTimeToShowSelected: EpochUnixTime = .month
 
 	var body: some View {
 		ScrollView(.vertical, showsIndicators: false) {
@@ -46,107 +44,34 @@ struct CurrencyChartView: View {
 				.frame(maxWidth: .infinity, minHeight: 500, maxHeight: 700)
 				.padding(.trailing, 5)
 				.task {
-					if canClick {
 						do {
-							try await fetchChart.getChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.month.rawValue) ?? 0))
-							timeRemaining += 0
+							try await fetchChart.getChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - EpochUnixTime.month.rawValue)
+
 						} catch {
 							print("Error \(error.localizedDescription)")
 
 						}
-					}
 				}
-				.task {
-					do {
-						try await fetchChart.getChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.week.rawValue) ?? 0))
-					} catch {
-						print("Error \(error.localizedDescription)")
-					}
-				}
-				.onReceive(timer, perform: { _ in
-					if timeRemaining < 0{
-						canClick = true
-					} else {
-						canClick = false
-						timeRemaining -= 1
-					}
-				})
-				.onChange(of: tagSelected, perform: { _ in
-					switch tagSelected {
-					case 0:
-						Task {
-							if canClick {
-								do {
-									try await fetchChart.getChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.day.rawValue) ?? 0))
-									timeRemaining = 1.3
-								}catch {
-									print("Error \(error.localizedDescription)")
-								}
-							}
-						}
-					case 1:
-						Task {
-							if canClick {
-								do {
-									try await fetchChart.getChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.week.rawValue) ?? 0))
-									timeRemaining = 1.3
-								} catch {
-									print("Error \(error.localizedDescription)")
-								}
-							}
-						}
-					case 2:
-						Task {
-							if canClick {
-								do {
-									try await fetchChart.getChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.month.rawValue) ?? 0))
-									timeRemaining = 1.3
-								} catch {
-									print("Error \(error.localizedDescription)")
-								}
-							}
-						}
-					case 3:
-						Task {
-							if canClick {
-								do {
-									try await fetchChart.getChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.year.rawValue) ?? 0))
-									timeRemaining = 1.3
-								} catch {
-									print("Error \(error.localizedDescription)")
-								}
-							}
-						}
-					default:
-						Task {
-							if canClick {
-								do {
-									try await fetchChart.getChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - (Double(EpochUnixTime.max.rawValue) ?? 0))
-									timeRemaining = 1.3
-								} catch {
-									print("Error \(error.localizedDescription)")
-								}
-							}
+				.onChange(of: epochTimeToShowSelected, perform: { _ in
+					Task {
+						do {
+							try await fetchChart.getChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - epochTimeToShowSelected.rawValue)
 						}
 					}
 				})
-				Group {
-					Picker("Select time value", selection: $tagSelected) {
-						Text("Day").tag(0)
-						Text("Week").tag(1)
-						Text("Month").tag(2)
-						Text("Year").tag(3)
-						Text("Max").tag(4)
+				Picker("Select time value", selection: $epochTimeToShowSelected) {
+					ForEach(EpochUnixTime.allCases, id: \.self) { value in
+						Text(String(value.name))
+							.tag(value)
 					}
-					.disabled(canClick == false)
-					.pickerStyle(.segmented)
-					.padding(.vertical)
+				}
+				.pickerStyle(.segmented)
+				.padding([.vertical, .horizontal])
 
-					Divider()
-						.padding(.horizontal,40)
-					ToggleAveragePriceView(showAveragePrice: $showAveragePrice)
-				}
-				.padding(.horizontal)
+				Divider()
+					.padding(.horizontal,40)
+				ToggleAveragePriceView(showAveragePrice: $showAveragePrice)
+					.padding(.horizontal)
 			}
 
 		}
