@@ -6,6 +6,6 @@ All the project is made in SwiftUI with [Nyl Neuville](https://www.linkedin.com/
 
 I made the [UIKit version](https://github.com/Harry-KNIGHT/Crypto4FunUIKit)
 
-You can contact me on my [mail](elliot.knight@appiwedia.com) or on [LinkedIn](https://www.linkedin.com/in/elliot-knight-134679182/)
+You can contact me on my [mail](mailto:elliot.knight@appiwedia.com) or on [LinkedIn](https://www.linkedin.com/in/elliot-knight-134679182/)
 
 
