@@ -32,6 +32,11 @@ struct MainView_Previews: PreviewProvider {
 	static var previews: some View {
 		MainView()
 			.preferredColorScheme(.dark)
+			.environmentObject(FavoriteViewModel())
+			.environmentObject(CryptoViewModel())
+			.environmentObject(FetchNewsViewModel())
+			.environmentObject(FetchChartViewModel())
+			
 	}
 }
 
