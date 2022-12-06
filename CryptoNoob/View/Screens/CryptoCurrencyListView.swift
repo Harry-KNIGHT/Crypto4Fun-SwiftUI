@@ -28,12 +28,8 @@ struct CryptoCurrencyListView: View {
 			.padding(.horizontal)
 			.padding(.top)
 		}
-		.task {
-			do {
-				try await crypto.getCryptos()
-			} catch {
-				print("Error \(error.localizedDescription)")
-			}
+		.onAppear {
+			crypto.getCryptos()
 		}
 		.onReceive(crypto.timer) { _ in
 			crypto.fetchDataTimer()

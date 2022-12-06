@@ -15,12 +15,14 @@ import Crypto4FunKit
 	@Published public var timeRemaining: Int = 10
 	@MainActor public var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
-	@MainActor func getCryptos() async throws {
-		 do {
-			 cryptoCurrencies = try await CryptoApi.fetchCryptoCurrency()
-		 } catch {
-			 print("Error")
-		 }
+	@MainActor func getCryptos() {
+		Task {
+			do {
+				cryptoCurrencies = try await CryptoApi.fetchCryptoCurrency()
+			} catch {
+				throw error
+			}
+		}
 	 }
 
 	func fetchDataTimer() {
@@ -28,7 +30,7 @@ import Crypto4FunKit
 			timeRemaining -= 1
 		} else {
 			Task {
-				try await getCryptos()
+				await getCryptos()
 			}
 			timeRemaining += 10
 		}
