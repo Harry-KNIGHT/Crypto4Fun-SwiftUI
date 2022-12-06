@@ -47,11 +47,7 @@ struct CurrencyChartView: View {
 						 fetchChart.getChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - EpochUnixTime.month.rawValue)
 				}
 				.onChange(of: epochTimeToShowSelected, perform: { _ in
-					Task {
-						do {
-							try await fetchChart.getChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - epochTimeToShowSelected.rawValue)
-						}
-					}
+					 fetchChart.getChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - epochTimeToShowSelected.rawValue)
 				})
 				Picker("Select time value", selection: $epochTimeToShowSelected) {
 					ForEach(EpochUnixTime.allCases, id: \.self) { value in
