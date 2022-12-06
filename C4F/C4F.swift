@@ -7,35 +7,39 @@
 
 import WidgetKit
 import SwiftUI
+import Crypto4FunKit
 
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date())
+		SimpleEntry(date: Date(), crypto: [.cryptoSample, .cryptoSample])
     }
 
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date())
+        let entry = SimpleEntry(date: Date(), crypto: [.cryptoSample, .cryptoSample])
         completion(entry)
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
 
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate)
-            entries.append(entry)
-        }
+		Task {
+			do {
+				let cryptos = try await CryptoApi.fetchCryptoCurrency()
+				let entry = SimpleEntry(date: Date(), crypto: cryptos)
 
-        let timeline = Timeline(entries: entries, policy: .atEnd)
-        completion(timeline)
+				let timeline = Timeline(entries: [entry], policy: .after(.now.advanced(by: 15)))
+				completion(timeline)
+			} catch {
+
+			}
+		}
+
+
     }
 }
 
 struct SimpleEntry: TimelineEntry {
     let date: Date
+	let crypto: [CryptoCurrencyModel]
 }
 
 struct C4FEntryView : View {
@@ -60,7 +64,7 @@ struct C4F: Widget {
 
 struct C4F_Previews: PreviewProvider {
     static var previews: some View {
-        C4FEntryView(entry: SimpleEntry(date: Date()))
+		C4FEntryView(entry: SimpleEntry(date: Date(), crypto: [.cryptoSample, .cryptoSample]))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
