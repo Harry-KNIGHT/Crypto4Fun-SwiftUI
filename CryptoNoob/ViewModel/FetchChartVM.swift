@@ -33,12 +33,14 @@ class FetchChartViewModel: ObservableObject, FetchChart {
 		return percentagePrice
 	}
 
-	@MainActor func getChart(_ id: String, from firstDate: Double, to today: Double = Date().timeIntervalSince1970) async throws {
-		do {
-			let data = try await ChartApi.fetchChart(id, from: firstDate)
-			prices = data.prices
-		} catch {
-			throw error
+	@MainActor func getChart(_ id: String, from firstDate: Double, to today: Double = Date().timeIntervalSince1970) {
+		Task {
+			do {
+				let data = try await ChartApi.fetchChart(id, from: firstDate)
+				prices = data.prices
+			} catch {
+				throw error
+			}
 		}
 	}
 }

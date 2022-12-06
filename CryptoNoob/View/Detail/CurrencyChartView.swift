@@ -43,14 +43,8 @@ struct CurrencyChartView: View {
 				.chartYScale(domain: .automatic(includesZero: false))
 				.frame(maxWidth: .infinity, minHeight: 500, maxHeight: 700)
 				.padding(.trailing, 5)
-				.task {
-						do {
-							try await fetchChart.getChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - EpochUnixTime.month.rawValue)
-
-						} catch {
-							print("Error \(error.localizedDescription)")
-
-						}
+				.onAppear {
+						 fetchChart.getChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - EpochUnixTime.month.rawValue)
 				}
 				.onChange(of: epochTimeToShowSelected, perform: { _ in
 					Task {
