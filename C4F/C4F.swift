@@ -23,10 +23,10 @@ struct Provider: TimelineProvider {
 
 		Task {
 			do {
-				let cryptos = try await CryptoApi.fetchCryptoCurrency()
+				let cryptos = try await CryptoApi.fetchCryptoCurrency(3)
 				let entry = SimpleEntry(date: Date(), crypto: cryptos)
 
-				let timeline = Timeline(entries: [entry], policy: .after(.now.advanced(by: 15)))
+				let timeline = Timeline(entries: [entry], policy: .after(.now.advanced(by: 15 * 60)))
 				completion(timeline)
 			} catch {
 
@@ -46,7 +46,9 @@ struct C4FEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
-        Text(entry.date, style: .time)
+		ForEach(entry.crypto, id: \.id) { crypto in
+			Text(crypto.name)
+		}
     }
 }
 
