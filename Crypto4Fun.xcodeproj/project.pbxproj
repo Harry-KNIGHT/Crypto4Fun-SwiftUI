@@ -164,8 +164,7 @@
 		3CD8C7AB285D00D0004D65B9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3C99C6A728648EA0007A261E /* CryptoCurrencyListView.swift */,
-				B3E11B5A2896EF3F00C31880 /* GameView.swift */,
+				3CE86731293F3E5A00428706 /* Screens */,
 				3CA21781287AB9C700511659 /* Detail */,
 				3CA7815F287A06C000473EB8 /* FavoritesView */,
 				3CA7815A287A060C00473EB8 /* ExtractedView */,
@@ -185,6 +184,15 @@
 				3CFA2C0A2861D6260086BE36 /* NegativeOrPositiveLast24hView.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		3CE86731293F3E5A00428706 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				3C99C6A728648EA0007A261E /* CryptoCurrencyListView.swift */,
+				B3E11B5A2896EF3F00C31880 /* GameView.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		3CFA2C052861D4420086BE36 /* ViewModifier */ = {
