@@ -10,9 +10,9 @@ import SwiftUI
 struct ContentView: View {
 	@ObservedObject public var fetchChart = FetchChartViewModel()
 	@ObservedObject public var fetchCryptoCurrency = CryptoViewModel()
-	@ObservedObject public var fetchNews = FetchNewsViewModel()
+
     var body: some View {
-       MainView()
+       CryptoCurrencyListView()
     }
 }
 
@@ -21,6 +21,5 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
 			.environmentObject(FetchChartViewModel())
 			.environmentObject(CryptoViewModel())
-			.environmentObject(FetchNewsViewModel())
     }
 }
