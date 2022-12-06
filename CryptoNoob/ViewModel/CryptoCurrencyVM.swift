@@ -20,7 +20,7 @@ import Crypto4FunKit
 			do {
 				cryptoCurrencies = try await CryptoApi.fetchCryptoCurrency()
 			} catch {
-				print("Error")
+				throw error
 			}
 		}
 	 }
