@@ -14,6 +14,12 @@
 		3C2CFADF285CF356000EED5D /* CryptoNoobApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2CFADE285CF356000EED5D /* CryptoNoobApp.swift */; };
 		3C2CFAE3285CF357000EED5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C2CFAE2285CF357000EED5D /* Assets.xcassets */; };
 		3C2CFAE6285CF357000EED5D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C2CFAE5285CF357000EED5D /* Preview Assets.xcassets */; };
+		3C67CC51293F595C002030C9 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C67CC50293F595C002030C9 /* WidgetKit.framework */; };
+		3C67CC53293F595C002030C9 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C67CC52293F595C002030C9 /* SwiftUI.framework */; };
+		3C67CC56293F595C002030C9 /* C4FBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C67CC55293F595C002030C9 /* C4FBundle.swift */; };
+		3C67CC58293F595C002030C9 /* C4F.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C67CC57293F595C002030C9 /* C4F.swift */; };
+		3C67CC5A293F595D002030C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C67CC59293F595D002030C9 /* Assets.xcassets */; };
+		3C67CC5E293F595D002030C9 /* C4FExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 3C67CC4E293F595C002030C9 /* C4FExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3C8A01D828B0CFCD0060BBF2 /* Crypto4FunKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3C8A01D728B0CFCD0060BBF2 /* Crypto4FunKit */; };
 		3C99C6A828648EA0007A261E /* CryptoCurrencyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C99C6A728648EA0007A261E /* CryptoCurrencyListView.swift */; };
 		3CA78159287A05E000473EB8 /* SelectViewPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA78158287A05E000473EB8 /* SelectViewPickerView.swift */; };
@@ -31,6 +37,16 @@
 		B3E11B5B2896EF3F00C31880 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E11B5A2896EF3F00C31880 /* GameView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3C67CC5C293F595D002030C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3C2CFAD3285CF356000EED5D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3C67CC4D293F595C002030C9;
+			remoteInfo = C4FExtension;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		3CCCCFE82888915F00EACE9D /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -38,6 +54,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				3C67CC5E293F595D002030C9 /* C4FExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -53,6 +70,13 @@
 		3C2CFADE285CF356000EED5D /* CryptoNoobApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoNoobApp.swift; sourceTree = "<group>"; };
 		3C2CFAE2285CF357000EED5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C2CFAE5285CF357000EED5D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3C67CC4E293F595C002030C9 /* C4FExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = C4FExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C67CC50293F595C002030C9 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		3C67CC52293F595C002030C9 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		3C67CC55293F595C002030C9 /* C4FBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C4FBundle.swift; sourceTree = "<group>"; };
+		3C67CC57293F595C002030C9 /* C4F.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C4F.swift; sourceTree = "<group>"; };
+		3C67CC59293F595D002030C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3C67CC5B293F595D002030C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C99C6A728648EA0007A261E /* CryptoCurrencyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCurrencyListView.swift; sourceTree = "<group>"; };
 		3CA78158287A05E000473EB8 /* SelectViewPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectViewPickerView.swift; sourceTree = "<group>"; };
 		3CA7815B287A063000473EB8 /* CryptoListRowCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListRowCellView.swift; sourceTree = "<group>"; };
@@ -78,6 +102,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3C67CC4B293F595C002030C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C67CC53293F595C002030C9 /* SwiftUI.framework in Frameworks */,
+				3C67CC51293F595C002030C9 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -94,6 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				3C2CFADD285CF356000EED5D /* CryptoNoob */,
+				3C67CC54293F595C002030C9 /* C4F */,
+				3C67CC4F293F595C002030C9 /* Frameworks */,
 				3C2CFADC285CF356000EED5D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -102,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				3C2CFADB285CF356000EED5D /* Crypto4Fun.app */,
+				3C67CC4E293F595C002030C9 /* C4FExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,6 +161,26 @@
 				3C2CFAE5285CF357000EED5D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3C67CC4F293F595C002030C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3C67CC50293F595C002030C9 /* WidgetKit.framework */,
+				3C67CC52293F595C002030C9 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3C67CC54293F595C002030C9 /* C4F */ = {
+			isa = PBXGroup;
+			children = (
+				3C67CC55293F595C002030C9 /* C4FBundle.swift */,
+				3C67CC57293F595C002030C9 /* C4F.swift */,
+				3C67CC59293F595D002030C9 /* Assets.xcassets */,
+				3C67CC5B293F595D002030C9 /* Info.plist */,
+			);
+			path = C4F;
 			sourceTree = "<group>";
 		};
 		3CA21781287AB9C700511659 /* Detail */ = {
@@ -228,6 +284,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				3C67CC5D293F595D002030C9 /* PBXTargetDependency */,
 			);
 			name = Crypto4Fun;
 			packageProductDependencies = (
@@ -237,6 +294,23 @@
 			productReference = 3C2CFADB285CF356000EED5D /* Crypto4Fun.app */;
 			productType = "com.apple.product-type.application";
 		};
+		3C67CC4D293F595C002030C9 /* C4FExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C67CC61293F595D002030C9 /* Build configuration list for PBXNativeTarget "C4FExtension" */;
+			buildPhases = (
+				3C67CC4A293F595C002030C9 /* Sources */,
+				3C67CC4B293F595C002030C9 /* Frameworks */,
+				3C67CC4C293F595C002030C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = C4FExtension;
+			productName = C4FExtension;
+			productReference = 3C67CC4E293F595C002030C9 /* C4FExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -244,11 +318,14 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1340;
+				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					3C2CFADA285CF356000EED5D = {
 						CreatedOnToolsVersion = 13.4.1;
+					};
+					3C67CC4D293F595C002030C9 = {
+						CreatedOnToolsVersion = 14.1;
 					};
 				};
 			};
@@ -269,6 +346,7 @@
 			projectRoot = "";
 			targets = (
 				3C2CFADA285CF356000EED5D /* Crypto4Fun */,
+				3C67CC4D293F595C002030C9 /* C4FExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -280,6 +358,14 @@
 			files = (
 				3C2CFAE6285CF357000EED5D /* Preview Assets.xcassets in Resources */,
 				3C2CFAE3285CF357000EED5D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C67CC4C293F595C002030C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C67CC5A293F595D002030C9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,7 +398,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3C67CC4A293F595C002030C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C67CC56293F595C002030C9 /* C4FBundle.swift in Sources */,
+				3C67CC58293F595C002030C9 /* C4F.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3C67CC5D293F595D002030C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3C67CC4D293F595C002030C9 /* C4FExtension */;
+			targetProxy = 3C67CC5C293F595D002030C9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		3C2CFAE7285CF357000EED5D /* Debug */ = {
@@ -433,6 +536,7 @@
 		3C2CFAEA285CF357000EED5D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
@@ -465,6 +569,7 @@
 		3C2CFAEB285CF357000EED5D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
@@ -494,6 +599,64 @@
 			};
 			name = Release;
 		};
+		3C67CC5F293F595D002030C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
+				DEVELOPMENT_TEAM = 99M75C322U;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = C4F/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = C4F;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 0.1.3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.knight.elliot.Crypto4Fun.C4F;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3C67CC60293F595D002030C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
+				DEVELOPMENT_TEAM = 99M75C322U;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = C4F/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = C4F;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 0.1.3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.knight.elliot.Crypto4Fun.C4F;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -511,6 +674,15 @@
 			buildConfigurations = (
 				3C2CFAEA285CF357000EED5D /* Debug */,
 				3C2CFAEB285CF357000EED5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3C67CC61293F595D002030C9 /* Build configuration list for PBXNativeTarget "C4FExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C67CC5F293F595D002030C9 /* Debug */,
+				3C67CC60293F595D002030C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
