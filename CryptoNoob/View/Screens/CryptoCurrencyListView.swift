@@ -12,21 +12,23 @@ struct CryptoCurrencyListView: View {
 	@EnvironmentObject var crypto: CryptoViewModel
 
 	var body: some View {
-		ScrollView(.vertical, showsIndicators: false) {
-			ForEach(crypto.cryptoCurrencies, id: \.id) { crypto in
-				NavigationLink(destination: CurrencyChartView(cryptoCurrency: crypto)) {
-					LazyVStack(alignment: .leading) {
-						CryptoListRowCellView(cryptoCurrency: crypto)
+		NavigationView {
+			ScrollView(.vertical, showsIndicators: false) {
+				ForEach(crypto.cryptoCurrencies, id: \.id) { crypto in
+					NavigationLink(destination: CurrencyChartView(cryptoCurrency: crypto)) {
+						LazyVStack(alignment: .leading) {
+							CryptoListRowCellView(cryptoCurrency: crypto)
+						}
+						.padding(10)
+						.background(.regularMaterial)
+						.cornerRadius(10)
+						.shadow(color: .secondary, radius: 1.5)
 					}
-					.padding(10)
-					.background(.regularMaterial)
-					.cornerRadius(10)
-					.shadow(color: .secondary, radius: 1.5)
-
 				}
+				.padding(.horizontal)
+				.padding(.top)
 			}
-			.padding(.horizontal)
-			.padding(.top)
+			.navigationTitle("C4F")
 		}
 		.onAppear {
 			crypto.getCryptos()
