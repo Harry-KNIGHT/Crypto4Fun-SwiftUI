@@ -119,10 +119,10 @@ struct LargeWidgetView: View {
 						
 					Spacer()
 					VStack(alignment: .trailing) {
-						Text("$ \(String(format: "%.2f", crypto.currentPrice))")
+						Text("$\(String(format: "%.2f", crypto.currentPrice))")
 							.font(.callout)
 
-						Text("\(String(format: "%.2f", crypto.priceChangePercentage24h))%")
+						Text("\(crypto.priceChangePercentage24h > 0 ? "+" : "")\(String(format: "%.2f", crypto.priceChangePercentage24h))%")
 							.font(.caption)
 							.foregroundColor(
 								crypto.priceChangePercentage24h == 0 ? .white : crypto.priceChangePercentage24h >= 0 ? .green : .red
