@@ -82,24 +82,45 @@ struct C4F_Previews: PreviewProvider {
 // MARK: Different sizes of widget views.
 
 struct SmallWidgetView: View {
-	var entry: Provider.Entry
+	var entry: Provider.Entry?
 
 	var body: some View {
-		Text(entry.crypto[1].name)
+		if let crypto = entry?.crypto[0] {
+			VStack(alignment: .leading, spacing: 15) {
+				HStack(alignment: .center) {
+					NetworkImage(url: URL(string: crypto.image))
+					Spacer()
+					Text("\(crypto.priceChangePercentage24h > 0 ? "+" : "")\(String(format: "%.2f", crypto.priceChangePercentage24h))%")
+						.font(.callout)
+						.foregroundColor(
+							crypto.priceChangePercentage24h == 0 ? .white : crypto.priceChangePercentage24h > 0 ? .green : .red
+						)
+				}
+
+				Text(crypto.name)
+
+				Text("$\(String(format: "%.2f", crypto.currentPrice))")
+					.font(.title2)
+			}
+			.padding()
+		}
 	}
 }
 
 struct MediumWidgetView: View {
 	var entry: Provider.Entry
 	var body: some View {
-		VStack(alignment: .leading, spacing: 10) {
-			ForEach(entry.crypto[0...2], id: \.id) { crypto in
-				HStack {
-					Text(crypto.name)
-					Spacer()
+		VStack(alignment: .center, spacing: 10) {
+			Spacer()
+			ForEach(entry.crypto[0...1], id: \.id) { crypto in
+				WigetCryptoListView(crypto: crypto)
+				if crypto == entry.crypto[0] {
+					Divider()
 				}
 			}
+			Spacer()
 		}
+		.padding()
 	}
 }
 
@@ -110,25 +131,7 @@ struct LargeWidgetView: View {
 		VStack(alignment: .leading) {
 			Spacer()
 			ForEach(entry.crypto, id: \.id) { crypto in
-				HStack {
-					NetworkImage(url: URL(string: crypto.image))
-					Text(crypto.name)
-						.fontDesign(.monospaced)
-						.fontWeight(.medium)
-						.font(.callout)
-						
-					Spacer()
-					VStack(alignment: .trailing) {
-						Text("$\(String(format: "%.2f", crypto.currentPrice))")
-							.font(.callout)
-
-						Text("\(crypto.priceChangePercentage24h > 0 ? "+" : "")\(String(format: "%.2f", crypto.priceChangePercentage24h))%")
-							.font(.caption)
-							.foregroundColor(
-								crypto.priceChangePercentage24h == 0 ? .white : crypto.priceChangePercentage24h >= 0 ? .green : .red
-							)
-					}
-				}
+				WigetCryptoListView(crypto: crypto)
 				if crypto != (entry.crypto.last) {
 					Divider()
 				}
@@ -136,5 +139,31 @@ struct LargeWidgetView: View {
 			Spacer()
 		}
 		.padding()
+	}
+}
+
+
+struct WigetCryptoListView: View {
+	let crypto: CryptoCurrencyModel
+	var body: some View {
+		HStack {
+			NetworkImage(url: URL(string: crypto.image))
+			Text(crypto.name)
+				.fontDesign(.monospaced)
+				.fontWeight(.medium)
+				.font(.callout)
+
+			Spacer()
+			VStack(alignment: .trailing) {
+				Text("$\(String(format: "%.2f", crypto.currentPrice))")
+					.font(.callout)
+
+				Text("\(crypto.priceChangePercentage24h > 0 ? "+" : "")\(String(format: "%.2f", crypto.priceChangePercentage24h))%")
+					.font(.caption)
+					.foregroundColor(
+						crypto.priceChangePercentage24h == 0 ? .white : crypto.priceChangePercentage24h > 0 ? .green : .red
+					)
+			}
+		}
 	}
 }
