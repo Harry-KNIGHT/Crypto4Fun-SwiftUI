@@ -15,8 +15,7 @@ struct NetworkImage: View {
             if let url = url, let imageData = try? Data(contentsOf: url), let uiImage = UIImage(data: imageData) {
                 Image(uiImage: uiImage)
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .clipped()
+					.frame(width: 35, height: 35)
             }
             else {
                 ProgressView()
