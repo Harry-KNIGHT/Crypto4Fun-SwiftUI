@@ -96,12 +96,13 @@ struct SmallWidgetView: View {
 							crypto.priceChangePercentage24h == 0 ? .white : crypto.priceChangePercentage24h > 0 ? .green : .red
 						)
 				}
-
+				Spacer()
 				Text(crypto.name)
 
 				Text("$\(String(format: "%.2f", crypto.currentPrice))")
 					.font(.title2)
 			}
+			.fontDesign(.rounded)
 			.padding()
 		}
 	}
@@ -110,11 +111,11 @@ struct SmallWidgetView: View {
 struct MediumWidgetView: View {
 	var entry: Provider.Entry
 	var body: some View {
-		VStack(alignment: .center, spacing: 10) {
+		VStack(alignment: .center, spacing: 8) {
 			Spacer()
-			ForEach(entry.crypto[0...1], id: \.id) { crypto in
+			ForEach(entry.crypto[0...2], id: \.id) { crypto in
 				WigetCryptoListView(crypto: crypto)
-				if crypto == entry.crypto[0] {
+				if crypto == entry.crypto[0] || crypto == entry.crypto[1]{
 					Divider()
 				}
 			}
@@ -149,9 +150,9 @@ struct WigetCryptoListView: View {
 		HStack {
 			NetworkImage(url: URL(string: crypto.image))
 			Text(crypto.name)
-				.fontDesign(.monospaced)
 				.fontWeight(.medium)
 				.font(.callout)
+				.padding(.leading, 8)
 
 			Spacer()
 			VStack(alignment: .trailing) {
@@ -165,5 +166,6 @@ struct WigetCryptoListView: View {
 					)
 			}
 		}
+		.fontDesign(.rounded)
 	}
 }
