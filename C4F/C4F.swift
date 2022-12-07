@@ -111,6 +111,7 @@ struct LargeWidgetView: View {
 			Spacer()
 			ForEach(entry.crypto, id: \.id) { crypto in
 				HStack {
+					NetworkImage(url: URL(string: crypto.image))
 					Text(crypto.name)
 						.fontDesign(.monospaced)
 						.fontWeight(.medium)

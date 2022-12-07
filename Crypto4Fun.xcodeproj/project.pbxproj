@@ -10,6 +10,7 @@
 		3C098332285F964400E3C117 /* CurrencyChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C098331285F964400E3C117 /* CurrencyChartView.swift */; };
 		3C0D9872287F560A000EDAD0 /* CryptoCurrencyVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0D9871287F560A000EDAD0 /* CryptoCurrencyVM.swift */; };
 		3C0D9874287F5B32000EDAD0 /* FetchChartVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0D9873287F5B32000EDAD0 /* FetchChartVM.swift */; };
+		3C164B1A2940B4D0000E62F7 /* NetworkImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C164B192940B4D0000E62F7 /* NetworkImage.swift */; };
 		3C2724962872D85C00DAB17C /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2724952872D85C00DAB17C /* StringExtension.swift */; };
 		3C2CFADF285CF356000EED5D /* CryptoNoobApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2CFADE285CF356000EED5D /* CryptoNoobApp.swift */; };
 		3C2CFAE3285CF357000EED5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C2CFAE2285CF357000EED5D /* Assets.xcassets */; };
@@ -67,6 +68,7 @@
 		3C098331285F964400E3C117 /* CurrencyChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyChartView.swift; sourceTree = "<group>"; };
 		3C0D9871287F560A000EDAD0 /* CryptoCurrencyVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCurrencyVM.swift; sourceTree = "<group>"; };
 		3C0D9873287F5B32000EDAD0 /* FetchChartVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchChartVM.swift; sourceTree = "<group>"; };
+		3C164B192940B4D0000E62F7 /* NetworkImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkImage.swift; sourceTree = "<group>"; };
 		3C2724952872D85C00DAB17C /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		3C2CFADB285CF356000EED5D /* Crypto4Fun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crypto4Fun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C2CFADE285CF356000EED5D /* CryptoNoobApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoNoobApp.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			children = (
 				3C67CC55293F595C002030C9 /* C4FBundle.swift */,
 				3C67CC57293F595C002030C9 /* C4F.swift */,
+				3C164B192940B4D0000E62F7 /* NetworkImage.swift */,
 				3C67CC59293F595D002030C9 /* Assets.xcassets */,
 				3C67CC5B293F595D002030C9 /* Info.plist */,
 			);
@@ -410,6 +413,7 @@
 			files = (
 				3C67CC56293F595C002030C9 /* C4FBundle.swift in Sources */,
 				3C67CC62293F5B67002030C9 /* CryptoCurrencyVM.swift in Sources */,
+				3C164B1A2940B4D0000E62F7 /* NetworkImage.swift in Sources */,
 				3C67CC58293F595C002030C9 /* C4F.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
