@@ -14,6 +14,7 @@ struct ChartView: View {
 	@Environment(\.colorScheme) var colorScheme
 	var minHeight: CGFloat = 500
 	var maxHeight: CGFloat = 700
+	var hasTraillingPadding: Bool = true
     var body: some View {
 		Chart {
 			ForEach(chartVM.prices, id: \.self) {
@@ -32,7 +33,7 @@ struct ChartView: View {
 		}
 		.chartYScale(domain: .automatic(includesZero: false))
 		.frame(maxWidth: .infinity, minHeight: minHeight, maxHeight: maxHeight)
-		.padding(.trailing, 5)
+		.padding(.trailing, hasTraillingPadding ? 5 : 0)
     }
 }
 

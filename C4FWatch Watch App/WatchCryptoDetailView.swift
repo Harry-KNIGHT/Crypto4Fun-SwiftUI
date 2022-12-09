@@ -32,7 +32,8 @@ struct WatchCryptoDetailView: View {
 			ChartView(
 				showAveragePrice: .constant(false),
 				minHeight: 65,
-				maxHeight: 80
+				maxHeight: 80,
+				hasTraillingPadding: false
 			)
 		}
 		.fontDesign(.rounded)
