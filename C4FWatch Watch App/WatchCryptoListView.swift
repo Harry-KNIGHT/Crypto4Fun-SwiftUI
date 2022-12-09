@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  WatchCryptoListView.swift
 //  C4FWatch Watch App
 //
 //  Created by Elliot Knight on 09/12/2022.
@@ -8,7 +8,7 @@
 import SwiftUI
 import Crypto4FunKit
 
-struct ContentView: View {
+struct WatchCryptoListView: View {
 	@State private var cryptos = [CryptoCurrencyModel]()
 	var body: some View {
 		NavigationView {
@@ -24,7 +24,7 @@ struct ContentView: View {
 								Text(crypto.priceChangePercentage24h > 0 ? "+" : "")
 								Text("\(String(format: "%.2f", crypto.priceChangePercentage24h)) %")
 									.font(.caption)
-							
+
 							}
 							Text(String(format: "$%.2f", crypto.currentPrice))
 								.font(.title3)
@@ -48,8 +48,8 @@ struct ContentView: View {
 	}
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct WatchCryptoListView_Previews: PreviewProvider {
 	static var previews: some View {
-		ContentView()
+		WatchCryptoListView()
 	}
 }

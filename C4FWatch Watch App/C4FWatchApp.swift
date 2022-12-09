@@ -11,7 +11,7 @@ import SwiftUI
 struct C4FWatch_Watch_AppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+			WatchCryptoListView()
         }
     }
 }
