@@ -16,9 +16,11 @@ struct WatchCryptoDetailView: View {
 				AsyncImageView(cryptoCurrency: crypto, width: 50, height: 50)
 
 				Spacer()
-				Text("\(crypto.priceChangePercentage24h.twoDigitFloat)%")
+				Text(
+					"\(crypto.priceChangePercentage24h.plusOrMinusIndicator)\(crypto.priceChangePercentage24h.twoDigitFloat)%"
+				)
 					.font(.callout)
-					.foregroundColor(crypto.priceChangePercentage24h > 0 ? .green : .red)
+					.foregroundColor(crypto.priceChangePercentage24h.positiveOrNegativeColor)
 
 			}
 			Spacer()
@@ -28,7 +30,7 @@ struct WatchCryptoDetailView: View {
 			Spacer()
 			Text("$\(crypto.currentPrice.twoDigitDouble)")
 				.font(.title)
-				.foregroundColor(crypto.priceChangePercentage24h > 0 ? .green : .red	)
+				.foregroundColor(crypto.priceChangePercentage24h.positiveOrNegativeColor)
 
 			Spacer()
 		}

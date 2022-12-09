@@ -22,7 +22,7 @@ struct WatchCryptoListView: View {
 										.font(.caption)
 										.lineLimit(1)
 									Spacer()
-									Text(crypto.priceChangePercentage24h > 0 ? "+" : "")
+									Text(crypto.priceChangePercentage24h.plusOrMinusIndicator)
 									Text("\(crypto.priceChangePercentage24h.twoDigitFloat) %")
 										.font(.caption)
 								}
@@ -30,7 +30,7 @@ struct WatchCryptoListView: View {
 									.font(.title3)
 							}
 						}
-						.listItemTint(crypto.priceChangePercentage24h > 0 ? .green : .red)
+						.listItemTint(crypto.priceChangePercentage24h.positiveOrNegativeColor)
 					}
 				}
 			}

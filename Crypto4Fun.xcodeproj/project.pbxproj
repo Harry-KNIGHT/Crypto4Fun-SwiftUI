@@ -31,6 +31,7 @@
 		3C81ABE32943777200D55198 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD8C7A9285CFBDA004D65B9 /* AsyncImageView.swift */; };
 		3C81ABE429437B9200D55198 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2724952872D85C00DAB17C /* Double.swift */; };
 		3C81ABE629437CBA00D55198 /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C81ABE529437CBA00D55198 /* Float.swift */; };
+		3C81ABE92943810100D55198 /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C81ABE529437CBA00D55198 /* Float.swift */; };
 		3C99C6A828648EA0007A261E /* CryptoCurrencyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C99C6A728648EA0007A261E /* CryptoCurrencyListView.swift */; };
 		3CA78159287A05E000473EB8 /* SelectViewPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA78158287A05E000473EB8 /* SelectViewPickerView.swift */; };
 		3CA7815C287A063000473EB8 /* CryptoListRowCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA7815B287A063000473EB8 /* CryptoListRowCellView.swift */; };
@@ -481,6 +482,7 @@
 				3CFA2C042861D3960086BE36 /* ButtonModifier.swift in Sources */,
 				3C2724962872D85C00DAB17C /* Double.swift in Sources */,
 				3CFA2C0B2861D6260086BE36 /* NegativeOrPositiveLast24hView.swift in Sources */,
+				3C81ABE92943810100D55198 /* Float.swift in Sources */,
 				3C0D9872287F560A000EDAD0 /* CryptoCurrencyVM.swift in Sources */,
 				3CD8C7AA285CFBDA004D65B9 /* AsyncImageView.swift in Sources */,
 				3C0D9874287F5B32000EDAD0 /* FetchChartVM.swift in Sources */,
