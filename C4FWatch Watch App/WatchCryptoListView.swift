@@ -26,7 +26,7 @@ struct WatchCryptoListView: View {
 									Text("\(crypto.priceChangePercentage24h.twoDigitFloat) %")
 										.font(.caption)
 								}
-								Text(crypto.currentPrice.twoDigitDouble)
+								Text("$\(crypto.currentPrice.twoDigitDouble)")
 									.font(.title3)
 							}
 						}
