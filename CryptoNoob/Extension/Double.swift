@@ -1,5 +1,5 @@
 //
-//  StringExtension.swift
+//  Double.swift
 //  CryptoNoob
 //
 //  Created by Elliot Knight on 04/07/2022.
