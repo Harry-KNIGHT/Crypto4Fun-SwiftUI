@@ -9,14 +9,15 @@ import SwiftUI
 import Crypto4FunKit
 
 struct WatchCryptoListView: View {
-	@State private var cryptos = [CryptoCurrencyModel]()
+
+	@EnvironmentObject var cryptoVM: CryptoViewModel
 	var body: some View {
 		NavigationView {
 			VStack {
 				List {
-					ForEach(cryptos, id: \.id) { crypto in
+					ForEach(cryptoVM.cryptoCurrencies, id: \.id) { crypto in
 						NavigationLink(destination: WatchCryptoDetailView(crypto: crypto)) {
-							VStack(alignment: .leading, spacing: 2) {
+							VStack(alignment: .leading) {
 								HStack(spacing: 0) {
 									Text(crypto.name)
 										.font(.caption)
@@ -27,7 +28,7 @@ struct WatchCryptoListView: View {
 										.font(.caption)
 								}
 								Text("$\(crypto.currentPrice.twoDigitDouble)")
-									.font(.title3)
+									.font(.title2)
 							}
 						}
 						.listItemTint(crypto.priceChangePercentage24h.positiveOrNegativeColor)
@@ -37,14 +38,7 @@ struct WatchCryptoListView: View {
 			.navigationTitle("C4F")
 		}
 		.onAppear {
-			Task {
-				do {
-					let allCrypto = try await CryptoApi.fetchCryptoCurrency()
-					cryptos = allCrypto
-				} catch {
-					throw error
-				}
-			}
+			cryptoVM.getCryptos()
 		}
 	}
 }
@@ -52,5 +46,6 @@ struct WatchCryptoListView: View {
 struct WatchCryptoListView_Previews: PreviewProvider {
 	static var previews: some View {
 		WatchCryptoListView()
+			.environmentObject(CryptoViewModel())
 	}
 }

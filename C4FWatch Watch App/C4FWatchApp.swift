@@ -12,6 +12,7 @@ struct C4FWatch_Watch_AppApp: App {
     var body: some Scene {
         WindowGroup {
 			WatchCryptoListView()
+				.environmentObject(CryptoViewModel())
         }
     }
 }

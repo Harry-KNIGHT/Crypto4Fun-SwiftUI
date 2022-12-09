@@ -36,6 +36,7 @@
 		3CA78159287A05E000473EB8 /* SelectViewPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA78158287A05E000473EB8 /* SelectViewPickerView.swift */; };
 		3CA7815C287A063000473EB8 /* CryptoListRowCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA7815B287A063000473EB8 /* CryptoListRowCellView.swift */; };
 		3CA78161287A075100473EB8 /* FavoritesSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA78160287A075100473EB8 /* FavoritesSheetView.swift */; };
+		3CB464692943C0AE00E9588D /* CryptoCurrencyVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0D9871287F560A000EDAD0 /* CryptoCurrencyVM.swift */; };
 		3CBD4001293F612700F564B9 /* Crypto4FunKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3CBD4000293F612700F564B9 /* Crypto4FunKit */; };
 		3CBD4003293F616A00F564B9 /* Crypto4FunKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3CBD4002293F616A00F564B9 /* Crypto4FunKit */; };
 		3CD8C7AA285CFBDA004D65B9 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD8C7A9285CFBDA004D65B9 /* AsyncImageView.swift */; };
@@ -505,6 +506,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C81ABD62943534E00D55198 /* WatchCryptoListView.swift in Sources */,
+				3CB464692943C0AE00E9588D /* CryptoCurrencyVM.swift in Sources */,
 				3C81ABE22943763F00D55198 /* WatchCryptoDetailView.swift in Sources */,
 				3C81ABE629437CBA00D55198 /* Float.swift in Sources */,
 				3C81ABD42943534E00D55198 /* C4FWatchApp.swift in Sources */,
