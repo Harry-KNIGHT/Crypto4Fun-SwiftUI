@@ -13,6 +13,7 @@ struct C4FWatch_Watch_AppApp: App {
         WindowGroup {
 			WatchCryptoListView()
 				.environmentObject(CryptoViewModel())
+				.environmentObject(FetchChartViewModel())
         }
     }
 }

@@ -33,6 +33,10 @@
 		3C81ABE629437CBA00D55198 /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C81ABE529437CBA00D55198 /* Float.swift */; };
 		3C81ABE92943810100D55198 /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C81ABE529437CBA00D55198 /* Float.swift */; };
 		3C99C6A828648EA0007A261E /* CryptoCurrencyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C99C6A728648EA0007A261E /* CryptoCurrencyListView.swift */; };
+		3C9CE1BA2943C4070041EDD0 /* FetchChartVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0D9873287F5B32000EDAD0 /* FetchChartVM.swift */; };
+		3C9CE1BB2943C50C0041EDD0 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFA2C102861D9460086BE36 /* DateExtension.swift */; };
+		3C9CE1BD2943C7B80041EDD0 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9CE1BC2943C7B80041EDD0 /* ChartView.swift */; };
+		3C9CE1BE2943C8850041EDD0 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9CE1BC2943C7B80041EDD0 /* ChartView.swift */; };
 		3CA78159287A05E000473EB8 /* SelectViewPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA78158287A05E000473EB8 /* SelectViewPickerView.swift */; };
 		3CA7815C287A063000473EB8 /* CryptoListRowCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA7815B287A063000473EB8 /* CryptoListRowCellView.swift */; };
 		3CA78161287A075100473EB8 /* FavoritesSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA78160287A075100473EB8 /* FavoritesSheetView.swift */; };
@@ -100,6 +104,7 @@
 		3C81ABE12943763F00D55198 /* WatchCryptoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchCryptoDetailView.swift; sourceTree = "<group>"; };
 		3C81ABE529437CBA00D55198 /* Float.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Float.swift; sourceTree = "<group>"; };
 		3C99C6A728648EA0007A261E /* CryptoCurrencyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCurrencyListView.swift; sourceTree = "<group>"; };
+		3C9CE1BC2943C7B80041EDD0 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		3CA78158287A05E000473EB8 /* SelectViewPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectViewPickerView.swift; sourceTree = "<group>"; };
 		3CA7815B287A063000473EB8 /* CryptoListRowCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListRowCellView.swift; sourceTree = "<group>"; };
 		3CA78160287A075100473EB8 /* FavoritesSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesSheetView.swift; sourceTree = "<group>"; };
@@ -259,6 +264,7 @@
 			children = (
 				3CE98C23285DE24E00539190 /* EmptyView.swift */,
 				3CA78158287A05E000473EB8 /* SelectViewPickerView.swift */,
+				3C9CE1BC2943C7B80041EDD0 /* ChartView.swift */,
 			);
 			path = ExtractedView;
 			sourceTree = "<group>";
@@ -484,6 +490,7 @@
 				3C2724962872D85C00DAB17C /* Double.swift in Sources */,
 				3CFA2C0B2861D6260086BE36 /* NegativeOrPositiveLast24hView.swift in Sources */,
 				3C81ABE92943810100D55198 /* Float.swift in Sources */,
+				3C9CE1BD2943C7B80041EDD0 /* ChartView.swift in Sources */,
 				3C0D9872287F560A000EDAD0 /* CryptoCurrencyVM.swift in Sources */,
 				3CD8C7AA285CFBDA004D65B9 /* AsyncImageView.swift in Sources */,
 				3C0D9874287F5B32000EDAD0 /* FetchChartVM.swift in Sources */,
@@ -508,7 +515,10 @@
 				3C81ABD62943534E00D55198 /* WatchCryptoListView.swift in Sources */,
 				3CB464692943C0AE00E9588D /* CryptoCurrencyVM.swift in Sources */,
 				3C81ABE22943763F00D55198 /* WatchCryptoDetailView.swift in Sources */,
+				3C9CE1BE2943C8850041EDD0 /* ChartView.swift in Sources */,
 				3C81ABE629437CBA00D55198 /* Float.swift in Sources */,
+				3C9CE1BB2943C50C0041EDD0 /* DateExtension.swift in Sources */,
+				3C9CE1BA2943C4070041EDD0 /* FetchChartVM.swift in Sources */,
 				3C81ABD42943534E00D55198 /* C4FWatchApp.swift in Sources */,
 				3C81ABE429437B9200D55198 /* Double.swift in Sources */,
 				3C81ABE32943777200D55198 /* AsyncImageView.swift in Sources */,

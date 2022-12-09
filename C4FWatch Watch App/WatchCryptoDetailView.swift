@@ -7,39 +7,47 @@
 
 import SwiftUI
 import Crypto4FunKit
+import Charts
 
 struct WatchCryptoDetailView: View {
 	let crypto: CryptoCurrencyModel
+	@EnvironmentObject var chartVM: FetchChartViewModel
+
 	var body: some View {
-		VStack(alignment: .leading) {
-			HStack {
-				AsyncImageView(cryptoCurrency: crypto, width: 50, height: 50)
-
-				Spacer()
-				Text(
-					"\(crypto.priceChangePercentage24h.plusOrMinusIndicator)\(crypto.priceChangePercentage24h.twoDigitFloat)%"
-				)
-					.font(.callout)
-					.foregroundColor(crypto.priceChangePercentage24h.positiveOrNegativeColor)
-
-			}
-			Spacer()
+		VStack(alignment: .leading, spacing: 2) {
 			Text(crypto.name.capitalized)
-				.font(.title2)
+				.font(.body)
 				.fontWeight(.medium)
-			Spacer()
 			Text("$\(crypto.currentPrice.twoDigitDouble)")
-				.font(.title)
+				.font(.title2)
 				.foregroundColor(crypto.priceChangePercentage24h.positiveOrNegativeColor)
+			Text(
+				"\(crypto.priceChangePercentage24h.plusOrMinusIndicator)\(crypto.priceChangePercentage24h.twoDigitFloat)%"
+			)
+			.font(.callout)
+			.foregroundColor(crypto.priceChangePercentage24h.positiveOrNegativeColor)
 
 			Spacer()
+
+			ChartView(
+				showAveragePrice: .constant(false),
+				minHeight: 65,
+				maxHeight: 80
+			)
 		}
 		.fontDesign(.rounded)
+		.onAppear {
+			chartVM.getChart(crypto.id, from: Date().timeIntervalSince1970 - EpochUnixTime.day.rawValue)
+		}
+		.onDisappear {
+			chartVM.prices = [[Double]]()
+		}
 	}
 }
 
 struct WatchCryptoDetailView_Previews: PreviewProvider {
 	static var previews: some View {
 		WatchCryptoDetailView(crypto: .cryptoSample)
+			.environmentObject(FetchChartViewModel())
 	}
 }
