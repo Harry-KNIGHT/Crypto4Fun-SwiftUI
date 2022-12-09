@@ -15,18 +15,21 @@ struct WatchCryptoDetailView: View {
 
 	var body: some View {
 		VStack(alignment: .leading, spacing: 2) {
-			Text(crypto.name.capitalized)
-				.font(.body)
-				.fontWeight(.medium)
-			Text("$\(crypto.currentPrice.twoDigitDouble)")
-				.font(.title2)
+			Group {
+				Text(crypto.name.capitalized)
+					.font(.body)
+					.fontWeight(.medium)
+				Text("$\(crypto.currentPrice.twoDigitDouble)")
+					.font(.title2)
+					.foregroundColor(crypto.priceChangePercentage24h.positiveOrNegativeColor)
+				Text(
+					"\(crypto.priceChangePercentage24h.plusOrMinusIndicator)\(crypto.priceChangePercentage24h.twoDigitFloat)%"
+				)
+				.font(.callout)
 				.foregroundColor(crypto.priceChangePercentage24h.positiveOrNegativeColor)
-			Text(
-				"\(crypto.priceChangePercentage24h.plusOrMinusIndicator)\(crypto.priceChangePercentage24h.twoDigitFloat)%"
-			)
-			.font(.callout)
-			.foregroundColor(crypto.priceChangePercentage24h.positiveOrNegativeColor)
-
+			}
+			.padding(.horizontal)
+			
 			Spacer()
 
 			ChartView(
