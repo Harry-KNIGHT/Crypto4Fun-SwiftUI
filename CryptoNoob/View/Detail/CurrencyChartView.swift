@@ -25,24 +25,9 @@ struct CurrencyChartView: View {
 					CurrencyPriceView(cryptoCurrency: cryptoCurrency)
 					NegativeOrPositiveTimeView(cryptoCurrency: cryptoCurrency)
 				}.padding(.horizontal)
-				Chart {
-					ForEach(fetchChart.prices, id: \.self) {
-						LineMark(
-							x: .value("Date", Date(miliseconds: Int64($0[0]))),
-							y: .value("Price", $0[1])
-						)
-						.foregroundStyle(fetchChart.pricePercentageValue < 0 ? .red : .green)
-					}
-					if showAveragePrice {
-						RuleMark(
-							y: .value("Average price", fetchChart.averagePrice)
-						)
-						.foregroundStyle(colorScheme == .dark ? .white : .black)
-					}
-				}
-				.chartYScale(domain: .automatic(includesZero: false))
-				.frame(maxWidth: .infinity, minHeight: 500, maxHeight: 700)
-				.padding(.trailing, 5)
+
+				ChartView(showAveragePrice: $showAveragePrice)
+				
 				.onAppear {
 						 fetchChart.getChart(cryptoCurrency.id, from: Date().timeIntervalSince1970 - EpochUnixTime.month.rawValue)
 				}
