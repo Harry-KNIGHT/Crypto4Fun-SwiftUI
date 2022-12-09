@@ -11,7 +11,7 @@
 		3C0D9872287F560A000EDAD0 /* CryptoCurrencyVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0D9871287F560A000EDAD0 /* CryptoCurrencyVM.swift */; };
 		3C0D9874287F5B32000EDAD0 /* FetchChartVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0D9873287F5B32000EDAD0 /* FetchChartVM.swift */; };
 		3C164B1A2940B4D0000E62F7 /* NetworkImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C164B192940B4D0000E62F7 /* NetworkImage.swift */; };
-		3C2724962872D85C00DAB17C /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2724952872D85C00DAB17C /* StringExtension.swift */; };
+		3C2724962872D85C00DAB17C /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2724952872D85C00DAB17C /* Double.swift */; };
 		3C2CFADF285CF356000EED5D /* CryptoNoobApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2CFADE285CF356000EED5D /* CryptoNoobApp.swift */; };
 		3C2CFAE3285CF357000EED5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C2CFAE2285CF357000EED5D /* Assets.xcassets */; };
 		3C2CFAE6285CF357000EED5D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C2CFAE5285CF357000EED5D /* Preview Assets.xcassets */; };
@@ -22,10 +22,25 @@
 		3C67CC5A293F595D002030C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C67CC59293F595D002030C9 /* Assets.xcassets */; };
 		3C67CC5E293F595D002030C9 /* C4FExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 3C67CC4E293F595C002030C9 /* C4FExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3C67CC62293F5B67002030C9 /* CryptoCurrencyVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0D9871287F560A000EDAD0 /* CryptoCurrencyVM.swift */; };
+		3C81ABD42943534E00D55198 /* C4FWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C81ABD32943534E00D55198 /* C4FWatchApp.swift */; };
+		3C81ABD62943534E00D55198 /* WatchCryptoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C81ABD52943534E00D55198 /* WatchCryptoListView.swift */; };
+		3C81ABD82943534F00D55198 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C81ABD72943534F00D55198 /* Assets.xcassets */; };
+		3C81ABDB2943534F00D55198 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C81ABDA2943534F00D55198 /* Preview Assets.xcassets */; };
+		3C81ABE0294353F800D55198 /* Crypto4FunKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3C81ABDF294353F800D55198 /* Crypto4FunKit */; };
+		3C81ABE22943763F00D55198 /* WatchCryptoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C81ABE12943763F00D55198 /* WatchCryptoDetailView.swift */; };
+		3C81ABE32943777200D55198 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD8C7A9285CFBDA004D65B9 /* AsyncImageView.swift */; };
+		3C81ABE429437B9200D55198 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2724952872D85C00DAB17C /* Double.swift */; };
+		3C81ABE629437CBA00D55198 /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C81ABE529437CBA00D55198 /* Float.swift */; };
+		3C81ABE92943810100D55198 /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C81ABE529437CBA00D55198 /* Float.swift */; };
 		3C99C6A828648EA0007A261E /* CryptoCurrencyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C99C6A728648EA0007A261E /* CryptoCurrencyListView.swift */; };
+		3C9CE1BA2943C4070041EDD0 /* FetchChartVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0D9873287F5B32000EDAD0 /* FetchChartVM.swift */; };
+		3C9CE1BB2943C50C0041EDD0 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFA2C102861D9460086BE36 /* DateExtension.swift */; };
+		3C9CE1BD2943C7B80041EDD0 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9CE1BC2943C7B80041EDD0 /* ChartView.swift */; };
+		3C9CE1BE2943C8850041EDD0 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9CE1BC2943C7B80041EDD0 /* ChartView.swift */; };
 		3CA78159287A05E000473EB8 /* SelectViewPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA78158287A05E000473EB8 /* SelectViewPickerView.swift */; };
 		3CA7815C287A063000473EB8 /* CryptoListRowCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA7815B287A063000473EB8 /* CryptoListRowCellView.swift */; };
 		3CA78161287A075100473EB8 /* FavoritesSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA78160287A075100473EB8 /* FavoritesSheetView.swift */; };
+		3CB464692943C0AE00E9588D /* CryptoCurrencyVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0D9871287F560A000EDAD0 /* CryptoCurrencyVM.swift */; };
 		3CBD4001293F612700F564B9 /* Crypto4FunKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3CBD4000293F612700F564B9 /* Crypto4FunKit */; };
 		3CBD4003293F616A00F564B9 /* Crypto4FunKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3CBD4002293F616A00F564B9 /* Crypto4FunKit */; };
 		3CD8C7AA285CFBDA004D65B9 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD8C7A9285CFBDA004D65B9 /* AsyncImageView.swift */; };
@@ -69,7 +84,7 @@
 		3C0D9871287F560A000EDAD0 /* CryptoCurrencyVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCurrencyVM.swift; sourceTree = "<group>"; };
 		3C0D9873287F5B32000EDAD0 /* FetchChartVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchChartVM.swift; sourceTree = "<group>"; };
 		3C164B192940B4D0000E62F7 /* NetworkImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkImage.swift; sourceTree = "<group>"; };
-		3C2724952872D85C00DAB17C /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		3C2724952872D85C00DAB17C /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		3C2CFADB285CF356000EED5D /* Crypto4Fun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crypto4Fun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C2CFADE285CF356000EED5D /* CryptoNoobApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoNoobApp.swift; sourceTree = "<group>"; };
 		3C2CFAE2285CF357000EED5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -81,7 +96,15 @@
 		3C67CC57293F595C002030C9 /* C4F.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C4F.swift; sourceTree = "<group>"; };
 		3C67CC59293F595D002030C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C67CC5B293F595D002030C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C81ABD12943534E00D55198 /* C4FWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "C4FWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C81ABD32943534E00D55198 /* C4FWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C4FWatchApp.swift; sourceTree = "<group>"; };
+		3C81ABD52943534E00D55198 /* WatchCryptoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchCryptoListView.swift; sourceTree = "<group>"; };
+		3C81ABD72943534F00D55198 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3C81ABDA2943534F00D55198 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3C81ABE12943763F00D55198 /* WatchCryptoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchCryptoDetailView.swift; sourceTree = "<group>"; };
+		3C81ABE529437CBA00D55198 /* Float.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Float.swift; sourceTree = "<group>"; };
 		3C99C6A728648EA0007A261E /* CryptoCurrencyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCurrencyListView.swift; sourceTree = "<group>"; };
+		3C9CE1BC2943C7B80041EDD0 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		3CA78158287A05E000473EB8 /* SelectViewPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectViewPickerView.swift; sourceTree = "<group>"; };
 		3CA7815B287A063000473EB8 /* CryptoListRowCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListRowCellView.swift; sourceTree = "<group>"; };
 		3CA78160287A075100473EB8 /* FavoritesSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesSheetView.swift; sourceTree = "<group>"; };
@@ -116,6 +139,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3C81ABCE2943534E00D55198 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C81ABE0294353F800D55198 /* Crypto4FunKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -123,7 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				3CFA2C102861D9460086BE36 /* DateExtension.swift */,
-				3C2724952872D85C00DAB17C /* StringExtension.swift */,
+				3C2724952872D85C00DAB17C /* Double.swift */,
+				3C81ABE529437CBA00D55198 /* Float.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -133,6 +165,7 @@
 			children = (
 				3C2CFADD285CF356000EED5D /* CryptoNoob */,
 				3C67CC54293F595C002030C9 /* C4F */,
+				3C81ABD22943534E00D55198 /* C4FWatch Watch App */,
 				3C67CC4F293F595C002030C9 /* Frameworks */,
 				3C2CFADC285CF356000EED5D /* Products */,
 			);
@@ -143,6 +176,7 @@
 			children = (
 				3C2CFADB285CF356000EED5D /* Crypto4Fun.app */,
 				3C67CC4E293F595C002030C9 /* C4FExtension.appex */,
+				3C81ABD12943534E00D55198 /* C4FWatch Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -189,6 +223,26 @@
 			path = C4F;
 			sourceTree = "<group>";
 		};
+		3C81ABD22943534E00D55198 /* C4FWatch Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				3C81ABD32943534E00D55198 /* C4FWatchApp.swift */,
+				3C81ABD52943534E00D55198 /* WatchCryptoListView.swift */,
+				3C81ABE12943763F00D55198 /* WatchCryptoDetailView.swift */,
+				3C81ABD72943534F00D55198 /* Assets.xcassets */,
+				3C81ABD92943534F00D55198 /* Preview Content */,
+			);
+			path = "C4FWatch Watch App";
+			sourceTree = "<group>";
+		};
+		3C81ABD92943534F00D55198 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				3C81ABDA2943534F00D55198 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		3CA21781287AB9C700511659 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +264,7 @@
 			children = (
 				3CE98C23285DE24E00539190 /* EmptyView.swift */,
 				3CA78158287A05E000473EB8 /* SelectViewPickerView.swift */,
+				3C9CE1BC2943C7B80041EDD0 /* ChartView.swift */,
 			);
 			path = ExtractedView;
 			sourceTree = "<group>";
@@ -320,6 +375,26 @@
 			productReference = 3C67CC4E293F595C002030C9 /* C4FExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		3C81ABD02943534E00D55198 /* C4FWatch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C81ABDE2943534F00D55198 /* Build configuration list for PBXNativeTarget "C4FWatch Watch App" */;
+			buildPhases = (
+				3C81ABCD2943534E00D55198 /* Sources */,
+				3C81ABCE2943534E00D55198 /* Frameworks */,
+				3C81ABCF2943534E00D55198 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "C4FWatch Watch App";
+			packageProductDependencies = (
+				3C81ABDF294353F800D55198 /* Crypto4FunKit */,
+			);
+			productName = "C4FWatch Watch App";
+			productReference = 3C81ABD12943534E00D55198 /* C4FWatch Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -334,6 +409,9 @@
 						CreatedOnToolsVersion = 13.4.1;
 					};
 					3C67CC4D293F595C002030C9 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+					3C81ABD02943534E00D55198 = {
 						CreatedOnToolsVersion = 14.1;
 					};
 				};
@@ -356,6 +434,7 @@
 			targets = (
 				3C2CFADA285CF356000EED5D /* Crypto4Fun */,
 				3C67CC4D293F595C002030C9 /* C4FExtension */,
+				3C81ABD02943534E00D55198 /* C4FWatch Watch App */,
 			);
 		};
 /* End PBXProject section */
@@ -375,6 +454,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C67CC5A293F595D002030C9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C81ABCF2943534E00D55198 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C81ABDB2943534F00D55198 /* Preview Assets.xcassets in Resources */,
+				3C81ABD82943534F00D55198 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,8 +487,10 @@
 				3C99C6A828648EA0007A261E /* CryptoCurrencyListView.swift in Sources */,
 				B3314EA2285DC77900BBFF4C /* FavoriteViewModel.swift in Sources */,
 				3CFA2C042861D3960086BE36 /* ButtonModifier.swift in Sources */,
-				3C2724962872D85C00DAB17C /* StringExtension.swift in Sources */,
+				3C2724962872D85C00DAB17C /* Double.swift in Sources */,
 				3CFA2C0B2861D6260086BE36 /* NegativeOrPositiveLast24hView.swift in Sources */,
+				3C81ABE92943810100D55198 /* Float.swift in Sources */,
+				3C9CE1BD2943C7B80041EDD0 /* ChartView.swift in Sources */,
 				3C0D9872287F560A000EDAD0 /* CryptoCurrencyVM.swift in Sources */,
 				3CD8C7AA285CFBDA004D65B9 /* AsyncImageView.swift in Sources */,
 				3C0D9874287F5B32000EDAD0 /* FetchChartVM.swift in Sources */,
@@ -415,6 +505,23 @@
 				3C67CC62293F5B67002030C9 /* CryptoCurrencyVM.swift in Sources */,
 				3C164B1A2940B4D0000E62F7 /* NetworkImage.swift in Sources */,
 				3C67CC58293F595C002030C9 /* C4F.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C81ABCD2943534E00D55198 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C81ABD62943534E00D55198 /* WatchCryptoListView.swift in Sources */,
+				3CB464692943C0AE00E9588D /* CryptoCurrencyVM.swift in Sources */,
+				3C81ABE22943763F00D55198 /* WatchCryptoDetailView.swift in Sources */,
+				3C9CE1BE2943C8850041EDD0 /* ChartView.swift in Sources */,
+				3C81ABE629437CBA00D55198 /* Float.swift in Sources */,
+				3C9CE1BB2943C50C0041EDD0 /* DateExtension.swift in Sources */,
+				3C9CE1BA2943C4070041EDD0 /* FetchChartVM.swift in Sources */,
+				3C81ABD42943534E00D55198 /* C4FWatchApp.swift in Sources */,
+				3C81ABE429437B9200D55198 /* Double.swift in Sources */,
+				3C81ABE32943777200D55198 /* AsyncImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -668,6 +775,68 @@
 			};
 			name = Release;
 		};
+		3C81ABDC2943534F00D55198 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"C4FWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 99M75C322U;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = C4FWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Debug;
+		};
+		3C81ABDD2943534F00D55198 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"C4FWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 99M75C322U;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = C4FWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -698,6 +867,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		3C81ABDE2943534F00D55198 /* Build configuration list for PBXNativeTarget "C4FWatch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C81ABDC2943534F00D55198 /* Debug */,
+				3C81ABDD2943534F00D55198 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -712,6 +890,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3C81ABDF294353F800D55198 /* Crypto4FunKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3CBD3FFF293F612700F564B9 /* XCRemoteSwiftPackageReference "Crypto4FunKit" */;
+			productName = Crypto4FunKit;
+		};
 		3CBD4000293F612700F564B9 /* Crypto4FunKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3CBD3FFF293F612700F564B9 /* XCRemoteSwiftPackageReference "Crypto4FunKit" */;
