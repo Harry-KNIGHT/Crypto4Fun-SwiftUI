@@ -15,21 +15,22 @@ struct WatchCryptoListView: View {
 			VStack {
 				List {
 					ForEach(cryptos, id: \.id) { crypto in
-						VStack(alignment: .leading, spacing: 2) {
-							HStack(spacing: 0) {
-								Text(crypto.name)
-									.font(.caption)
-									.lineLimit(1)
-								Spacer()
-								Text(crypto.priceChangePercentage24h > 0 ? "+" : "")
-								Text("\(String(format: "%.2f", crypto.priceChangePercentage24h)) %")
-									.font(.caption)
-
+						NavigationLink(destination: WatchCryptoDetailView(crypto: crypto)) {
+							VStack(alignment: .leading, spacing: 2) {
+								HStack(spacing: 0) {
+									Text(crypto.name)
+										.font(.caption)
+										.lineLimit(1)
+									Spacer()
+									Text(crypto.priceChangePercentage24h > 0 ? "+" : "")
+									Text("\(String(format: "%.2f", crypto.priceChangePercentage24h)) %")
+										.font(.caption)
+								}
+								Text(String(format: "$%.2f", crypto.currentPrice))
+									.font(.title3)
 							}
-							Text(String(format: "$%.2f", crypto.currentPrice))
-								.font(.title3)
 						}
-						.listItemTint(crypto.priceChangePercentage24h > 0 ? .green : .red	)
+						.listItemTint(crypto.priceChangePercentage24h > 0 ? .green : .red)
 					}
 				}
 			}
