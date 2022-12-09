@@ -11,4 +11,8 @@ extension Double {
 	var stringWithoutZeroFraction: String {
 		return truncatingRemainder(dividingBy: 1) == 0 ? String(format: "%.0f") : String(self)
 	}
+
+	var twoDigitDouble: String {
+		String(format: "%.2f", self)
+	}
 }

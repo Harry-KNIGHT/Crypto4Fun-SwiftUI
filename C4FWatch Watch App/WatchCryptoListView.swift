@@ -23,10 +23,10 @@ struct WatchCryptoListView: View {
 										.lineLimit(1)
 									Spacer()
 									Text(crypto.priceChangePercentage24h > 0 ? "+" : "")
-									Text("\(String(format: "%.2f", crypto.priceChangePercentage24h)) %")
+									Text("\(crypto.priceChangePercentage24h.twoDigitFloat) %")
 										.font(.caption)
 								}
-								Text(String(format: "$%.2f", crypto.currentPrice))
+								Text(crypto.currentPrice.twoDigitDouble)
 									.font(.title3)
 							}
 						}

@@ -16,7 +16,7 @@ struct WatchCryptoDetailView: View {
 				AsyncImageView(cryptoCurrency: crypto, width: 50, height: 50)
 
 				Spacer()
-				Text("\(String(format: "%.2f", crypto.priceChangePercentage24h))%")
+				Text("\(crypto.priceChangePercentage24h.twoDigitFloat)%")
 					.font(.callout)
 					.foregroundColor(crypto.priceChangePercentage24h > 0 ? .green : .red)
 
@@ -26,7 +26,7 @@ struct WatchCryptoDetailView: View {
 				.font(.title2)
 				.fontWeight(.medium)
 			Spacer()
-			Text("$\(crypto.currentPrice.description)")
+			Text("$\(crypto.currentPrice.twoDigitDouble)")
 				.font(.title)
 				.foregroundColor(crypto.priceChangePercentage24h > 0 ? .green : .red	)
 
