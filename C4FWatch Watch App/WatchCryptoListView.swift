@@ -17,19 +17,7 @@ struct WatchCryptoListView: View {
 				List {
 					ForEach(cryptoVM.cryptoCurrencies, id: \.id) { crypto in
 						NavigationLink(destination: WatchCryptoDetailView(crypto: crypto)) {
-							VStack(alignment: .leading) {
-								HStack(spacing: 0) {
-									Text(crypto.name)
-										.font(.caption)
-										.lineLimit(1)
-									Spacer()
-									Text(crypto.priceChangePercentage24h.plusOrMinusIndicator)
-									Text("\(crypto.priceChangePercentage24h.twoDigitFloat) %")
-										.font(.caption)
-								}
-								Text("$\(crypto.currentPrice.twoDigitDouble)")
-									.font(.title2)
-							}
+							WidgetCryptoListRowCell(crypto: crypto)
 						}
 						.listItemTint(crypto.priceChangePercentage24h.positiveOrNegativeColor)
 					}
