@@ -16,13 +16,20 @@ struct WidgetCryptoListRowCell: View {
 				Text(crypto.name)
 					.font(.caption)
 					.lineLimit(1)
+					.accessibilityLabel(crypto.name)
 				Spacer()
 				Text(crypto.priceChangePercentage24h.plusOrMinusIndicator)
+					.accessibilityHidden(true)
+
 				Text("\(crypto.priceChangePercentage24h.twoDigitFloat) %")
 					.font(.caption)
+					.accessibilityHidden(true)
 			}
 			Text("$\(crypto.currentPrice.twoDigitDouble)")
 				.font(.title2)
+				.accessibilityValue(crypto.currentPrice.description)
+				.accessibilityLabel("Crypto's price in dollar.")
+
 		}
     }
 }

@@ -19,14 +19,19 @@ struct WatchCryptoDetailView: View {
 				Text(crypto.name.capitalized)
 					.font(.body)
 					.fontWeight(.medium)
+					.accessibilityLabel(crypto.name)
 				Text("$\(crypto.currentPrice.twoDigitDouble)")
 					.font(.title2)
 					.foregroundColor(crypto.priceChangePercentage24h.positiveOrNegativeColor)
+					.accessibilityValue("\(crypto.currentPrice.twoDigitDouble) dollars.")
 				Text(
 					"\(crypto.priceChangePercentage24h.plusOrMinusIndicator)\(crypto.priceChangePercentage24h.twoDigitFloat)%"
 				)
 				.font(.callout)
 				.foregroundColor(crypto.priceChangePercentage24h.positiveOrNegativeColor)
+				.accessibilityValue("\(crypto.priceChangePercentage24h.plusOrMinusIndicator)\(crypto.priceChangePercentage24h.twoDigitFloat)%")
+				.accessibilityLabel("Price change percentage 24h.")
+
 			}
 			.padding(.horizontal)
 			
