@@ -66,8 +66,8 @@ struct C4F: Widget {
 		StaticConfiguration(kind: kind, provider: Provider()) { entry in
 			C4FEntryView(entry: entry)
 		}
-		.configurationDisplayName("My Widget")
-		.description("This is an example widget.")
+		.configurationDisplayName("Crypto List")
+		.description("Track crypto prices for the last 24h.")
 	}
 }
 
