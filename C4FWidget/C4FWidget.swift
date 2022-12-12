@@ -66,6 +66,7 @@ struct C4FWidget: Widget {
 		}
 		.configurationDisplayName("Crypto List")
 		.description("Track crypto prices for the last 24h.")
+		.supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
 	}
 }
 
@@ -154,7 +155,7 @@ struct WigetCryptoListView: View {
 			
 			Spacer()
 			VStack(alignment: .trailing) {
-				Text("$\(String(format: "%.2f", crypto.currentPrice))")
+				Text("$\(crypto.currentPrice.twoDigitDouble)")
 					.font(.callout)
 				
 				Text("\(crypto.priceChangePercentage24h.plusOrMinusIndicator)\(crypto.priceChangePercentage24h.twoDigitFloat)%")
