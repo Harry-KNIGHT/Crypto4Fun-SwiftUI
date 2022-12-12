@@ -91,9 +91,7 @@ struct SmallWidgetView: View {
 					Spacer()
 					Text("\(crypto.priceChangePercentage24h.plusOrMinusIndicator)\(crypto.priceChangePercentage24h.twoDigitFloat)%")
 						.font(.callout)
-						.foregroundColor(
-							crypto.priceChangePercentage24h == 0 ? .white : crypto.priceChangePercentage24h > 0 ? .green : .red
-						)
+						.foregroundColor(crypto.priceChangePercentage24h.isNumberEqualPositiveOrNegative)
 				}
 				Spacer()
 				Text(crypto.name)
@@ -160,9 +158,7 @@ struct WigetCryptoListView: View {
 				
 				Text("\(crypto.priceChangePercentage24h.plusOrMinusIndicator)\(crypto.priceChangePercentage24h.twoDigitFloat)%")
 					.font(.caption)
-					.foregroundColor(
-						crypto.priceChangePercentage24h == 0 ? .white : crypto.priceChangePercentage24h > 0 ? .green : .red
-					)
+					.foregroundColor(crypto.priceChangePercentage24h.isNumberEqualPositiveOrNegative)
 			}
 		}
 		.fontDesign(.rounded)

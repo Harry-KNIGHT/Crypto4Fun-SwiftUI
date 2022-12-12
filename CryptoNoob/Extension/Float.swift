@@ -16,6 +16,10 @@ extension Float {
 		(self > 0 ? Color.green : Color.red)
 	}
 
+	var isNumberEqualPositiveOrNegative: Color {
+		(self == 0 ? .primary : self > 0 ? .green : .red)
+	}
+
 	var plusOrMinusIndicator: String {
 		(self == 0 ? "" : self > 0 ? "+" : "")
 	}
