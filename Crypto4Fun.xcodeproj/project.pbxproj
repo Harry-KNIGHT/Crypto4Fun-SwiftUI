@@ -45,6 +45,9 @@
 		3CF2A8EB2947B72F006A8126 /* C4FWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 3CF2A8DE2947B72E006A8126 /* C4FWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3CF2A8F02947B7A2006A8126 /* Crypto4FunKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3CF2A8EF2947B7A2006A8126 /* Crypto4FunKit */; };
 		3CF2A8F12947B810006A8126 /* NetworkImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C164B192940B4D0000E62F7 /* NetworkImage.swift */; };
+		3CF2A8F22947B9A1006A8126 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2724952872D85C00DAB17C /* Double.swift */; };
+		3CF2A8F42947B9A5006A8126 /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C81ABE529437CBA00D55198 /* Float.swift */; };
+		3CF2A8F52947B9AB006A8126 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFA2C102861D9460086BE36 /* DateExtension.swift */; };
 		3CFA2C042861D3960086BE36 /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFA2C032861D3960086BE36 /* ButtonModifier.swift */; };
 		3CFA2C0B2861D6260086BE36 /* NegativeOrPositiveLast24hView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFA2C0A2861D6260086BE36 /* NegativeOrPositiveLast24hView.swift */; };
 		3CFA2C0D2861D6B30086BE36 /* CurrencyPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFA2C0C2861D6B30086BE36 /* CurrencyPriceView.swift */; };
@@ -522,7 +525,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CF2A8E32947B72E006A8126 /* C4FWidgetBundle.swift in Sources */,
+				3CF2A8F52947B9AB006A8126 /* DateExtension.swift in Sources */,
+				3CF2A8F42947B9A5006A8126 /* Float.swift in Sources */,
 				3CF2A8F12947B810006A8126 /* NetworkImage.swift in Sources */,
+				3CF2A8F22947B9A1006A8126 /* Double.swift in Sources */,
 				3CF2A8E52947B72E006A8126 /* C4FWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
