@@ -1,8 +1,8 @@
 //
-//  C4F.swift
-//  C4F
+//  C4FWidget.swift
+//  C4FWidget
 //
-//  Created by Elliot Knight on 06/12/2022.
+//  Created by Elliot Knight on 12/12/2022.
 //
 
 import WidgetKit
@@ -10,39 +10,39 @@ import SwiftUI
 import Crypto4FunKit
 
 struct Provider: TimelineProvider {
-
+	
 	func placeholder(in context: Context) -> SimpleEntry {
 		SimpleEntry(date: Date(), crypto: [.cryptoSample, .cryptoSample])
 	}
-
+	
 	func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
 		let entry = SimpleEntry(date: Date(), crypto: [.cryptoSample, .cryptoSample])
 		completion(entry)
 	}
-
+	
 	func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
 		Task {
 			do {
 				let cryptos = try await CryptoApi.fetchCryptoCurrency(6)
 				let entry = SimpleEntry(date: Date(), crypto: cryptos)
-
+				
 				let timeline = Timeline(entries: [entry], policy: .after(.now.advanced(by: 15)))
 				completion(timeline)
 			} catch {
-
+				
 			}
 		}
-
-
 	}
 }
+
 
 struct SimpleEntry: TimelineEntry {
 	let date: Date
 	let crypto: [CryptoCurrencyModel]
 }
 
-struct C4FEntryView : View {
+
+struct C4FWidgetEntryView : View {
 	var entry: Provider.Entry
 	@Environment(\.widgetFamily) var widgetFamilies
 	var body: some View {
@@ -51,29 +51,27 @@ struct C4FEntryView : View {
 			SmallWidgetView(entry: entry)
 		case .systemMedium:
 			MediumWidgetView(entry: entry)
-
 		default:
-
 			LargeWidgetView(entry: entry)
 		}
 	}
 }
 
-struct C4F: Widget {
-	let kind: String = "C4F"
-
+struct C4FWidget: Widget {
+	let kind: String = "C4FWidget"
+	
 	var body: some WidgetConfiguration {
 		StaticConfiguration(kind: kind, provider: Provider()) { entry in
-			C4FEntryView(entry: entry)
+			C4FWidgetEntryView(entry: entry)
 		}
 		.configurationDisplayName("Crypto List")
 		.description("Track crypto prices for the last 24h.")
 	}
 }
 
-struct C4F_Previews: PreviewProvider {
+struct C4FWidget_Previews: PreviewProvider {
 	static var previews: some View {
-		C4FEntryView(entry: SimpleEntry(date: Date(), crypto: [.cryptoSample, .cryptoSample]))
+		C4FWidgetEntryView(entry: SimpleEntry(date: Date(), crypto: [.cryptoSample]))
 			.previewContext(WidgetPreviewContext(family: .systemSmall))
 	}
 }
@@ -83,7 +81,7 @@ struct C4F_Previews: PreviewProvider {
 
 struct SmallWidgetView: View {
 	var entry: Provider.Entry?
-
+	
 	var body: some View {
 		if let crypto = entry?.crypto[0] {
 			VStack(alignment: .leading, spacing: 15) {
@@ -98,7 +96,7 @@ struct SmallWidgetView: View {
 				}
 				Spacer()
 				Text(crypto.name)
-
+				
 				Text("$\(String(format: "%.2f", crypto.currentPrice))")
 					.font(.title2)
 			}
@@ -127,7 +125,7 @@ struct MediumWidgetView: View {
 
 struct LargeWidgetView: View {
 	var entry: Provider.Entry
-
+	
 	var body: some View {
 		VStack(alignment: .leading) {
 			Spacer()
@@ -153,12 +151,12 @@ struct WigetCryptoListView: View {
 				.fontWeight(.medium)
 				.font(.callout)
 				.padding(.leading, 8)
-
+			
 			Spacer()
 			VStack(alignment: .trailing) {
 				Text("$\(String(format: "%.2f", crypto.currentPrice))")
 					.font(.callout)
-
+				
 				Text("\(crypto.priceChangePercentage24h > 0 ? "+" : "")\(String(format: "%.2f", crypto.priceChangePercentage24h))%")
 					.font(.caption)
 					.foregroundColor(

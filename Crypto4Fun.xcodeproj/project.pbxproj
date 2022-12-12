@@ -10,18 +10,10 @@
 		3C098332285F964400E3C117 /* CurrencyChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C098331285F964400E3C117 /* CurrencyChartView.swift */; };
 		3C0D9872287F560A000EDAD0 /* CryptoCurrencyVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0D9871287F560A000EDAD0 /* CryptoCurrencyVM.swift */; };
 		3C0D9874287F5B32000EDAD0 /* FetchChartVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0D9873287F5B32000EDAD0 /* FetchChartVM.swift */; };
-		3C164B1A2940B4D0000E62F7 /* NetworkImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C164B192940B4D0000E62F7 /* NetworkImage.swift */; };
 		3C2724962872D85C00DAB17C /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2724952872D85C00DAB17C /* Double.swift */; };
 		3C2CFADF285CF356000EED5D /* CryptoNoobApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2CFADE285CF356000EED5D /* CryptoNoobApp.swift */; };
 		3C2CFAE3285CF357000EED5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C2CFAE2285CF357000EED5D /* Assets.xcassets */; };
 		3C2CFAE6285CF357000EED5D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C2CFAE5285CF357000EED5D /* Preview Assets.xcassets */; };
-		3C67CC51293F595C002030C9 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C67CC50293F595C002030C9 /* WidgetKit.framework */; };
-		3C67CC53293F595C002030C9 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C67CC52293F595C002030C9 /* SwiftUI.framework */; };
-		3C67CC56293F595C002030C9 /* C4FBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C67CC55293F595C002030C9 /* C4FBundle.swift */; };
-		3C67CC58293F595C002030C9 /* C4F.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C67CC57293F595C002030C9 /* C4F.swift */; };
-		3C67CC5A293F595D002030C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C67CC59293F595D002030C9 /* Assets.xcassets */; };
-		3C67CC5E293F595D002030C9 /* C4FExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 3C67CC4E293F595C002030C9 /* C4FExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		3C67CC62293F5B67002030C9 /* CryptoCurrencyVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0D9871287F560A000EDAD0 /* CryptoCurrencyVM.swift */; };
 		3C81ABD42943534E00D55198 /* C4FWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C81ABD32943534E00D55198 /* C4FWatchApp.swift */; };
 		3C81ABD62943534E00D55198 /* WatchCryptoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C81ABD52943534E00D55198 /* WatchCryptoListView.swift */; };
 		3C81ABD82943534F00D55198 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C81ABD72943534F00D55198 /* Assets.xcassets */; };
@@ -42,10 +34,17 @@
 		3CA78161287A075100473EB8 /* FavoritesSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA78160287A075100473EB8 /* FavoritesSheetView.swift */; };
 		3CB464692943C0AE00E9588D /* CryptoCurrencyVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0D9871287F560A000EDAD0 /* CryptoCurrencyVM.swift */; };
 		3CBD4001293F612700F564B9 /* Crypto4FunKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3CBD4000293F612700F564B9 /* Crypto4FunKit */; };
-		3CBD4003293F616A00F564B9 /* Crypto4FunKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3CBD4002293F616A00F564B9 /* Crypto4FunKit */; };
 		3CD8C7AA285CFBDA004D65B9 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD8C7A9285CFBDA004D65B9 /* AsyncImageView.swift */; };
 		3CE50D24294479C900ECB42A /* WidgetCryptoListRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE50D23294479C900ECB42A /* WidgetCryptoListRowCell.swift */; };
 		3CE98C24285DE24E00539190 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE98C23285DE24E00539190 /* EmptyView.swift */; };
+		3CF2A8DF2947B72E006A8126 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C67CC50293F595C002030C9 /* WidgetKit.framework */; };
+		3CF2A8E02947B72E006A8126 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C67CC52293F595C002030C9 /* SwiftUI.framework */; };
+		3CF2A8E32947B72E006A8126 /* C4FWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF2A8E22947B72E006A8126 /* C4FWidgetBundle.swift */; };
+		3CF2A8E52947B72E006A8126 /* C4FWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF2A8E42947B72E006A8126 /* C4FWidget.swift */; };
+		3CF2A8E72947B72F006A8126 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CF2A8E62947B72F006A8126 /* Assets.xcassets */; };
+		3CF2A8EB2947B72F006A8126 /* C4FWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 3CF2A8DE2947B72E006A8126 /* C4FWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3CF2A8F02947B7A2006A8126 /* Crypto4FunKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3CF2A8EF2947B7A2006A8126 /* Crypto4FunKit */; };
+		3CF2A8F12947B810006A8126 /* NetworkImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C164B192940B4D0000E62F7 /* NetworkImage.swift */; };
 		3CFA2C042861D3960086BE36 /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFA2C032861D3960086BE36 /* ButtonModifier.swift */; };
 		3CFA2C0B2861D6260086BE36 /* NegativeOrPositiveLast24hView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFA2C0A2861D6260086BE36 /* NegativeOrPositiveLast24hView.swift */; };
 		3CFA2C0D2861D6B30086BE36 /* CurrencyPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFA2C0C2861D6B30086BE36 /* CurrencyPriceView.swift */; };
@@ -57,12 +56,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3C67CC5C293F595D002030C9 /* PBXContainerItemProxy */ = {
+		3CF2A8E92947B72F006A8126 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3C2CFAD3285CF356000EED5D /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 3C67CC4D293F595C002030C9;
-			remoteInfo = C4FExtension;
+			remoteGlobalIDString = 3CF2A8DD2947B72E006A8126;
+			remoteInfo = C4FWidgetExtension;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -73,7 +72,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				3C67CC5E293F595D002030C9 /* C4FExtension.appex in Embed Foundation Extensions */,
+				3CF2A8EB2947B72F006A8126 /* C4FWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,13 +89,8 @@
 		3C2CFADE285CF356000EED5D /* CryptoNoobApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoNoobApp.swift; sourceTree = "<group>"; };
 		3C2CFAE2285CF357000EED5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C2CFAE5285CF357000EED5D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		3C67CC4E293F595C002030C9 /* C4FExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = C4FExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C67CC50293F595C002030C9 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		3C67CC52293F595C002030C9 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		3C67CC55293F595C002030C9 /* C4FBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C4FBundle.swift; sourceTree = "<group>"; };
-		3C67CC57293F595C002030C9 /* C4F.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C4F.swift; sourceTree = "<group>"; };
-		3C67CC59293F595D002030C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3C67CC5B293F595D002030C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C81ABD12943534E00D55198 /* C4FWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "C4FWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C81ABD32943534E00D55198 /* C4FWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C4FWatchApp.swift; sourceTree = "<group>"; };
 		3C81ABD52943534E00D55198 /* WatchCryptoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchCryptoListView.swift; sourceTree = "<group>"; };
@@ -112,6 +106,11 @@
 		3CD8C7A9285CFBDA004D65B9 /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		3CE50D23294479C900ECB42A /* WidgetCryptoListRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCryptoListRowCell.swift; sourceTree = "<group>"; };
 		3CE98C23285DE24E00539190 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		3CF2A8DE2947B72E006A8126 /* C4FWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = C4FWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CF2A8E22947B72E006A8126 /* C4FWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C4FWidgetBundle.swift; sourceTree = "<group>"; };
+		3CF2A8E42947B72E006A8126 /* C4FWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C4FWidget.swift; sourceTree = "<group>"; };
+		3CF2A8E62947B72F006A8126 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3CF2A8E82947B72F006A8126 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CFA2C032861D3960086BE36 /* ButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifier.swift; sourceTree = "<group>"; };
 		3CFA2C0A2861D6260086BE36 /* NegativeOrPositiveLast24hView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NegativeOrPositiveLast24hView.swift; sourceTree = "<group>"; };
 		3CFA2C0C2861D6B30086BE36 /* CurrencyPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyPriceView.swift; sourceTree = "<group>"; };
@@ -131,21 +130,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3C67CC4B293F595C002030C9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3C67CC53293F595C002030C9 /* SwiftUI.framework in Frameworks */,
-				3C67CC51293F595C002030C9 /* WidgetKit.framework in Frameworks */,
-				3CBD4003293F616A00F564B9 /* Crypto4FunKit in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		3C81ABCE2943534E00D55198 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3C81ABE0294353F800D55198 /* Crypto4FunKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3CF2A8DB2947B72E006A8126 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CF2A8E02947B72E006A8126 /* SwiftUI.framework in Frameworks */,
+				3CF2A8DF2947B72E006A8126 /* WidgetKit.framework in Frameworks */,
+				3CF2A8F02947B7A2006A8126 /* Crypto4FunKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,7 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				3C2CFADD285CF356000EED5D /* CryptoNoob */,
-				3C67CC54293F595C002030C9 /* C4F */,
+				3CF2A8E12947B72E006A8126 /* C4FWidget */,
 				3C81ABD22943534E00D55198 /* C4FWatch Watch App */,
 				3C67CC4F293F595C002030C9 /* Frameworks */,
 				3C2CFADC285CF356000EED5D /* Products */,
@@ -177,8 +176,8 @@
 			isa = PBXGroup;
 			children = (
 				3C2CFADB285CF356000EED5D /* Crypto4Fun.app */,
-				3C67CC4E293F595C002030C9 /* C4FExtension.appex */,
 				3C81ABD12943534E00D55198 /* C4FWatch Watch App.app */,
+				3CF2A8DE2947B72E006A8126 /* C4FWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -211,18 +210,6 @@
 				3C67CC52293F595C002030C9 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		3C67CC54293F595C002030C9 /* C4F */ = {
-			isa = PBXGroup;
-			children = (
-				3C67CC55293F595C002030C9 /* C4FBundle.swift */,
-				3C67CC57293F595C002030C9 /* C4F.swift */,
-				3C164B192940B4D0000E62F7 /* NetworkImage.swift */,
-				3C67CC59293F595D002030C9 /* Assets.xcassets */,
-				3C67CC5B293F595D002030C9 /* Info.plist */,
-			);
-			path = C4F;
 			sourceTree = "<group>";
 		};
 		3C81ABD22943534E00D55198 /* C4FWatch Watch App */ = {
@@ -315,6 +302,18 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
+		3CF2A8E12947B72E006A8126 /* C4FWidget */ = {
+			isa = PBXGroup;
+			children = (
+				3CF2A8E22947B72E006A8126 /* C4FWidgetBundle.swift */,
+				3CF2A8E42947B72E006A8126 /* C4FWidget.swift */,
+				3C164B192940B4D0000E62F7 /* NetworkImage.swift */,
+				3CF2A8E62947B72F006A8126 /* Assets.xcassets */,
+				3CF2A8E82947B72F006A8126 /* Info.plist */,
+			);
+			path = C4FWidget;
+			sourceTree = "<group>";
+		};
 		3CFA2C052861D4420086BE36 /* ViewModifier */ = {
 			isa = PBXGroup;
 			children = (
@@ -348,7 +347,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				3C67CC5D293F595D002030C9 /* PBXTargetDependency */,
+				3CF2A8EA2947B72F006A8126 /* PBXTargetDependency */,
 			);
 			name = Crypto4Fun;
 			packageProductDependencies = (
@@ -357,26 +356,6 @@
 			productName = CryptoNoob;
 			productReference = 3C2CFADB285CF356000EED5D /* Crypto4Fun.app */;
 			productType = "com.apple.product-type.application";
-		};
-		3C67CC4D293F595C002030C9 /* C4FExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3C67CC61293F595D002030C9 /* Build configuration list for PBXNativeTarget "C4FExtension" */;
-			buildPhases = (
-				3C67CC4A293F595C002030C9 /* Sources */,
-				3C67CC4B293F595C002030C9 /* Frameworks */,
-				3C67CC4C293F595C002030C9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = C4FExtension;
-			packageProductDependencies = (
-				3CBD4002293F616A00F564B9 /* Crypto4FunKit */,
-			);
-			productName = C4FExtension;
-			productReference = 3C67CC4E293F595C002030C9 /* C4FExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
 		};
 		3C81ABD02943534E00D55198 /* C4FWatch Watch App */ = {
 			isa = PBXNativeTarget;
@@ -398,6 +377,26 @@
 			productReference = 3C81ABD12943534E00D55198 /* C4FWatch Watch App.app */;
 			productType = "com.apple.product-type.application";
 		};
+		3CF2A8DD2947B72E006A8126 /* C4FWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3CF2A8EE2947B72F006A8126 /* Build configuration list for PBXNativeTarget "C4FWidgetExtension" */;
+			buildPhases = (
+				3CF2A8DA2947B72E006A8126 /* Sources */,
+				3CF2A8DB2947B72E006A8126 /* Frameworks */,
+				3CF2A8DC2947B72E006A8126 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = C4FWidgetExtension;
+			packageProductDependencies = (
+				3CF2A8EF2947B7A2006A8126 /* Crypto4FunKit */,
+			);
+			productName = C4FWidgetExtension;
+			productReference = 3CF2A8DE2947B72E006A8126 /* C4FWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -411,10 +410,10 @@
 					3C2CFADA285CF356000EED5D = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
-					3C67CC4D293F595C002030C9 = {
+					3C81ABD02943534E00D55198 = {
 						CreatedOnToolsVersion = 14.1;
 					};
-					3C81ABD02943534E00D55198 = {
+					3CF2A8DD2947B72E006A8126 = {
 						CreatedOnToolsVersion = 14.1;
 					};
 				};
@@ -436,8 +435,8 @@
 			projectRoot = "";
 			targets = (
 				3C2CFADA285CF356000EED5D /* Crypto4Fun */,
-				3C67CC4D293F595C002030C9 /* C4FExtension */,
 				3C81ABD02943534E00D55198 /* C4FWatch Watch App */,
+				3CF2A8DD2947B72E006A8126 /* C4FWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -452,20 +451,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3C67CC4C293F595C002030C9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3C67CC5A293F595D002030C9 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		3C81ABCF2943534E00D55198 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3C81ABDB2943534F00D55198 /* Preview Assets.xcassets in Resources */,
 				3C81ABD82943534F00D55198 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3CF2A8DC2947B72E006A8126 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CF2A8E72947B72F006A8126 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,17 +499,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3C67CC4A293F595C002030C9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3C67CC56293F595C002030C9 /* C4FBundle.swift in Sources */,
-				3C67CC62293F5B67002030C9 /* CryptoCurrencyVM.swift in Sources */,
-				3C164B1A2940B4D0000E62F7 /* NetworkImage.swift in Sources */,
-				3C67CC58293F595C002030C9 /* C4F.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		3C81ABCD2943534E00D55198 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -529,13 +517,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3CF2A8DA2947B72E006A8126 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CF2A8E32947B72E006A8126 /* C4FWidgetBundle.swift in Sources */,
+				3CF2A8F12947B810006A8126 /* NetworkImage.swift in Sources */,
+				3CF2A8E52947B72E006A8126 /* C4FWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3C67CC5D293F595D002030C9 /* PBXTargetDependency */ = {
+		3CF2A8EA2947B72F006A8126 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3C67CC4D293F595C002030C9 /* C4FExtension */;
-			targetProxy = 3C67CC5C293F595D002030C9 /* PBXContainerItemProxy */;
+			target = 3CF2A8DD2947B72E006A8126 /* C4FWidgetExtension */;
+			targetProxy = 3CF2A8E92947B72F006A8126 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -721,64 +719,6 @@
 			};
 			name = Release;
 		};
-		3C67CC5F293F595D002030C9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
-				DEVELOPMENT_TEAM = 99M75C322U;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = C4F/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = C4F;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.1.4;
-				PRODUCT_BUNDLE_IDENTIFIER = com.knight.elliot.Crypto4Fun.C4F;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		3C67CC60293F595D002030C9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
-				DEVELOPMENT_TEAM = 99M75C322U;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = C4F/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = C4F;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.1.4;
-				PRODUCT_BUNDLE_IDENTIFIER = com.knight.elliot.Crypto4Fun.C4F;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		3C81ABDC2943534F00D55198 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -841,6 +781,64 @@
 			};
 			name = Release;
 		};
+		3CF2A8EC2947B72F006A8126 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 99M75C322U;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = C4FWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = C4FWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.knight.elliot.Crypto4Fun.C4FWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3CF2A8ED2947B72F006A8126 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 99M75C322U;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = C4FWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = C4FWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.knight.elliot.Crypto4Fun.C4FWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -862,20 +860,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3C67CC61293F595D002030C9 /* Build configuration list for PBXNativeTarget "C4FExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3C67CC5F293F595D002030C9 /* Debug */,
-				3C67CC60293F595D002030C9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		3C81ABDE2943534F00D55198 /* Build configuration list for PBXNativeTarget "C4FWatch Watch App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3C81ABDC2943534F00D55198 /* Debug */,
 				3C81ABDD2943534F00D55198 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3CF2A8EE2947B72F006A8126 /* Build configuration list for PBXNativeTarget "C4FWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3CF2A8EC2947B72F006A8126 /* Debug */,
+				3CF2A8ED2947B72F006A8126 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -904,7 +902,7 @@
 			package = 3CBD3FFF293F612700F564B9 /* XCRemoteSwiftPackageReference "Crypto4FunKit" */;
 			productName = Crypto4FunKit;
 		};
-		3CBD4002293F616A00F564B9 /* Crypto4FunKit */ = {
+		3CF2A8EF2947B7A2006A8126 /* Crypto4FunKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3CBD3FFF293F612700F564B9 /* XCRemoteSwiftPackageReference "Crypto4FunKit" */;
 			productName = Crypto4FunKit;
