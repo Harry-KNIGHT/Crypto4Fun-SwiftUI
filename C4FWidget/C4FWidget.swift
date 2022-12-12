@@ -88,7 +88,7 @@ struct SmallWidgetView: View {
 				HStack(alignment: .center) {
 					NetworkImage(url: URL(string: crypto.image))
 					Spacer()
-					Text("\(crypto.priceChangePercentage24h > 0 ? "+" : "")\(String(format: "%.2f", crypto.priceChangePercentage24h))%")
+					Text("\(crypto.priceChangePercentage24h.plusOrMinusIndicator)\(crypto.priceChangePercentage24h.twoDigitFloat)%")
 						.font(.callout)
 						.foregroundColor(
 							crypto.priceChangePercentage24h == 0 ? .white : crypto.priceChangePercentage24h > 0 ? .green : .red
@@ -97,7 +97,7 @@ struct SmallWidgetView: View {
 				Spacer()
 				Text(crypto.name)
 				
-				Text("$\(String(format: "%.2f", crypto.currentPrice))")
+				Text("$\(crypto.currentPrice.twoDigitDouble)")
 					.font(.title2)
 			}
 			.fontDesign(.rounded)
@@ -157,7 +157,7 @@ struct WigetCryptoListView: View {
 				Text("$\(String(format: "%.2f", crypto.currentPrice))")
 					.font(.callout)
 				
-				Text("\(crypto.priceChangePercentage24h > 0 ? "+" : "")\(String(format: "%.2f", crypto.priceChangePercentage24h))%")
+				Text("\(crypto.priceChangePercentage24h.plusOrMinusIndicator)\(crypto.priceChangePercentage24h.twoDigitFloat)%")
 					.font(.caption)
 					.foregroundColor(
 						crypto.priceChangePercentage24h == 0 ? .white : crypto.priceChangePercentage24h > 0 ? .green : .red
